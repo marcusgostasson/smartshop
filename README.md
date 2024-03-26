@@ -1,9 +1,6 @@
 <p align="center">
   <img width="347" alt="Skärmavbild 2024-03-26 kl 22 25 01" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/d6e43b15-d4e2-4c2d-8436-7236d9db5573">
 </p>
-
-AKTIVO
-======
 **Aktivo: Utforska Aktiviteter i Närheten**
 
 Aktivo är en innovativ mobilapplikation som gör det enkelt för användare att hitta och delta i olika aktiviteter baserat på deras ålder och intressen. Genom att använda den senaste teknologin och platsbaserad information ger Aktivo en skräddarsydd upplevelse för varje användare.
