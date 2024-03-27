@@ -1,6 +1,6 @@
-<p align="center">
-  <img width="347" alt="Skärmavbild 2024-03-26 kl 22 25 01" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/d6e43b15-d4e2-4c2d-8436-7236d9db5573">
-</p>
+<center>
+  <img width="1137" alt="Image Description" src="https://raw.githubusercontent.com/marcusgostasson/Aktivo/master/assets/143846336/d7dd29f7-e3b2-4df9-a4f9-b56ddf976e0b">
+</center>
 
 **Aktivo: Explore Nearby Activities**
 
