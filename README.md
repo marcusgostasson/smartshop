@@ -26,4 +26,4 @@ Aktivo is an innovative mobile application that makes it easy for users to find 
 
 Aktivo is not just an app; it's a lifestyle that promotes activity, community, and joy. Download Aktivo today and start exploring a world of possibilities!
 
-================
+---------------------------------------------------------------------------------------------------------------
