@@ -4,7 +4,7 @@
 
 **Aktivo: Explore Nearby Activities**
 
-Aktivo is an innovative mobile application that makes it easy for users to find and participate in various activities based on their age and interests. By utilizing the latest technology and location-based information, Aktivo provides a tailored experience for each user.
+Aktivo is an innovative application that makes it easy for users to find and participate in various activities based on their age and interests. By utilizing the latest technology and location-based information, Aktivo provides a tailored experience for each user.
 
 **Features:**
 
