@@ -25,3 +25,5 @@ Aktivo is an innovative mobile application that makes it easy for users to find 
 - **Optimizes Time Usage:** By offering simple and quick ways to find nearby activities, Aktivo helps users optimize their leisure time and make the most of each day.
 
 Aktivo is not just an app; it's a lifestyle that promotes activity, community, and joy. Download Aktivo today and start exploring a world of possibilities!
+
+============================================================================================================================================================================================
