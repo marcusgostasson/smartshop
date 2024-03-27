@@ -1,5 +1,5 @@
 <center>
-  <img width="1137" alt="Image Description" src="https://raw.githubusercontent.com/marcusgostasson/Aktivo/master/assets/143846336/d7dd29f7-e3b2-4df9-a4f9-b56ddf976e0b">
+  <img width="1137" alt="Skärmavbild 2024-03-27 kl  09 00 23" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/d7dd29f7-e3b2-4df9-a4f9-b56ddf976e0b">
 </center>
 
 **Aktivo: Explore Nearby Activities**
