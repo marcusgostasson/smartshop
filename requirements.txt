@@ -16,3 +16,7 @@ coverage
 # automatic test case
 Hypothesis
 Robot Framework
+
+# GUI
+pillow
+customtkinter
