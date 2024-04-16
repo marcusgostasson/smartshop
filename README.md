@@ -1,54 +1,62 @@
-## KöpSmart
 
-**What is KöpSmart?**
 
-KöpSmart is an app that helps you find the cheapest recipes and ingredients. With KöpSmart, you can easily compare prices on ingredients from different stores near you, so you can plan your meals and save money on your grocery budget.
+**What is SmartShop?**
+
+SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank. 
 
 **Features**
 
-* **Search for recipes:** Browse thousands of recipes based on your preferences and dietary needs.
-* **Compare prices:** See prices on ingredients from different stores in your area.
-* **Create shopping lists:** Add ingredients to your shopping list from recipes with a single tap.
-* **Save money:** KöpSmart helps you find the best deals and save money on your groceries.
-* **Plan your meals:** Plan your meals for the week and make sure you always have the ingredients you need on hand.
+* **Recipe Discovery:** Search through a vast database of recipes based on your dietary needs, preferences, and budget. 
+* **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area. 
+* **Smart Shopping Lists:** Build your shopping list directly from recipes with a single tap. No more scrambling for ingredients or forgetting something essential.
+* **Weekly Meal Planning:**  Plan your meals for the week and ensure you always have the ingredients on hand to avoid impulse purchases.
+* **Save Money:** SmartShop helps you find the best deals and discounts on groceries, so you can stretch your budget further.
 
-**Get started with KöpSmart**
 
-1. Download the KöpSmart app from the App Store: [https://www.apple.com/app-store/](https://www.apple.com/app-store/) or Google Play: [https://play.google.com/store/games?hl=en&gl=US](https://play.google.com/store/games?hl=en&gl=US).
+**Get Started with SmartShop**
+
+1. Download the SmartShop app from the App Store: [link to App Store] or Google Play: [link to Google Play].
 2. Create an account or log in if you already have one.
-3. Set your location or select your local stores.
-4. Start exploring recipes and comparing prices!
+3. Set your location to see nearby stores or manually select your preferred grocery stores.
+4. Start exploring delicious recipes and finding the best deals on your groceries!
 
-**Tips for saving money with KöpSmart**
 
-* Look for recipes that use ingredients that are in season.
-* Buy in bulk if you have the space to store the food.
-* Take advantage of store sales and coupons.
-* Plan your meals ahead of time to avoid impulse purchases.
+**Tips for Saving Money with SmartShop**
 
-**We hope you enjoy using KöpSmart!**
+* **Seasonal Savvy:**  Search for recipes that use seasonal ingredients, which are typically cheaper and fresher.
+* **Bulk Up (if you can):**  Consider buying in bulk for staples if you have the storage space. Just make sure you'll use it all before it expires.
+* **Deal Hunter:**  Take advantage of store sales and coupons integrated within the app to maximize your savings.
+* **Plan It Out:**  Plan your meals ahead of time to avoid impulse purchases and unnecessary grocery trips.
+
+**We hope you enjoy using SmartShop!**
+
 
 **FAQ**
 
-* **Is KöpSmart free?**
+* **Is SmartShop Free?**
 
-Yes, KöpSmart is free to download and use. We offer a premium version with extra features, but the basic functionality is free.
+Yes, SmartShop is free to download and use!  We offer a premium version with additional features, but the core functionality remains free.
 
-* **Which stores does KöpSmart support?**
+* **Which Stores Does SmartShop Support?**
 
-KöpSmart supports most major grocery stores in Sweden. We are constantly working on adding more stores.
+SmartShop supports most major grocery stores in your region. We're constantly working on expanding our reach to include even more stores.
 
-* **How does KöpSmart keep its price data up-to-date?**
+* **How Does SmartShop Keep Prices Up-to-Date?**
 
-We use a combination of automated data collection and user feedback to keep our price data as up-to-date as possible.
+We utilize a combination of automated data collection and user feedback to ensure our price data remains as accurate as possible. 
 
 **Feedback**
 
-We appreciate your feedback! If you have any questions or suggestions, please contact us at [email protected]
+We appreciate your input! If you have any questions or suggestions, please feel free to contact us at [email protected]
 
-**Additional information**
 
-* Visit our website: [https://www.facebook.com/](https://www.facebook.com/) (coming soon!)
-* Follow us on social media:
-    * Facebook: [https://www.facebook.com/home](https://www.facebook.com/home) (coming soon!)
-    * Instagram: [https://www.instagram.com/reel/C4di4ngurPf/](https://www.instagram.com/reel/C4di4ngurPf/) (coming soon!)
+**Additional Information**
+
+* Visit our website: [link to website] (coming soon!)
+* Follow us on social media for recipe inspiration and exclusive deals:
+    * Facebook: [link to Facebook page] (coming soon!)
+    * Instagram: [link to Instagram page] (coming soon!)
+
+**Non-Privacy Related Information**
+
+This README file does not contain privacy-related information such as how the app collects or uses user data.  Please create a separate privacy policy to inform users about how their data is handled.
