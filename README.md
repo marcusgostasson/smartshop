@@ -49,7 +49,7 @@ We utilize a combination of automated data collection and user feedback to ensur
 
 **Feedback**
 
-We appreciate your input! If you have any questions or suggestions, please feel free to contact us at [email protected]
+We appreciate your input! If you have any questions or suggestions, please feel free to contact us at [info@smartshop.com]
 
 
 **Additional Information**
@@ -58,7 +58,3 @@ We appreciate your input! If you have any questions or suggestions, please feel 
 * Follow us on social media for recipe inspiration and exclusive deals:
     * Facebook: [link to Facebook page] (coming soon!)
     * Instagram: [link to Instagram page] (coming soon!)
-
-**Non-Privacy Related Information**
-
-This README file does not contain privacy-related information such as how the app collects or uses user data.  Please create a separate privacy policy to inform users about how their data is handled.
