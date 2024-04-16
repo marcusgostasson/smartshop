@@ -1,7 +1,6 @@
-<div style="text-align:center;">
+<p align="center">
     <img width="350" alt="Bildens beskrivning" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/8b85d329-58fc-482a-94d0-07e79a7b9041">
-</div>
-
+</p>
 
 **What is SmartShop?**
 
