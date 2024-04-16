@@ -32,7 +32,6 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 
 **We hope you enjoy using SmartShop!**
 
-
 **FAQ**
 
 * **Is SmartShop Free?**
@@ -42,10 +41,6 @@ Yes, SmartShop is free to download and use!  We offer a premium version with add
 * **Which Stores Does SmartShop Support?**
 
 SmartShop supports most major grocery stores in your region. We're constantly working on expanding our reach to include even more stores.
-
-* **How Does SmartShop Keep Prices Up-to-Date?**
-
-We utilize a combination of automated data collection and user feedback to ensure our price data remains as accurate as possible. 
 
 **Feedback**
 
