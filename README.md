@@ -1,6 +1,6 @@
-<center>
-<img width="350" alt="Skärmavbild 2024-04-16 kl  21 16 53" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/8b85d329-58fc-482a-94d0-07e79a7b9041">
-</center>
+<div style="text-align:center;">
+    <img width="350" alt="Bildens beskrivning" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/8b85d329-58fc-482a-94d0-07e79a7b9041">
+</div>
 
 
 **What is SmartShop?**
