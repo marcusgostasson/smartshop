@@ -1,4 +1,4 @@
-## KöpSmart - README
+## KöpSmart
 
 **What is KöpSmart?**
 
