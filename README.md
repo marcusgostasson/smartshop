@@ -2,7 +2,7 @@
     <img width="350" alt="Bildens beskrivning" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/8b85d329-58fc-482a-94d0-07e79a7b9041">
 </p>
 
-**What is SmartShop?**
+**What is SmartShop**
 
 SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank. 
 
