@@ -1,35 +1,7 @@
-"""Class 1."""
+from controller import controller
 
-class :
-    """Class to represent."""
+def main():
+    pass
 
-
-    def __init__(self):
-    """Initialize."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
+if __name__ == "__main__":
+    main()
