@@ -21,11 +21,18 @@
    <widget class="QPushButton" name="get_ingredients_button">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>130</y>
-      <width>121</width>
-      <height>41</height>
+      <width>171</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -61,39 +68,6 @@ QPushButton:disabled {
      <string>Get ingredients</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="chosen_recipe">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>80</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>Tacos</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Hamburger</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>80</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Recept</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="recipe_step">
     <property name="geometry">
      <rect>
@@ -106,6 +80,55 @@ QPushButton:disabled {
     <property name="text">
      <string/>
     </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="recept_label">
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>        Recept</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="chosen_recipe">
+       <item>
+        <property name="text">
+         <string>Tacos</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hamburger</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

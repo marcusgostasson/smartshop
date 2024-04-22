@@ -1,5 +1,10 @@
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import QPixmap
+from PyQt5.uic import loadUi
+import smartshop_mysql
+import window_for_stores_and_ingredients_price
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QSpinBox, QVBoxLayout, QHBoxLayout, QGridLayout
 
 
 class ingredient_price(QWidget):
@@ -11,9 +16,9 @@ class ingredient_price(QWidget):
         self.total_cost = 0
         #self.product_prices = [] # så jag vet vilken label som är kopplad med spinbox
         self.store_and_products = {
-            "ICA": [("Sås", 200), ("Bröd", 100), ("Ost", 150)],
-            "COOP": [("Mjölk", 50), ("Mjöl", 55), ("Gurka", 20)],
-            "WILLYS": [("Kaffe", 200), ("Mjölk", 90), ("Sås", 500)]
+            "ica.png": [("Sås", 200), ("Bröd", 100), ("Ost", 150)],
+            "coop.png": [("Mjölk", 50), ("Mjöl", 55), ("Gurka", 20)],
+            "willys.png": [("Kaffe", 200), ("Mjölk", 90), ("Sås", 500)]
         }
         self.lowest_total_cost = float('inf')
         for store_name, products in self.store_and_products.items():
@@ -36,8 +41,12 @@ class ingredient_price(QWidget):
         #store_layout = QVBoxLayout()
         
         grid_layout = QGridLayout()
+        store_label = QLabel()
+        store_image = QPixmap(store_name)
+        store_image = store_image.scaled(200, 200)
 
-        store_label = QLabel(store_name)
+        store_label.setPixmap(store_image)
+        #store_label.resize(100,100)
         grid_layout.addWidget(store_label, 0, self.col_for_store_name)
 
         #grid_layout = QGridLayout()
@@ -98,8 +107,3 @@ class ingredient_price(QWidget):
         new_total_cost = self.total_cost - price + (value * price)
         self.total_cost_label.setText("Total cost: " + str(new_total_cost))
         self.total_cost = new_total_cost
-
-#name = "yo"
-#app = QApplication(sys.argv)
-#uiwindow = ingredient_price(name,name)
-#sys.exit(app.exec_())
