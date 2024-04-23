@@ -11,7 +11,7 @@ class UI_main_window(QMainWindow):
         self.db_instance = smartshop_mysql.SMARTSHOP_DB()
         super(UI_main_window, self).__init__()
         loadUi("smartshop/code/viewer/start_menu.ui", self)
-        
+
         self.recept_label = self.findChild(QLabel, "recept_label")
         self.recept_label.adjustSize()
 
