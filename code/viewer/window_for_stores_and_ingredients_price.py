@@ -42,7 +42,7 @@ class ingredient_price(QWidget):
         
         grid_layout = QGridLayout()
         store_label = QLabel()
-        store_image = QPixmap(store_name)
+        store_image = QPixmap("smartshop/code/viewer/pictures/" + store_name)
         store_image = store_image.scaled(200, 200)
 
         store_label.setPixmap(store_image)

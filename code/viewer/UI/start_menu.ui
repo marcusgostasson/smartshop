@@ -15,7 +15,8 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../OneDrive/Bilder/smartshoplogo.png</normaloff>../../../../../OneDrive/Bilder/smartshoplogo.png</iconset>
+        <normaloff>../pictures/smartshoplogo.png</normaloff>
+   </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="get_ingredients_button">
