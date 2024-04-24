@@ -7,8 +7,8 @@ class SMARTSHOP_DB:
             self.db = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="root",
-                database="Smartshop")
+                password="yfCMzK@W9TCDPe",
+                database="SmartShop")
             if self.db.is_connected():
                 print("Successfully connected to database")
                 self.mycursor = self.db.cursor()

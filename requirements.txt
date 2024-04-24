@@ -20,3 +20,6 @@ Robot Framework
 # GUI
 pillow
 customtkinter
+
+
+passlib
