@@ -8,9 +8,14 @@ import sys
 
 class UI_main_window(QMainWindow):
     def __init__(self):
+        self.second_window = window_for_stores_and_ingredients_price.ingredient_price()
+        self.set_up_start_menu()
+
+    def set_up_start_menu(self):
         self.db_instance = smartshop_mysql.SMARTSHOP_DB()
         super(UI_main_window, self).__init__()
         loadUi("smartshop/code/viewer/UI/start_menu.ui", self)
+        self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
         self.recept_label = self.findChild(QLabel, "recept_label")
         self.recept_label.adjustSize()
@@ -29,12 +34,16 @@ class UI_main_window(QMainWindow):
         self.show()
 
     def get_ingredients(self):
-        self.close()
-        ingredients_for_chosen_recipe = self.ingredients_for_recipe.currentText()
+        #self.close()
+        self.hide()
+        #ingredients_for_chosen_recipe = self.ingredients_for_recipe.currentText()
         #self.ingredient_menu = ingredients_gui.UI_ingredient_menu(self.db_instance, ingredients_for_chosen_recipe)
-        self.ingredient_price_window = window_for_stores_and_ingredients_price.ingredient_price(self.db_instance, ingredients_for_chosen_recipe)
-
+        self.second_window.set_up_ingredient_price_window(self, self.ingredients_for_recipe.currentText())
         #self.db_instance.get_ingredients()
+        
+        
+        #recipe_name = self.ingredients_for_recipe.currentText()
+        #self.db_instance.get_recipe_step(recipe_name)
 
     def print_recipe(self):
         recipe_step = self.db_instance.get_recipe_step(self.chosen_recipe.currentText())
@@ -43,8 +52,10 @@ class UI_main_window(QMainWindow):
         else:
             self.recipe.setText(recipe_step[0][0])
             self.recipe.adjustSize()
-
+            
+    def closeEvent(self, event):
+        sys.exit()
 
 app = QApplication(sys.argv)
 uiwindow = UI_main_window()
-app.exec_()
+sys.exit(app.exec_())

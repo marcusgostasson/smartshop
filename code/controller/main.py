@@ -1,35 +1,12 @@
-"""Class 1."""
+#import sys
+#import os
+#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+#from viewer import start_window
 
-class :
-    """Class to represent."""
+
+#def main():
+#    start_window.UI_main_window()
 
 
-    def __init__(self):
-    """Initialize."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
-
-    def (self)
-    """."""
+#if __name__ == "__main__":
+#    main()
