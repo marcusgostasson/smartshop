@@ -3,6 +3,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import smartshop_mysql
 from pathlib import Path
+import sys
 
 
 class ingredient_price(QWidget):
@@ -121,8 +122,12 @@ class ingredient_price(QWidget):
         return grid_layout
     
     def return_to_start_window(self):
-        self.destroy()
+        self.hide()
         self.start_menu_window.set_up_start_menu()
+        
+    def closeEvent(self, event):
+        """So the program stops running when you close the window."""
+        sys.exit()
 
     def on_spinbox_changed(self, value, row, grid_layout, price, total_cost_label):
         print("Row:", row, "Value:", value, "Price:", price)

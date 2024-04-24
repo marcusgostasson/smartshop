@@ -63,6 +63,7 @@ class UI_main_window(QMainWindow):
             self.recipe.adjustSize()
             
     def closeEvent(self, event):
+        """So the program stops running when you close the window."""
         sys.exit()
 
 app = QApplication(sys.argv)
