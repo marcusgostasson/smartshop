@@ -11,19 +11,19 @@ venv:
 	@printf "Type 'deactivate' to deactivate.\n"
 installed:
 	$(PYTHON) -m pip list
-    @printf "installed"
+	@printf "installed"
 lint:
-    flake8 .
-    pylint .
+	flake8 .
+	pylint .
 
 docs:
-    pdoc --html code --output-dir docs
+	pdoc --html code --output-dir docs
 
 test:
-    coverage run -m pytest
-    coverage report -m
+	coverage run -m pytest
+	coverage report -m
 
 robot-test:
-    robot code.robot
+	robot code.robot
 
 .PHONY: install lint docs sphinx test robot-test
