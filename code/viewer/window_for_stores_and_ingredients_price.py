@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import smartshop_mysql
+from pathlib import Path
 
 
 class ingredient_price(QWidget):
@@ -52,7 +53,13 @@ class ingredient_price(QWidget):
         font.setBold(True)
         grid_layout = QGridLayout()
         store_label = QLabel()
-        store_image = QPixmap("smartshop/code/viewer/pictures/" + store_name)
+        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+
+        # Construct the path to the UI file relative to the viewer folder
+        ui_file_path = viewer_path / "pictures"
+
+        # Load the UI file
+        store_image = QPixmap(f"{ui_file_path}/{store_name}")
         store_image = store_image.scaled(200, 200)
 
         store_label.setPixmap(store_image)

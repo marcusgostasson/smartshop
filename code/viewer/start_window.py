@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 import smartshop_mysql
 import window_for_stores_and_ingredients_price
 import sys
+from pathlib import Path
 
 
 class UI_main_window(QMainWindow):
@@ -14,7 +15,15 @@ class UI_main_window(QMainWindow):
     def set_up_start_menu(self):
         self.db_instance = smartshop_mysql.SMARTSHOP_DB()
         super(UI_main_window, self).__init__()
-        loadUi("smartshop/code/viewer/UI/start_menu.ui", self)
+        # Get the path to the viewer folder
+        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+
+        # Construct the path to the UI file relative to the viewer folder
+        ui_file_path = viewer_path / "UI" / "start_menu.ui"
+
+        # Load the UI file
+        loadUi(ui_file_path, self)
+        #loadUi("smartshop/code/viewer/UI/start_menu.ui", self)
         self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
         self.recept_label = self.findChild(QLabel, "recept_label")
