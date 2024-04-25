@@ -7,13 +7,37 @@ class SMARTSHOP_DB:
             self.db = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="yfCMzK@W9TCDPe",
-                database="SmartShop")
+                password="Root123!",
+                database="smartshop")
             if self.db.is_connected():
                 print("Successfully connected to database")
                 self.mycursor = self.db.cursor()
         except mysql.connector.Error as e:
             print("Failed to connect to MySQL DB" + str(e))
+
+    def create_user(self, first_name, last_name, username_create,
+                    email, hashed_password):
+        """Send user to MySQL."""
+
+        self.mycursor.execute("""INSERT INTO user (user_name, password,
+                               first_name,last_name, email) VALUES
+                                   (%s, %s, %s, %s, %s)""", (username_create,
+                                                             hashed_password,
+                                                             first_name,
+                                                             last_name,
+                                                             email))
+
+        self.db.commit()
+
+    def get_username_and_password(self, username, hashed_password):
+        """Get username and password from database."""
+        self.mycursor.execute("""SELECT user_name, password
+                              FROM user
+                              WHERE user_name = %s and password = %s""",
+                              (username, hashed_password))
+        username_password = self.mycursor.fetchall()
+        return username_password
+
 
     def get_recipe_step(self, recipe_name):
         self.mycursor.execute("SELECT recipe_step FROM recipe WHERE recipe_name = %s", (recipe_name,))
