@@ -15,11 +15,11 @@ class SMARTSHOP_DB:
         except mysql.connector.Error as e:
             print("Failed to connect to MySQL DB" + str(e))
 
-    def get_recipe_step(self, recipe_name):
+    def get_price_and_ingredients(self, recipe_name):
         #self.mycursor.execute("SELECT recipe_step FROM recipe WHERE recipe_name = %s", (recipe_name,))
         #recipe_steps = self.mycursor.fetchall()
         #if recipe_steps:
-        #    return recipe_steps
+        #return recipe_steps
         #return None
         self.mycursor.execute("""select store.store_name , product.product_name , product.product_price, ingredients_recipe.portionsize 
 from ingredients_recipe
@@ -41,11 +41,11 @@ Where recipe.recipe_name= %s; """, (recipe_name,))
         #    for product, price, port in products:
         #        print(f"\t{product}: {price} SEK, {port} portioner")
 
-    def get_product_and_price(self, recipe_name):
-        self.mycursor.execute("SELECT product_name, product_price FROM recipe, product, ingredients_recipe WHERE recipe_name = %s AND recipe_id = recipe_recipe_id and product_id = product_product_id", (recipe_name,))
-        product_and_price = self.mycursor.fetchall()
-        
-        # See if can make it into a dictionary when returning
-        # Vi vet ju recepten så kanske en query för product namn convert till list sen en för product price
-        # convert till list sen får ju de en varsin column en i taget
-        return product_and_price
+    def get_recipe(self):
+        self.mycursor.execute("SELECT recipe_name from recipe")
+        recipe_names = self.mycursor.fetchall()
+        recipes = []
+        for recipe in recipe_names:
+            for rec in recipe:
+                recipes.append(rec)
+        return recipes

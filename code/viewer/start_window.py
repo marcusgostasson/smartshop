@@ -30,6 +30,8 @@ class UI_main_window(QMainWindow):
         self.recept_label.adjustSize()
 
         self.ingredients_for_recipe = self.findChild(QComboBox, "chosen_recipe")
+        self.recipes = self.db_instance.get_recipe()
+        self.ingredients_for_recipe.addItems(self.recipes)
 
         self.get_ingredients_button = self.findChild(QPushButton, "get_ingredients_button")
         self.get_ingredients_button.clicked.connect(self.get_ingredients)
@@ -55,7 +57,7 @@ class UI_main_window(QMainWindow):
         #self.db_instance.get_recipe_step(recipe_name)
 
     def print_recipe(self):
-        recipe_step = self.db_instance.get_recipe_step(self.chosen_recipe.currentText())
+        recipe_step = self.db_instance.get_product_and_price(self.chosen_recipe.currentText())
         if recipe_step is None:
             self.recipe.setText("No steps for this recipe")
         else:

@@ -24,7 +24,7 @@ class ingredient_price(QWidget):
          #   "coop.png": [("Mjölk", 50, 2), ("Mjöl", 55, 2), ("Gurka", 20, 2)],
          #   "willys.png": [("Kaffe", 200, 2), ("Mjölk", 90, 2), ("Sås", 500, 2)]
         #}
-        recipe_price = self.db_instance.get_recipe_step(recipe_name)
+        recipe_price = self.db_instance.get_price_and_ingredients(recipe_name)
         self.lowest_total_cost = float('inf')
         for store_name, products in recipe_price.items():
             self.total_cost = 0
