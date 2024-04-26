@@ -17,6 +17,10 @@ class ingredient_price(QWidget):
         super().__init__()
         self.start_menu_window = start_menu
         self.setWindowTitle("Ingredienser för receptet")
+
+        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
+
         self.setGeometry(300, 300, 800, 200)
 
         self.total_cost = 0

@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Steg till receptet</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../../OneDrive/Bilder/smartshoplogo.png</normaloff>../../../../../../OneDrive/Bilder/smartshoplogo.png</iconset>
+  </property>
   <widget class="QLabel" name="recept_name">
    <property name="geometry">
     <rect>
