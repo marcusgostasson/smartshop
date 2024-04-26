@@ -49,3 +49,10 @@ Where recipe.recipe_name= %s; """, (recipe_name,))
             for rec in recipe:
                 recipes.append(rec)
         return recipes
+    
+    def get_steps_for_recipe(self, recipe_name):
+        self.mycursor.execute("SELECT recipe_step FROM recipe WHERE recipe_name = %s", (recipe_name,))
+        steps = self.mycursor.fetchall()
+        for step in steps:
+            for s in step:
+                return s

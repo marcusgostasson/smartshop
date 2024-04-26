@@ -23,7 +23,6 @@ class UI_main_window(QMainWindow):
 
         # Load the UI file
         loadUi(ui_file_path, self)
-        #loadUi("smartshop/code/viewer/UI/start_menu.ui", self)
         self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
         self.recept_label = self.findChild(QLabel, "recept_label")
@@ -36,33 +35,11 @@ class UI_main_window(QMainWindow):
         self.get_ingredients_button = self.findChild(QPushButton, "get_ingredients_button")
         self.get_ingredients_button.clicked.connect(self.get_ingredients)
 
-        #self.print_hi = self.findChild(QPushButton, "get_recipe_button")
-        #self.print_hi.clicked.connect(self.print_recipe)
-
-        #self.recipe = self.findChild(QLabel, "recipe_step")
-        #self.chosen_recipe = self.findChild(QComboBox, "chosen_recipe")
-
         self.show()
 
     def get_ingredients(self):
-        #self.close()
         self.hide()
-        #ingredients_for_chosen_recipe = self.ingredients_for_recipe.currentText()
-        #self.ingredient_menu = ingredients_gui.UI_ingredient_menu(self.db_instance, ingredients_for_chosen_recipe)
         self.second_window.set_up_ingredient_price_window(self, self.ingredients_for_recipe.currentText())
-        #self.db_instance.get_ingredients()
-        
-        
-        #recipe_name = self.ingredients_for_recipe.currentText()
-        #self.db_instance.get_recipe_step(recipe_name)
-
-    def print_recipe(self):
-        recipe_step = self.db_instance.get_product_and_price(self.chosen_recipe.currentText())
-        if recipe_step is None:
-            self.recipe.setText("No steps for this recipe")
-        else:
-            self.recipe.setText(recipe_step[0][0])
-            self.recipe.adjustSize()
             
     def closeEvent(self, event):
         """So the program stops running when you close the window."""
