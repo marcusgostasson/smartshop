@@ -94,7 +94,7 @@ class ingredient_price(QWidget):
 
         if self.total_cost == self.lowest_total_cost:
             self.total_cost_label = QLabel(f"Total kostnad: {self.total_cost:.2f}")
-            self.total_cost_label.setStyleSheet("font-weight: bold; color: green;")
+            self.total_cost_label.setStyleSheet("font-weight: bold; color: green; font-size: 20px;")
             grid_layout.addWidget(self.total_cost_label, self.row, 0)
             self.lowest_total_cost = self.total_cost
         else:
