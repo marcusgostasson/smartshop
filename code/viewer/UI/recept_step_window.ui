@@ -38,8 +38,8 @@
   <widget class="QLabel" name="recept_steps">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
+     <x>50</x>
+     <y>200</y>
      <width>311</width>
      <height>41</height>
     </rect>
@@ -57,7 +57,22 @@
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
    </property>
   </widget>
+  <widget class="QLabel" name="recept_picture">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>50</y>
+     <width>241</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../../../../OneDrive/Bilder/tacos.png"/>
+ </resources>
  <connections/>
 </ui>

@@ -23,12 +23,23 @@ class Recipe_steps(QWidget):
 
         # Load the UI file
         loadUi(ui_file_path, self)
+        self.setGeometry(100,100,100,100)
         self.recipe = recipe
-        
+
         vertical_layout = QVBoxLayout()
-        
+
         self.recipe_name = self.findChild(QLabel, "recept_name")
         self.recipe_steps = self.findChild(QLabel, "recept_steps")
+
+        self.recipe_picture = self.findChild(QLabel, "recept_picture")
+        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+
+        ui_file_path_for_picture = viewer_path / "pictures"
+
+        recipe_image = QPixmap(f"{ui_file_path_for_picture}/{recipe}.png")
+
+        self.recipe_picture.setPixmap(recipe_image)
+        vertical_layout.addWidget(self.recipe_picture)
 
         self.db_instance = db_instance
         recipe_step = self.db_instance.get_steps_for_recipe(recipe)
@@ -42,6 +53,7 @@ class Recipe_steps(QWidget):
             self.recipe_steps.adjustSize()
         else:
             self.recipe_name.setText("Stegen till " + recipe)
+            
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
