@@ -73,6 +73,15 @@ class TestSmartshopMysql(unittest.TestCase):
                                                           ('Kokos Mjölk', 16.5, 2), ('Salt Finkornigt', 8.95, 2), ('Chilisås', 24.95, 2), ('Sambal Olek', 26.5, 2)]}
         self.assertEqual(pasta_med_räkor_och_curry_res, pasta_med_räkor_och_curry_ingredients)
 
+    def test_get_recipe(self):
+        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        res = db_instance.get_recipe()
+        recipes_exp = ['Hamburgare',
+                       'Kyckling Roma',
+                       'Pasta med räkor och curry',
+                       'Tacos']
+        self.assertEqual(res, recipes_exp)
+
 
 if __name__ == '__main__':
     unittest.main()
