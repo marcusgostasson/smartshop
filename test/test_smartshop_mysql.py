@@ -81,6 +81,19 @@ class TestSmartshopMysql(unittest.TestCase):
                        'Pasta med räkor och curry',
                        'Tacos']
         self.assertEqual(res, recipes_exp)
+    
+    def test_get_steps_for_recipe(self):
+        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        res = db_instance.get_steps_for_recipe("Hamburgare")
+        exp = """1. Blanda ihop färsen och kryddorna och forma till fyra puckar. 
+2. Stek eller grilla burgarna snabbt på hög värme tills de har fått fin färg på båda sidor. 
+3. Sänk värmen och stek eller grilla färdigt till önskad stekgrad. För medium 3–4 minuter per sida. 
+4. Hamburgerdressing: Rör ihop majonnäs, yoghurt, saltgurka, vitlök och ketchup. 
+Smaka av med salt, peppar och några droppar worcestershiresås. 
+5. Karamelliserad lök: Skiva löken och stek i smör eller olja. 
+Tillsätt en nypa socker och stek tills den är rejält gyllenbrun. Då får löken en söt och mild smak. 
+6. Rosta bröden lätt och lägg på valfria tillbehör som dressing, sallad, tomat, lök och ost. """
+        self.assertEqual(res, exp)
 
 
 if __name__ == '__main__':
