@@ -81,8 +81,8 @@ class TestSmartshopMysql(unittest.TestCase):
                        'Pasta med räkor och curry',
                        'Tacos']
         self.assertEqual(res, recipes_exp)
-    
-    def test_get_steps_for_recipe(self):
+
+    def test_get_steps_for_recipe_for_hamburgare(self):
         db_instance = smartshop_mysql.SMARTSHOP_DB()
         res = db_instance.get_steps_for_recipe("Hamburgare")
         exp = """1. Blanda ihop färsen och kryddorna och forma till fyra puckar. 
@@ -93,6 +93,39 @@ Smaka av med salt, peppar och några droppar worcestershiresås.
 5. Karamelliserad lök: Skiva löken och stek i smör eller olja. 
 Tillsätt en nypa socker och stek tills den är rejält gyllenbrun. Då får löken en söt och mild smak. 
 6. Rosta bröden lätt och lägg på valfria tillbehör som dressing, sallad, tomat, lök och ost. """
+        self.assertEqual(res, exp)
+
+    def test_get_steps_for_recipe_for_tacos(self):
+        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        res = db_instance.get_steps_for_recipe("Tacos")
+        exp = """1. Tvätta limen och riv skalet. Pressa ur saften och blanda med skal, honung, vatten och salt. 
+Skala, dela och skiva lökarna tunt. Vänd runt dem i lagen och låt dra, 30 minuter. 
+2. Stek färsen smulig i smör i stekpanna. Rör i tacokrydda, tärnade tomater och vatten. Småkoka 5 minuter. 
+3. Tärna gurkan. Blanda crème fraiche med riven vitlök. Lägg lite sallad i tacoskalen och fyll på med färs, majs och gurka. 
+Toppa med crème fraiche och picklad lök."""
+        self.assertEqual(res, exp)
+
+    def test_get_steps_for_recipe_for_kyckling_roma(self):
+        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        res = db_instance.get_steps_for_recipe("Kyckling Roma")
+        exp = """1. Stek kyckling tillsammans med salvia­blad i lite av oljan. 
+Lägg över på en tallrik medan du gör tomatsåsen. 
+2. Fräs löken genomskinlig i resten av oljan. Tillsätt vinet och låt det mesta koka in. 
+Blanda ner tomater, socker, salt och peppar och låt puttra 5–10 minuter. 
+3. Koka pastan tillsammans med squash­en och låt det rinna av. 
+4. Blanda såsen med pastan, squashen, kycklingen och det mesta av parme­sanosten. 
+Lägg upp i djupa, gärna för­ värmda tallrikar och strö över resten av osten. 
+Ta några drag med pepparkvarnen över."""
+        self.assertEqual(res, exp)
+
+    def test_get_steps_for_recipe_for_pasta_med_räkor_och_curry(self):
+        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        res = db_instance.get_steps_for_recipe("Pasta med räkor och curry")
+        exp = """1. Koka pastan enligt beskrivningen på paketet. Skala räkorna. 
+Stek lök, vitlök, paprika och svamp i smör tillsammans med curry i en stor stekpanna. 
+2. Lägg över i en gryta och häll i kokosmjölk, chilisås och sambal oelek. Låt sjuda 3 minuter. 
+3. Tillsätt räkorna. 
+4. Servera med kokt pasta. Garnera med strimlad salladslök och färsk timjan."""
         self.assertEqual(res, exp)
 
 
