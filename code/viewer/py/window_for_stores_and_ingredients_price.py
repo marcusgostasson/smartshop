@@ -47,7 +47,7 @@ class ingredient_price(QWidget):
         main_layout.addWidget(return_to_start_window_button)
         return_to_start_window_button.clicked.connect(self.return_to_start_window)
 
-        get_steps_for_recipe_button = QPushButton("Få stegen till receptet")
+        get_steps_for_recipe_button = QPushButton("Få stegen till receptet adasd")
         get_steps_for_recipe_button.setStyleSheet(style)
         main_layout.addWidget(get_steps_for_recipe_button)
         get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
