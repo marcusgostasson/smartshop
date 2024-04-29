@@ -3,7 +3,7 @@ name: testing
 on:
   push:
     branches: 
-      -dev  
+      - dev  
 
 jobs:
   build:
@@ -29,3 +29,12 @@ jobs:
       - name: Run tests
         run: |
           python -m unittest discover -f
+
+      - name: Push changes if tests pass
+        if: success() && github.ref == 'refs/heads/dev'
+        run: |
+          git config --global user.name "Razmus"
+          git config --global user.email "youremail@example.com"
+          git add .
+          git commit -m "Automated commit after tests passed"
+          git push
