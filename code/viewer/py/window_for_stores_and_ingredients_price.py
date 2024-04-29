@@ -41,12 +41,15 @@ class ingredient_price(QWidget):
             main_layout.addItem(spacer)
             main_layout.addLayout(store_layout)
 
+        style = self.set_button_style()
         return_to_start_window_button = QPushButton("Tillbaka till meny")
-        main_layout.addWidget(return_to_start_window_button, self.row)
+        return_to_start_window_button.setStyleSheet(style)
+        main_layout.addWidget(return_to_start_window_button)
         return_to_start_window_button.clicked.connect(self.return_to_start_window)
 
         get_steps_for_recipe_button = QPushButton("Få stegen till receptet")
-        main_layout.addWidget(get_steps_for_recipe_button, self.row)
+        get_steps_for_recipe_button.setStyleSheet(style)
+        main_layout.addWidget(get_steps_for_recipe_button)
         get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
 
         self.setLayout(main_layout)
@@ -120,3 +123,37 @@ class ingredient_price(QWidget):
     def closeEvent(self, event):
         """So the program stops running when you close the window."""
         sys.exit()
+        
+    def set_button_style(self):
+        self.button_style = """QPushButton { 
+        border-style: solid;
+        border-width: 2px;
+        border-color: #9999aa;
+        border-radius: 10px;
+        color: white;
+        background-color: #3474eb;
+        min-width: 150px;
+        min-height: 100px;
+    }
+
+    QPushButton:enabled {
+        background-color: #3474eb;
+        color: white;
+    }
+
+    QPushButton:pressed {
+        background-color: #0d2f72;
+        color: #fffffe;
+    }
+
+    QPushButton:hover:!pressed {
+        background-color: #E1F4FF;
+        color: #0c2f70;
+    }
+
+    QPushButton:disabled {
+        background-color: #aaaaaa;
+        color: #ffffff;
+    }
+"""
+        return self.button_style
