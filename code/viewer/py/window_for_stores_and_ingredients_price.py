@@ -42,7 +42,7 @@ class ingredient_price(QWidget):
             main_layout.addLayout(store_layout)
 
         style = self.set_button_style()
-        return_to_start_window_button = QPushButton("Tillbaka till meny")
+        return_to_start_window_button = QPushButton("Tillbaka till menyasdas")
         return_to_start_window_button.setStyleSheet(style)
         main_layout.addWidget(return_to_start_window_button)
         return_to_start_window_button.clicked.connect(self.return_to_start_window)
