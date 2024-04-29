@@ -1,14 +1,22 @@
 import mysql.connector
+from jproperties import Properties
 
 
 class SMARTSHOP_DB:
     def __init__(self):
+        configs = Properties()
+        with open('db.properties', 'rb') as config_file:
+            configs.load(config_file)
+        host = configs.get("DB_HOST").data
+        user = configs.get("DB_USER").data
+        password = configs.get("DB_PWD").data
+        database = configs.get("DB_SCHEMA").data
         try:
             self.db = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="Root123!",
-                database="Smartshop")
+                host=host,
+                user=user,
+                password=password,
+                database=database)
             if self.db.is_connected():
                 print("Successfully connected to database")
                 self.mycursor = self.db.cursor()

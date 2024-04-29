@@ -1,9 +1,10 @@
 import unittest
 import sys
+from pathlib import Path
 
-sys.path.append("C:/Users/Razmu/agile_development/SmartShop/smartshop/code/viewer")
-
-import smartshop_mysql
+script_dir = Path(__file__).resolve().parent
+sys.path.append(str(script_dir.parent.parent))
+from smartshop.code.viewer import smartshop_mysql
 
 
 class TestSmartshopMysql(unittest.TestCase):
