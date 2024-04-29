@@ -10,18 +10,18 @@ from smartshop.code.viewer.py import smartshop_mysql
 class TestSmartshopMysql(unittest.TestCase):
 
     def test_get_price_and_ingredients_for_taco(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         taco_res = db_instance.get_price_and_ingredients("tacos")
         taco_ingredients = {'Willys': [('Taco Kryddmix Original Mild', 10.9, 2), ('Körsbärstomater Klass 1', 14.9, 2),
-                                        ('Blandfärs 20%', 49.9, 2), ('Smör Normalsaltat 82%', 59.9, 2)],
+                                       ('Blandfärs 20%', 49.9, 2), ('Smör Normalsaltat 82%', 59.9, 2)],
                             'Ica': [('Taco Kryddmix Original Mild', 10.95, 2), ('Körsbärstomater Klass 1', 22.95, 2),
                                     ('Blandfärs 21%', 51.95, 2), ('Smör Normalsaltat 82%', 59.95, 2)], 
                             'Coop': [('Taco Kryddmix Original Mild', 11.95, 2), ('Körsbärstomater Hela', 16.5, 2),
-                                    ('Nötfärs 12%', 58.95, 2), ('Smör Normalsaltat 82%', 59.95, 2)]}
+                                     ('Nötfärs 12%', 58.95, 2), ('Smör Normalsaltat 82%', 59.95, 2)]}
         self.assertEqual(taco_res, taco_ingredients)
 
     def test_get_price_and_ingredients_for_hamburger(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         hamburger_res = db_instance.get_price_and_ingredients("hamburgare")
         hamburger_ingredients = {'Willys': [('Blandfärs 20%', 49.9, 2), ('Salt Finkornigt', 7.9, 2),
                                             ('Svart Peppar Mellan Malen', 19.9, 2), ('Hamburgerbröd Frisco 4-p', 23.9, 2),
@@ -36,7 +36,7 @@ class TestSmartshopMysql(unittest.TestCase):
         self.assertEqual(hamburger_res, hamburger_ingredients)
 
     def test_get_price_and_ingredients_for_kyckling_roma(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         kyckling_roma_res = db_instance.get_price_and_ingredients("kyckling roma")
         kyckling_roma_ingredients = {'Willys': [('Körsbärstomater Klass 1', 14.9, 2),
                                                 ('Pasta Spaghetti', 22.9, 2),
@@ -57,7 +57,7 @@ class TestSmartshopMysql(unittest.TestCase):
         self.assertEqual(kyckling_roma_res, kyckling_roma_ingredients)
 
     def test_get_price_and_ingredients_for_pasta_med_räkor_och_curry(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         pasta_med_räkor_och_curry_res = db_instance.get_price_and_ingredients("pasta med räkor och curry")
         pasta_med_räkor_och_curry_ingredients = {'Willys': [('Pasta Spaghetti', 22.9, 2), ('Stora Skalade Räkor', 59.9, 2),
                                                             ('Gul Lök', 14.9, 2), ('Vit Lök', 3.9, 2), ('Spetspaprika Röd', 21.9, 2),
@@ -76,7 +76,7 @@ class TestSmartshopMysql(unittest.TestCase):
         self.assertEqual(pasta_med_räkor_och_curry_res, pasta_med_räkor_och_curry_ingredients)
 
     def test_get_recipe(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         res = db_instance.get_recipe()
         recipes_exp = ['Hamburgare',
                        'Kyckling Roma',
@@ -85,7 +85,7 @@ class TestSmartshopMysql(unittest.TestCase):
         self.assertEqual(res, recipes_exp)
 
     def test_get_steps_for_recipe_for_hamburgare(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         res = db_instance.get_steps_for_recipe("Hamburgare")
         exp = """1. Blanda ihop färsen och kryddorna och forma till fyra puckar. 
 2. Stek eller grilla burgarna snabbt på hög värme tills de har fått fin färg på båda sidor. 
@@ -98,7 +98,7 @@ Tillsätt en nypa socker och stek tills den är rejält gyllenbrun. Då får lö
         self.assertEqual(res, exp)
 
     def test_get_steps_for_recipe_for_tacos(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         res = db_instance.get_steps_for_recipe("Tacos")
         exp = """1. Tvätta limen och riv skalet. Pressa ur saften och blanda med skal, honung, vatten och salt. 
 Skala, dela och skiva lökarna tunt. Vänd runt dem i lagen och låt dra, 30 minuter. 
@@ -108,7 +108,7 @@ Toppa med crème fraiche och picklad lök."""
         self.assertEqual(res, exp)
 
     def test_get_steps_for_recipe_for_kyckling_roma(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         res = db_instance.get_steps_for_recipe("Kyckling Roma")
         exp = """1. Stek kyckling tillsammans med salvia­blad i lite av oljan. 
 Lägg över på en tallrik medan du gör tomatsåsen. 
@@ -121,7 +121,7 @@ Ta några drag med pepparkvarnen över."""
         self.assertEqual(res, exp)
 
     def test_get_steps_for_recipe_for_pasta_med_räkor_och_curry(self):
-        db_instance = smartshop_mysql.SMARTSHOP_DB()
+        db_instance = smartshop_mysql.SmartShopDB()
         res = db_instance.get_steps_for_recipe("Pasta med räkor och curry")
         exp = """1. Koka pastan enligt beskrivningen på paketet. Skala räkorna. 
 Stek lök, vitlök, paprika och svamp i smör tillsammans med curry i en stor stekpanna. 
