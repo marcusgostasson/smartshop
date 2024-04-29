@@ -45,6 +45,6 @@ class UI_main_window(QMainWindow):
             self.recipe.adjustSize()
 
 
-app = QApplication(sys.argv)
-uiwindow = UI_main_window()
-app.exec_()
+# app = QApplication(sys.argv)
+# uiwindow = UI_main_window()
+# app.exec_()
