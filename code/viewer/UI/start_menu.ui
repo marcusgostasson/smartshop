@@ -94,35 +94,38 @@
          <bold>false</bold>
         </font>
        </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {
-	border-style: solid;
-	border-width: 2px;
-	border-color: #9999aa;
-	border-radius: 10px;
-	color: white;
-	background-color: #3474eb
-}
+        <string notr="true">QPushButton { 
+        border-style: solid;
+        border-width: 2px;
+        border-color: #9999aa;
+        border-radius: 10px;
+        color: white;
+        background-color: #3474eb;
+    }
 
-QPushButton:enabled {
-	background-color: #3474eb
-	color: white;
-}
+    QPushButton:enabled {
+        background-color: #3474eb;
+        color: white;
+    }
 
-QPushButton:pressed {
-	background-color: #0d2f72;
-	color: #fffffe;
-}
+    QPushButton:pressed {
+        background-color: #0d2f72;
+        color: #fffffe;
+    }
 
-QPushButton:hover:!pressed {
-	background-color: E1F4FF;
-	color: 0c2f70;
-}
+    QPushButton:hover:!pressed {
+        background-color: #E1F4FF;
+        color: #0c2f70;
+    }
 
-QPushButton:disabled {
-	background-color: #aaaaaa;
-	color: #ffffff;
-}</string>
+    QPushButton:disabled {
+        background-color: #aaaaaa;
+        color: #ffffff;
+    }</string>
        </property>
        <property name="text">
         <string>Hämta ingredienser</string>

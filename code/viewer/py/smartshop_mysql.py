@@ -2,8 +2,11 @@ import mysql.connector
 from jproperties import Properties
 
 
-class SMARTSHOP_DB:
+class SmartShopDB:
+    """Smartshop database class."""
+
     def __init__(self):
+        """Initialize the connection to the smartshop database."""
         configs = Properties()
         with open('db.properties', 'rb') as config_file:
             configs.load(config_file)
@@ -24,6 +27,7 @@ class SMARTSHOP_DB:
             print("Failed to connect to MySQL DB" + str(e))
 
     def get_price_and_ingredients(self, recipe_name):
+        """Fetch all ingredients and the price for the selected recipe."""
         self.mycursor.execute("""
 SELECT store.store_name , product.product_name , product.product_price, ingredients_recipe.portionsize
 FROM ingredients_recipe
@@ -41,6 +45,7 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
         return organized_data
 
     def get_recipe(self):
+        """Fetch all the recipes that exists."""
         self.mycursor.execute("SELECT recipe_name from recipe")
         recipe_names = self.mycursor.fetchall()
         recipes = []
@@ -48,13 +53,13 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
             for rec in recipe:
                 recipes.append(rec)
         return recipes
-    
+
     def get_steps_for_recipe(self, recipe_name):
+        """Fetch the steps for the selected recipe."""
         self.mycursor.execute("SELECT recipe_step FROM recipe WHERE recipe_name = %s", (recipe_name,))
-        steps = self.mycursor.fetchall()
+        steps = self.mycursor.fetchone()
         for step in steps:
-            for s in step:
-                return s
+            return step
 
     def create_user(self, first_name, last_name, username_create,
                     email, hashed_pass):

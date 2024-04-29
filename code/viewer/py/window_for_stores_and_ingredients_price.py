@@ -7,34 +7,26 @@ from pathlib import Path
 import sys
 
 
-class ingredient_price(QWidget):
-    def __init__(self):
-        pass
+class IngredientPrice(QWidget):
+    """Ingredient and price class."""
 
     def set_up_ingredient_price_window(self, start_menu, recipe_name):
+        """Set up the window."""
         self.recipe_name = recipe_name
-        self.db_instance = smartshop_mysql.SMARTSHOP_DB()
+        self.db_instance = smartshop_mysql.SmartShopDB()
         super().__init__()
         self.start_menu_window = start_menu
-        self.setWindowTitle("Ingredienser för receptet")
 
+        self.setWindowTitle("Ingredienser för receptet")
         viewer_path = Path(__file__).resolve().parent.parent
         self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
-
         self.setGeometry(200, 200, 500, 200)
 
-        self.total_cost = 0
         recipe_price = self.db_instance.get_price_and_ingredients(recipe_name)
-        self.lowest_total_cost = float('inf')
-        for store_name, products in recipe_price.items():
-            self.total_cost = 0
-            for product in products:
-                self.total_cost += product[1]
-            if self.total_cost < self.lowest_total_cost:
-                self.lowest_total_cost = self.total_cost
+
+        self.lowest_total_cost = self.store_with_lowest_cost(recipe_price)
 
         main_layout = QHBoxLayout(self)
-        self.col_for_store_name = 0
         for store_name, products in recipe_price.items():
             store_layout = self.create_store_layout(store_name, products)
             spacer = QSpacerItem(100, 200)
@@ -55,29 +47,37 @@ class ingredient_price(QWidget):
         self.setLayout(main_layout)
         self.show()
 
+    def store_with_lowest_cost(self, recipe_price):
+        """Calculate the store with the lowest cost."""
+        lowest_total_cost = float('inf')
+        for store_name, products in recipe_price.items():
+            self.total_cost = 0
+            for product in products:
+                self.total_cost += product[1]
+            if self.total_cost < lowest_total_cost:
+                lowest_total_cost = self.total_cost
+        return lowest_total_cost
+
     def create_store_layout(self, store_name, products):
-        font = QFont()
-        font.setBold(True)
+        """Each store gets its own place in the gridlayout."""
         grid_layout = QGridLayout()
         store_label = QLabel()
         viewer_path = Path(__file__).resolve().parent.parent
 
         # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "pictures"
-
-        # Load the UI file
         store_image = QPixmap(f"{ui_file_path}/{store_name}")
         store_image = store_image.scaled(200, 200)
 
         store_label.setPixmap(store_image)
-        grid_layout.addWidget(store_label, 0, self.col_for_store_name)
+        grid_layout.addWidget(store_label, 0, 0)
 
         ingredient_header = QLabel("Produkt namn")
-        ingredient_header.setFont(font)
+        ingredient_header.setStyleSheet("font-weight: bold;")
         grid_layout.addWidget(ingredient_header, 1, 0)
 
         price_header = QLabel("Pris")
-        price_header.setFont(font)
+        price_header.setStyleSheet("font-weight: bold;")
         grid_layout.addWidget(price_header, 1, 1)
 
         self.row = 2
@@ -112,20 +112,23 @@ class ingredient_price(QWidget):
         return grid_layout
 
     def create_recipe_step_window(self):
+        """Hide current window and open steps for recipe window."""
         self.hide()
-        self.steps_for_chosen_recipe = steps_for_recipe.Recipe_steps()
+        self.steps_for_chosen_recipe = steps_for_recipe.RecipeSteps()
         self.steps_for_chosen_recipe.set_up_recipe_step_window(self.db_instance, self.recipe_name, self.start_menu_window)
 
     def return_to_start_window(self):
+        """Hide current window and return to the start menu."""
         self.hide()
         self.start_menu_window.set_up_start_menu()
 
     def closeEvent(self, event):
         """So the program stops running when you close the window."""
         sys.exit()
-        
+
     def set_button_style(self):
-        self.button_style = """QPushButton { 
+        """Set the style for the buttons."""
+        button_style = """QPushButton {
         border-style: solid;
         border-width: 2px;
         border-color: #9999aa;
@@ -156,4 +159,4 @@ class ingredient_price(QWidget):
         color: #ffffff;
     }
 """
-        return self.button_style
+        return button_style

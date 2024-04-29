@@ -7,22 +7,25 @@ import sys
 from pathlib import Path
 
 
-class UI_main_window(QMainWindow):
+class UIMainWindow(QMainWindow):
+    """Class for the window after user has logged in."""
+
     def __init__(self):
-        self.second_window = window_for_stores_and_ingredients_price.ingredient_price()
+        """Initialize the object."""
+        self.second_window = window_for_stores_and_ingredients_price.IngredientPrice()
         self.set_up_start_menu()
 
     def set_up_start_menu(self):
-        self.db_instance = smartshop_mysql.SMARTSHOP_DB()
-        super(UI_main_window, self).__init__()
+        """Set up the window."""
+        self.db_instance = smartshop_mysql.SmartShopDB()
+        super(UIMainWindow, self).__init__()
         # Get the path to the viewer folder
         viewer_path = Path(__file__).resolve().parent.parent
 
         # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "UI" / "start_menu.ui"
-
-        # Load the UI file
         loadUi(ui_file_path, self)
+
         self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
         self.recept_label = self.findChild(QLabel, "recept_label")
@@ -39,6 +42,7 @@ class UI_main_window(QMainWindow):
         self.show()
 
     def get_ingredients(self):
+        """Hide current window and set up second window."""
         self.hide()
         self.second_window.set_up_ingredient_price_window(self, self.ingredients_for_recipe.currentText())
 

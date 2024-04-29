@@ -33,7 +33,7 @@ class CreateUserWindow(QWidget):
 
         # Instanses
 
-        self.db_instance = smartshop_mysql.SMARTSHOP_DB()
+        self.db_instance = smartshop_mysql.SmartShopDB()
 
         # Text
 
