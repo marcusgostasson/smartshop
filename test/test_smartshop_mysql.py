@@ -4,7 +4,7 @@ from pathlib import Path
 
 script_dir = Path(__file__).resolve().parent
 sys.path.append(str(script_dir.parent.parent))
-from smartshop.code.viewer import smartshop_mysql
+from smartshop.code.viewer.py import smartshop_mysql
 
 
 class TestSmartshopMysql(unittest.TestCase):
