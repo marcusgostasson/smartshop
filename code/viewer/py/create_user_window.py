@@ -2,15 +2,18 @@
 import login_window
 import smartshop_mysql
 import re
-from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QDesktopWidget, QGridLayout, QMessageBox
+#from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QDesktopWidget, QGridLayout, QMessageBox
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
 from passlib.hash import bcrypt
 from pathlib import Path
 
 
 class CreateUserWindow(QWidget):
-    """Constructor for CreateUserWindow."""
+    """Create create_user_window class."""
+
     def __init__(self):
+        """Initialize the object."""
         super().__init__()
 
         # Window
@@ -49,7 +52,7 @@ class CreateUserWindow(QWidget):
         self.create.clicked.connect(self.create_account)
 
     def create_account(self):
-        """Create account"""
+        """Create account."""
         first_name = self.first_name.text().strip().title()
         last_name = self.last_name.text().strip().title()
         username_create = self.username_create.text().strip()
@@ -63,7 +66,7 @@ class CreateUserWindow(QWidget):
             return
 
         if not self.validate_email(email):
-            self.error_message("Formatet på email är fel.")
+            self.error_message("Formatet på E-mail är fel.")
             return
 
         if self.db_instance.get_username_data_base(username_create):
@@ -82,7 +85,7 @@ class CreateUserWindow(QWidget):
         self.login = login_window.LoginWindow()
 
     def validate_email(self, email):
-        """Check if the email is set correctly"""
+        """Check if the email is set correctly."""
         pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         if re.match(pattern, email):
             return True

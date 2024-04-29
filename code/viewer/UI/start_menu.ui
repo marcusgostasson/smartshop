@@ -24,62 +24,6 @@
     <normaloff>../pictures/smartshoplogo.png</normaloff>../pictures/smartshoplogo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="get_ingredients_button">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>140</y>
-      <width>275</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>2000</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	border-style: solid;
-	border-width: 2px;
-	border-color: #9999aa;
-	border-radius: 10px;
-	color: white;
-	background-color: #3474eb
-}
-
-QPushButton:enabled {
-	background-color: #3474eb
-	color: white;
-}
-
-QPushButton:pressed {
-	background-color: #0d2f72;
-	color: #fffffe;
-}
-
-QPushButton:hover:!pressed {
-	background-color: E1F4FF;
-	color: 0c2f70;
-}
-
-QPushButton:disabled {
-	background-color: #aaaaaa;
-	color: #ffffff;
-}</string>
-    </property>
-    <property name="text">
-     <string>Hämta ingredienser</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
@@ -120,6 +64,68 @@ QPushButton:disabled {
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>130</y>
+      <width>271</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="get_ingredients_button">
+       <property name="maximumSize">
+        <size>
+         <width>2000</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 10px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #3474eb
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: E1F4FF;
+	color: 0c2f70;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
+       </property>
+       <property name="text">
+        <string>Hämta ingredienser</string>
        </property>
       </widget>
      </item>

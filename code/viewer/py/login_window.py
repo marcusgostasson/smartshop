@@ -1,7 +1,9 @@
 """Class for login_window."""
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit, QMessageBox, QGridLayout, QDesktopWidget
 from PyQt5.uic import loadUi
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 from passlib.hash import bcrypt
 from pathlib import Path
 import create_user_window
@@ -11,22 +13,23 @@ import smartshop_mysql
 
 class LoginWindow(QMainWindow):
     """Login window class for user authentication."""
+
     def __init__(self):
+        """Initialize the object."""
         super().__init__()
 
         # Instans
-        
+
         self.database = smartshop_mysql.SMARTSHOP_DB()
 
         # Screen
-        # Get the path to the viewer folder
+
         viewer_path = Path(__file__).resolve().parent.parent
-
-        # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "UI/login.ui"
-
         loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Logga in")
+        viewer_path = Path(__file__).resolve().parent.parent
+        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
         grid = QGridLayout()
         self.setLayout(grid)
         qr = self.frameGeometry()
@@ -46,6 +49,7 @@ class LoginWindow(QMainWindow):
         self.create_account = self.findChild(QPushButton,
                                              "create_account_button")
         self.create_account.clicked.connect(self.create_account_user)
+
         self.show()
 
     def login_user(self):

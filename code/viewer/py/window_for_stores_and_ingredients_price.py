@@ -21,7 +21,7 @@ class ingredient_price(QWidget):
         viewer_path = Path(__file__).resolve().parent.parent
         self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
 
-        self.setGeometry(300, 300, 800, 200)
+        self.setGeometry(200, 200, 500, 200)
 
         self.total_cost = 0
         recipe_price = self.db_instance.get_price_and_ingredients(recipe_name)

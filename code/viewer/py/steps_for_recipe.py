@@ -23,7 +23,8 @@ class Recipe_steps(QWidget):
 
         # Load the UI file
         loadUi(ui_file_path, self)
-        self.setGeometry(100,100,100,100)
+        self.setGeometry(650, 100, 500, 200)
+
         self.recipe = recipe
 
         vertical_layout = QVBoxLayout()
@@ -53,7 +54,7 @@ class Recipe_steps(QWidget):
             self.recipe_steps.adjustSize()
         else:
             self.recipe_name.setText("Stegen till " + recipe)
-            
+
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
@@ -64,9 +65,9 @@ class Recipe_steps(QWidget):
         self.return_button = QPushButton("Tillbaka")
         vertical_layout.addWidget(self.return_button)
         self.return_button.clicked.connect(self.return_to_previous_window)
-        
+
         self.setLayout(vertical_layout)
-        
+
         self.show()
 
     def return_to_previous_window(self):
