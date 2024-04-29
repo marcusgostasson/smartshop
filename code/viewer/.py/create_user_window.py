@@ -5,6 +5,7 @@ import re
 from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QDesktopWidget, QGridLayout, QMessageBox
 from PyQt5.uic import loadUi
 from passlib.hash import bcrypt
+from pathlib import Path
 
 
 class CreateUserWindow(QWidget):
@@ -13,8 +14,12 @@ class CreateUserWindow(QWidget):
         super().__init__()
 
         # Window
+        viewer_path = Path(__file__).resolve().parent.parent
 
-        loadUi("code/viewer/UI/create_user.ui", self)
+        # Construct the path to the UI file relative to the viewer folder
+        ui_file_path = viewer_path / "UI/create_user.ui"
+
+        loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Skapa användare")
         grid = QGridLayout()
         self.setLayout(grid)

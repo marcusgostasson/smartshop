@@ -3,6 +3,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit, QMessageBox, QGridLayout, QDesktopWidget
 from PyQt5.uic import loadUi
 from passlib.hash import bcrypt
+from pathlib import Path
 import create_user_window
 import start_window
 import smartshop_mysql
@@ -18,8 +19,13 @@ class LoginWindow(QMainWindow):
         self.database = smartshop_mysql.SMARTSHOP_DB()
 
         # Screen
+        # Get the path to the viewer folder
+        viewer_path = Path(__file__).resolve().parent.parent
 
-        loadUi("code/viewer/UI/login.ui", self)
+        # Construct the path to the UI file relative to the viewer folder
+        ui_file_path = viewer_path / "UI/login.ui"
+
+        loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Logga in")
         grid = QGridLayout()
         self.setLayout(grid)

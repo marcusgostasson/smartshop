@@ -64,3 +64,40 @@ Where recipe.recipe_name= %s; """, (recipe_name,))
         for step in steps:
             for s in step:
                 return s
+
+    def create_user(self, first_name, last_name, username_create,
+                    email, hashed_pass):
+        """Send user to MySQL."""
+
+        self.mycursor.execute("""INSERT INTO user (user_name, password,
+                               first_name,last_name, email) VALUES
+                                   (%s, %s, %s, %s, %s)""", (username_create,
+                                                             hashed_pass,
+                                                             first_name,
+                                                             last_name,
+                                                             email))
+
+        self.db.commit()
+
+    def get_username_data_base(self, username):
+        """Get the username from database"""
+        self.mycursor.execute("""SELECT user_name
+                                 FROM user
+                                 WHERE user_name = %s""", (username,))
+        data_base_username = self.mycursor.fetchall()
+        if not data_base_username:
+            return None
+        return data_base_username[0][0]
+
+    def get_password_hash(self, username):
+        """Get password hash from database for a given username."""
+        try:
+            self.mycursor.execute("""SELECT password
+                                     FROM user
+                                     WHERE user_name = %s""", (username,))
+            username_password = self.mycursor.fetchone()
+            if username_password:
+                return username_password[0]
+        except Exception as e:
+            print("Database query failed:", e)
+            return None

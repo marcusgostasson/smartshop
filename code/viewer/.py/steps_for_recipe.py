@@ -16,7 +16,7 @@ class Recipe_steps(QWidget):
         self.start_menu_window = start_menu_window
         self.previous_window = window_for_stores_and_ingredients_price.ingredient_price()
         super().__init__()
-        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+        viewer_path = Path(__file__).resolve().parent.parent
 
         # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "UI" / "recept_step_window.ui"
@@ -32,7 +32,7 @@ class Recipe_steps(QWidget):
         self.recipe_steps = self.findChild(QLabel, "recept_steps")
 
         self.recipe_picture = self.findChild(QLabel, "recept_picture")
-        viewer_path = Path(__file__).resolve().parent.parent / "viewer"
+        viewer_path = Path(__file__).resolve().parent.parent
 
         ui_file_path_for_picture = viewer_path / "pictures"
 

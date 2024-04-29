@@ -22,3 +22,6 @@ bcrypt
 
 #mysql
 mysql-connector-python
+
+#properties
+jproperties
