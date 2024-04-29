@@ -31,6 +31,7 @@ class UI_main_window(QMainWindow):
         self.ingredients_for_recipe = self.findChild(QComboBox, "chosen_recipe")
         self.recipes = self.db_instance.get_recipe()
         self.ingredients_for_recipe.addItems(self.recipes)
+        self.ingredients_for_recipe.adjustSize()
 
         self.get_ingredients_button = self.findChild(QPushButton, "get_ingredients_button")
         self.get_ingredients_button.clicked.connect(self.get_ingredients)

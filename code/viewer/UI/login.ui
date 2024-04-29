@@ -31,10 +31,10 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="create_account_button">
-       <property name="text">
-        <string>Skapa ny användare</string>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="password_line_edit">
+       <property name="placeholderText">
+        <string>Password</string>
        </property>
       </widget>
      </item>
@@ -45,10 +45,10 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="password_line_edit">
-       <property name="placeholderText">
-        <string>Password</string>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="create_account_button">
+       <property name="text">
+        <string>Skapa ny användare</string>
        </property>
       </widget>
      </item>
