@@ -48,7 +48,7 @@ class Recipe_steps(QWidget):
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
-            self.recipe_steps.setText("No steps for this recipe")
+            self.recipe_steps.setText("No steps for this recipe!")
             vertical_layout.addWidget(self.recipe_steps)
             self.recipe_steps.adjustSize()
         else:
