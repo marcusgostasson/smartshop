@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>469</width>
-    <height>315</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,17 +23,23 @@
    <iconset>
     <normaloff>../pictures/smartshoplogo.png</normaloff>../pictures/smartshoplogo.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>50</y>
-      <width>271</width>
-      <height>81</height>
+      <x>210</x>
+      <y>281</y>
+      <width>381</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
      <item>
       <widget class="QLabel" name="recept_label">
        <property name="sizePolicy">
@@ -44,10 +50,13 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <family>Arial Black</family>
+         <pointsize>40</pointsize>
+         <bold>true</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(251, 108, 24);</string>
        </property>
        <property name="text">
         <string>Recept</string>
@@ -59,11 +68,27 @@
      </item>
      <item>
       <widget class="QComboBox" name="chosen_recipe">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>18</pointsize>
+         <bold>false</bold>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(44, 101, 164);
+selection-color: rgb(251, 108, 24);
+</string>
        </property>
       </widget>
      </item>
@@ -72,13 +97,22 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>130</y>
-      <width>271</width>
-      <height>81</height>
+      <x>210</x>
+      <y>430</y>
+      <width>381</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>-1</number>
+     </property>
+     <property name="leftMargin">
+      <number>15</number>
+     </property>
+     <property name="rightMargin">
+      <number>15</number>
+     </property>
      <item>
       <widget class="QPushButton" name="get_ingredients_button">
        <property name="maximumSize">
@@ -89,43 +123,19 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <family>Arial Black</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="mouseTracking">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
+        <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+</string>
        </property>
        <property name="text">
         <string>Hämta ingredienser</string>
@@ -134,14 +144,33 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="logo1">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>20</y>
+      <width>381</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../Bilder/smartshoplogo1.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>469</width>
-     <height>22</height>
+     <width>800</width>
+     <height>37</height>
     </rect>
    </property>
   </widget>

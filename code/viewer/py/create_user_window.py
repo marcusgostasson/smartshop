@@ -2,8 +2,9 @@
 import login_window
 import smartshop_mysql
 import re
-#from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QDesktopWidget, QGridLayout, QMessageBox
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 from PyQt5.uic import loadUi
 from passlib.hash import bcrypt
 from pathlib import Path
@@ -25,6 +26,15 @@ class CreateUserWindow(QWidget):
         loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Skapa användare")
         grid = QGridLayout()
+
+        # Logo
+
+        self.logo_picture = self.findChild(QLabel, "logo")
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        self.logo_picture.setPixmap(logo_pixmap)
+
+        # Center window
+
         self.setLayout(grid)
         qr = self.frameGeometry()
         cp = QDesktopWidget().availableGeometry().center()

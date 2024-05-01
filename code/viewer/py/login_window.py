@@ -1,14 +1,14 @@
 """Class for login_window."""
 import sys
+import create_user_window
+import start_window
+import smartshop_mysql
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from passlib.hash import bcrypt
 from pathlib import Path
-import create_user_window
-import start_window
-import smartshop_mysql
 
 
 class LoginWindow(QMainWindow):
@@ -30,6 +30,15 @@ class LoginWindow(QMainWindow):
         self.setWindowTitle("Logga in")
         viewer_path = Path(__file__).resolve().parent.parent
         self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
+
+        # Logo
+
+        self.logo_picture = self.findChild(QLabel, "logo")
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        self.logo_picture.setPixmap(logo_pixmap)
+
+        # Center window
+
         grid = QGridLayout()
         self.setLayout(grid)
         qr = self.frameGeometry()
