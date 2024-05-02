@@ -5,6 +5,11 @@ import smartshop_mysql
 import window_for_stores_and_ingredients_price
 import create_recipe_window_UI
 import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.uic import loadUi
+
 from pathlib import Path
 
 
@@ -28,6 +33,12 @@ class UIMainWindow(QMainWindow):
         # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "UI" / "start_menu.ui"
         loadUi(ui_file_path, self)
+
+        self.start_up_window = self.findChild(QMainWindow, "mainwindow")
+
+        self.logo_picture = self.findChild(QLabel, "logo1")
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo1.png')
+        self.logo_picture.setPixmap(logo_pixmap)
 
         self.recept_label = self.findChild(QLabel, "recept_label")
         self.recept_label.adjustSize()
