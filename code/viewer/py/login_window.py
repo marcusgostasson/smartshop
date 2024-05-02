@@ -34,7 +34,7 @@ class LoginWindow(QMainWindow):
         # Logo
 
         self.logo_picture = self.findChild(QLabel, "logo")
-        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo1.png')
         self.logo_picture.setPixmap(logo_pixmap)
 
         # Center window

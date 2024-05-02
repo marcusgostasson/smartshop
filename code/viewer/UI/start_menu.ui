@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1377</width>
     <height>600</height>
    </rect>
   </property>
@@ -30,10 +30,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>281</y>
+      <x>230</x>
+      <y>20</y>
       <width>381</width>
-      <height>121</height>
+      <height>154</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -52,6 +52,7 @@
         <font>
          <family>Arial Black</family>
          <pointsize>40</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -81,6 +82,7 @@
         <font>
          <family>Arial Black</family>
          <pointsize>18</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
          <kerning>false</kerning>
         </font>
@@ -92,27 +94,6 @@ selection-color: rgb(251, 108, 24);
        </property>
       </widget>
      </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>430</y>
-      <width>381</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>-1</number>
-     </property>
-     <property name="leftMargin">
-      <number>15</number>
-     </property>
-     <property name="rightMargin">
-      <number>15</number>
-     </property>
      <item>
       <widget class="QPushButton" name="get_ingredients_button">
        <property name="maximumSize">
@@ -125,6 +106,7 @@ selection-color: rgb(251, 108, 24);
         <font>
          <family>Arial Black</family>
          <pointsize>14</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -147,13 +129,13 @@ color: rgb(255, 255, 255);
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>220</y>
-      <width>351</width>
-      <height>81</height>
+      <x>190</x>
+      <y>210</y>
+      <width>441</width>
+      <height>161</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="your_vertical_layout">
      <item>
       <widget class="QLabel" name="your_recipe_label">
        <property name="sizePolicy">
@@ -187,79 +169,34 @@ color: rgb(255, 255, 255);
        </property>
       </widget>
      </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>300</y>
-      <width>351</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="your_horizontalLayout">
      <item>
-      <widget class="QPushButton" name="your_get_ingredients_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>2000</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>14</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-</string>
-       </property>
-       <property name="text">
-        <string>Hämta ingredienser</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="create_recipe_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>2000</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="mouseTracking">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton { 
+      <layout class="QHBoxLayout" name="your_horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="your_get_ingredients_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>2000</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { 
         border-style: solid;
         border-width: 2px;
         border-color: #9999aa;
@@ -287,33 +224,38 @@ color: rgb(255, 255, 255);
         background-color: #aaaaaa;
         color: #ffffff;
     }</string>
-       </property>
-       <property name="text">
-        <string>Skapa recept</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="delete_recipe_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>50</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton { 
+         </property>
+         <property name="text">
+          <string>Hämta ingredienser</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="create_recipe_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>2000</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { 
         border-style: solid;
         border-width: 2px;
         border-color: #9999aa;
@@ -341,95 +283,33 @@ color: rgb(255, 255, 255);
         background-color: #aaaaaa;
         color: #ffffff;
     }</string>
-       </property>
-       <property name="text">
-        <string>Radera recept</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>220</y>
-      <width>351</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="your_recipe_label">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Dina recept</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="your_chosen_recipe">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>300</y>
-      <width>351</width>
-      <height>102</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="your_horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="your_get_ingredients_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>2000</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="mouseTracking">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton { 
+         </property>
+         <property name="text">
+          <string>Skapa recept</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="delete_recipe_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { 
         border-style: solid;
         border-width: 2px;
         border-color: #9999aa;
@@ -457,124 +337,13 @@ color: rgb(255, 255, 255);
         background-color: #aaaaaa;
         color: #ffffff;
     }</string>
-       </property>
-       <property name="text">
-        <string>Hämta ingredienser</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="create_recipe_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>2000</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="mouseTracking">
-        <bool>false</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
-       </property>
-       <property name="text">
-        <string>Skapa recept</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="delete_recipe_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>50</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
-       </property>
-       <property name="text">
-        <string>Radera recept</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>Radera recept</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
@@ -584,8 +353,8 @@ color: rgb(255, 255, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>37</height>
+     <width>1377</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

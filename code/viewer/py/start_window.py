@@ -36,9 +36,9 @@ class UIMainWindow(QMainWindow):
 
         self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
-        self.logo_picture = self.findChild(QLabel, "logo1")
-        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo1.png')
-        self.logo_picture.setPixmap(logo_pixmap)
+        #self.logo_picture = self.findChild(QLabel, "logo1")
+        #logo_pixmap = QPixmap(f'{viewer_path}/pictures/tacos.png')
+        #self.logo_picture.setPixmap(logo_pixmap)
 
         self.recept_label = self.findChild(QLabel, "recept_label")
         self.recept_label.adjustSize()
