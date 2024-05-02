@@ -10,9 +10,10 @@ import sys
 class IngredientPrice(QWidget):
     """Ingredient and price class."""
 
-    def set_up_ingredient_price_window(self, start_menu, recipe_name):
+    def set_up_ingredient_price_window(self, start_menu, recipe_name, user_name):
         """Set up the window."""
         self.recipe_name = recipe_name
+        self.user_name = user_name
         self.db_instance = smartshop_mysql.SmartShopDB()
         super().__init__()
         self.start_menu_window = start_menu
@@ -115,12 +116,12 @@ class IngredientPrice(QWidget):
         """Hide current window and open steps for recipe window."""
         self.hide()
         self.steps_for_chosen_recipe = steps_for_recipe.RecipeSteps()
-        self.steps_for_chosen_recipe.set_up_recipe_step_window(self.db_instance, self.recipe_name, self.start_menu_window)
+        self.steps_for_chosen_recipe.set_up_recipe_step_window(self.db_instance, self.recipe_name, self.start_menu_window, self.user_name)
 
     def return_to_start_window(self):
         """Hide current window and return to the start menu."""
         self.hide()
-        self.start_menu_window.set_up_start_menu()
+        self.start_menu_window.set_up_start_menu(self.user_name)
 
     def closeEvent(self, event):
         """So the program stops running when you close the window."""

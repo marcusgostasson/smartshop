@@ -44,15 +44,34 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
             organized_data[store].append((product, price, portionsize))
         return organized_data
 
-    def get_recipe(self):
+    def delete_recipe(self, recipe, user_name):
+        self.mycursor.execute("""DELETE FROM recipe
+                                WHERE user_user_name = %s AND recipe_name = %s""", (user_name, recipe))
+        self.db.commit()
+
+    def get_recipe(self, user_name=None):
         """Fetch all the recipes that exists."""
-        self.mycursor.execute("SELECT recipe_name from recipe")
+        if not user_name:
+            self.mycursor.execute("SELECT recipe_name FROM recipe WHERE user_user_name IS NULL")
+        else:
+            self.mycursor.execute("SELECT recipe_name FROM recipe WHERE user_user_name = %s", (user_name,))
         recipe_names = self.mycursor.fetchall()
         recipes = []
         for recipe in recipe_names:
             for rec in recipe:
                 recipes.append(rec)
         return recipes
+    
+    def get_ingrediense(self, product_name):
+        if not product_name:
+            return []
+        self.mycursor.execute("SELECT product_name FROM product WHERE product_name LIKE %s", ('%' + product_name + '%',))
+        ingrediense = self.mycursor.fetchall()
+        ingredienses = []
+        for ingrediense in ingrediense:
+            for i in ingrediense:
+                ingredienses.append(i)
+        return ingredienses
 
     def get_steps_for_recipe(self, recipe_name):
         """Fetch the steps for the selected recipe."""

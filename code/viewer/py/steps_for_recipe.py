@@ -9,8 +9,9 @@ import window_for_stores_and_ingredients_price
 class RecipeSteps(QWidget):
     """Recipe steps class."""
 
-    def set_up_recipe_step_window(self, db_instance, recipe, start_menu_window):
+    def set_up_recipe_step_window(self, db_instance, recipe, start_menu_window, user_name):
         """Set up the window."""
+        self.user_name = user_name
         self.start_menu_window = start_menu_window
         self.previous_window = window_for_stores_and_ingredients_price.IngredientPrice()
         super().__init__()
@@ -70,7 +71,7 @@ class RecipeSteps(QWidget):
     def return_to_previous_window(self):
         """Hide current window and opens IngredientPrice class."""
         self.hide()
-        self.previous_window.set_up_ingredient_price_window(self.start_menu_window, self.recipe)
+        self.previous_window.set_up_ingredient_price_window(self.start_menu_window, self.recipe, self.user_name)
 
     def set_button_style(self):
         """Set the style for the button."""

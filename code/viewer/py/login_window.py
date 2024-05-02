@@ -65,7 +65,7 @@ class LoginWindow(QMainWindow):
             if stored_hash and self.compare_password(input_password,
                                                      stored_hash):
                 self.hide()
-                self.start_window = start_window.UIMainWindow()
+                self.start_window = start_window.UIMainWindow(username)
                 self.start_window.show()
             else:
                 self.error_message("""Användarnamn eller lösenord är felaktigt,
