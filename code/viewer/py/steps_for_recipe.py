@@ -22,7 +22,7 @@ class RecipeSteps(QWidget):
 
         # Load the UI file
         loadUi(ui_file_path, self)
-        self.setGeometry(650, 100, 500, 200)
+        # self.setGeometry(650, 100, 500, 200)
 
         self.recipe = recipe
 
@@ -50,7 +50,7 @@ class RecipeSteps(QWidget):
             vertical_layout.addWidget(self.recipe_steps)
             self.recipe_steps.adjustSize()
         else:
-            self.recipe_name.setText("Stegen till " + recipe)
+            self.recipe_name.setText(recipe)    # Ändrat från "stegen till" + recipe
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
