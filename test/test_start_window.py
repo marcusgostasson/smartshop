@@ -1,5 +1,7 @@
 import unittest
 import sys
+from PyQt5.QtCore import Qt
+from PyQt5.QtTest import QTest
 from PyQt5.QtWidgets import QApplication
 from pathlib import Path
 from unittest.mock import MagicMock
@@ -13,13 +15,21 @@ sys.path.append(str(script_dir.parent.parent))
 from smartshop.code.viewer.py import start_window
 
 class TestApp(unittest.TestCase):
-    def setUp(self):
+    def test_window_title(self):
         self.app = QApplication(sys.argv)
         self.window = start_window.UIMainWindow()
+        self.assertEqual(self.window.windowTitle(), "SmartShop")
 
+    def test_button(self):
+        self.app = QApplication(sys.argv)
+        self.window = start_window.UIMainWindow()
+        button = self.window.get_ingredients_button
 
-    def test_app_title(self):
-        self.assertEqual(self.app.windowTitle(), "SmartShop")
+        self.window.second_window.set_up_ingredient_price_window = MagicMock()
+
+        QTest.mouseClick(button, Qt.LeftButton)
+
+        self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
 
 
 if __name__ == '__main__':
