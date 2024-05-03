@@ -17,12 +17,12 @@ from smartshop.code.viewer.py import start_window
 class TestApp(unittest.TestCase):
     def test_window_title(self):
         self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow()
+        self.window = start_window.UIMainWindow("raz")
         self.assertEqual(self.window.windowTitle(), "SmartShop")
 
     def test_button(self):
         self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow()
+        self.window = start_window.UIMainWindow("raz")
         button = self.window.get_ingredients_button
 
         self.window.second_window.set_up_ingredient_price_window = MagicMock()

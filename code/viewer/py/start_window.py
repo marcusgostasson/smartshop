@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 import smartshop_mysql
 import window_for_stores_and_ingredients_price
 import create_recipe_window_UI
+import login_window
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
@@ -46,7 +47,7 @@ class UIMainWindow(QMainWindow):
         recipe_list = self.fill_up_recipe_list()
         self.ingredients_for_recipe = self.findChild(QComboBox, "chosen_recipe")
         self.ingredients_for_recipe.addItems(recipe_list)
-        
+
         user_recipe_list = self.fill_up_recipe_list(user_name)
         self.user_ingredients_for_recipe = self.findChild(QComboBox, "your_chosen_recipe")
         self.user_ingredients_for_recipe.addItems(user_recipe_list)
@@ -66,11 +67,14 @@ class UIMainWindow(QMainWindow):
         self.user_get_ingredients_button.clicked.connect(lambda: self.user_get_ingredients(user_name))
 
         self.create_recipe_button = self.findChild(QPushButton, "create_recipe_button")
-        self.create_recipe_button.clicked.connect(self.create_recipe_window)
+        self.create_recipe_button.clicked.connect(lambda: self.create_recipe_window(user_name))
         
         self.delete_recipe_button = self.findChild(QPushButton, "delete_recipe_button")
         self.delete_recipe_button.clicked.connect(lambda: self.delete_recipe(self.user_ingredients_for_recipe.currentText(), user_name))
 
+        self.logout_button = self.findChild(QPushButton, "logout_button")
+        self.logout_button.clicked.connect(self.logout)
+        
         self.show()
 
     def delete_recipe(self, recipe, user_name):
@@ -105,6 +109,10 @@ class UIMainWindow(QMainWindow):
         """Hide current window and set up second window."""
         self.hide()
         self.second_window.set_up_ingredient_price_window(self, self.ingredients_for_recipe.currentText(), user_name)
+        
+    def logout(self):
+        self.hide()
+        window = login_window.LoginWindow()
 
     def closeEvent(self, event):
         """So the program stops running when you close the window."""

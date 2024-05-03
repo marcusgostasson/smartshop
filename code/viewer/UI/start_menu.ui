@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1377</width>
-    <height>600</height>
+    <width>1385</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -347,13 +347,78 @@ color: rgb(255, 255, 255);
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="logout_button">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>480</y>
+      <width>142</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>2000</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { 
+        border-style: solid;
+        border-width: 2px;
+        border-color: #9999aa;
+        border-radius: 10px;
+        color: white;
+        background-color: #3474eb;
+    }
+
+    QPushButton:enabled {
+        background-color: #3474eb;
+        color: white;
+    }
+
+    QPushButton:pressed {
+        background-color: #0d2f72;
+        color: #fffffe;
+    }
+
+    QPushButton:hover:!pressed {
+        background-color: #E1F4FF;
+        color: #0c2f70;
+    }
+
+    QPushButton:disabled {
+        background-color: #aaaaaa;
+        color: #ffffff;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Logga ut</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1377</width>
+     <width>1385</width>
      <height>22</height>
     </rect>
    </property>

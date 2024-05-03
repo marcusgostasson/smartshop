@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>375</height>
+    <width>795</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,8 +22,8 @@
   <widget class="QComboBox" name="ingrediense_box">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>100</y>
+     <x>130</x>
+     <y>150</y>
      <width>181</width>
      <height>21</height>
     </rect>
@@ -32,8 +32,8 @@
   <widget class="QLabel" name="ingrediense_label">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>10</y>
+     <x>180</x>
+     <y>30</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -52,8 +52,8 @@
   <widget class="QPushButton" name="add_ingrediense_button">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>90</y>
+     <x>330</x>
+     <y>140</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -65,8 +65,8 @@
   <widget class="QLineEdit" name="type_in_recipe">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>50</y>
+     <x>130</x>
+     <y>110</y>
      <width>181</width>
      <height>20</height>
     </rect>
@@ -75,8 +75,8 @@
   <widget class="QPushButton" name="search_ingredient_button">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>40</y>
+     <x>330</x>
+     <y>100</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -88,8 +88,8 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>150</y>
+     <x>110</x>
+     <y>190</y>
      <width>221</width>
      <height>171</height>
     </rect>
@@ -126,14 +126,60 @@
   <widget class="QPushButton" name="create_recipe_button">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>330</y>
+     <x>100</x>
+     <y>380</y>
      <width>101</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Skapa recept</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="recept_name">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>70</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>70</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Recept namn</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="recepie_steps">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>200</y>
+     <width>241</width>
+     <height>151</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>160</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Recept steg</string>
    </property>
   </widget>
  </widget>

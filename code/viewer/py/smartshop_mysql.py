@@ -29,11 +29,12 @@ class SmartShopDB:
     def get_price_and_ingredients(self, recipe_name):
         """Fetch all ingredients and the price for the selected recipe."""
         self.mycursor.execute("""
-SELECT store.store_name , product.product_name , product.product_price, ingredients_recipe.portionsize
+SELECT store.store_name , product.product_name , product_price_for_each_store.product_price, ingredients_recipe.portionsize
 FROM ingredients_recipe
-JOIN store on store.store_id=ingredients_recipe.store_store_id
 JOIN recipe on recipe.recipe_id=ingredients_recipe.recipe_recipe_id
 JOIN product on product.product_id=ingredients_recipe.product_product_id
+JOIN product_price_for_each_store on product_price_for_each_store.p_product_id=product_product_id
+join store on store_id = product_price_for_each_store.store_store_id
 WHERE recipe.recipe_name= %s; """, (recipe_name,))
         recipe_ingredient = self.mycursor.fetchall()
         organized_data = {}
@@ -45,6 +46,10 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
         return organized_data
 
     def delete_recipe(self, recipe, user_name):
+        self.mycursor.execute("SELECT recipe_id FROM recipe WHERE recipe_name = %s", (recipe,))
+        recipe_id = self.mycursor.fetchone()
+        self.mycursor.execute("DELETE FROM ingredients_recipe WHERE recipe_recipe_id= %s", (recipe_id[0],))
+
         self.mycursor.execute("""DELETE FROM recipe
                                 WHERE user_user_name = %s AND recipe_name = %s""", (user_name, recipe))
         self.db.commit()
@@ -61,14 +66,14 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
             for rec in recipe:
                 recipes.append(rec)
         return recipes
-    
+
     def get_ingrediense(self, product_name):
         if not product_name:
             return []
         self.mycursor.execute("SELECT product_name FROM product WHERE product_name LIKE %s", ('%' + product_name + '%',))
-        ingrediense = self.mycursor.fetchall()
+        all_ingrediense = self.mycursor.fetchall()
         ingredienses = []
-        for ingrediense in ingrediense:
+        for ingrediense in all_ingrediense:
             for i in ingrediense:
                 ingredienses.append(i)
         return ingredienses
@@ -116,3 +121,26 @@ WHERE recipe.recipe_name= %s; """, (recipe_name,))
         except Exception as e:
             print("Database query failed:", e)
             return None
+
+    def get_recipe_name(self, recipe_name):
+        self.mycursor.execute("SELECT recipe_name FROM recipe WHERE recipe_name = %s", (recipe_name,))
+        result = self.mycursor.fetchone()
+        if result is not None:
+            return True
+        else:
+            return False
+
+    def insert_user_recipe(self, recipe_name, user_name, recipe_steps, ingrediense_list):
+        self.mycursor.execute("INSERT INTO recipe(recipe_name, recipe_step, user_user_name) VALUES(%s, %s, %s)", (recipe_name, recipe_steps, user_name))
+
+        self.mycursor.execute("SELECT LAST_INSERT_ID()")
+        recipe_id = self.mycursor.fetchone()[0]
+
+        for ingredient in ingrediense_list:
+            self.mycursor.execute("INSERT INTO ingredients_recipe(product_product_id, recipe_recipe_id) VALUES(%s, %s)", (ingredient, recipe_id))
+            self.db.commit()
+        
+    def get_product_id(self, ingrediens):
+        self.mycursor.execute("SELECT product_id FROM product WHERE product_name = %s", (ingrediens,))
+        product_id = self.mycursor.fetchone()
+        return product_id[0]
