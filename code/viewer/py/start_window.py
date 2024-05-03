@@ -22,6 +22,9 @@ class UIMainWindow(QMainWindow):
         self.create_recipe_instance = create_recipe_window_UI.CreateRecipeWindow()
 
         self.second_window = window_for_stores_and_ingredients_price.IngredientPrice()
+
+        self.login_window = login_window.LoginWindow()
+
         self.set_up_start_menu(user_name)
 
     def set_up_start_menu(self, user_name):
@@ -112,7 +115,7 @@ class UIMainWindow(QMainWindow):
         
     def logout(self):
         self.hide()
-        window = login_window.LoginWindow()
+        self.login_window.set_up_login()
 
     def closeEvent(self, event):
         """So the program stops running when you close the window."""

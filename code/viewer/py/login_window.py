@@ -14,7 +14,7 @@ from pathlib import Path
 class LoginWindow(QMainWindow):
     """Login window class for user authentication."""
 
-    def __init__(self):
+    def set_up_login(self):
         """Initialize the object."""
         super().__init__()
 
@@ -112,4 +112,5 @@ försök igen!""")
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     loginWindow = LoginWindow()
+    loginWindow.set_up_login()
     sys.exit(app.exec_())
