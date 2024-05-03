@@ -98,6 +98,7 @@ försök igen!""")
         """Switch to account creation window."""
         self.hide()
         self.create_user_window = create_user_window.CreateUserWindow()
+        self.create_user_window.set_up_window()
         self.create_user_window.show()
 
     def error_message(self, message):

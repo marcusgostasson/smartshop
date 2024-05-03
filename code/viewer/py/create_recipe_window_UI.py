@@ -45,7 +45,7 @@ class CreateRecipeWindow(QWidget):
         does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
         if does_recipe_exist:
             print("Pick another name for recipe name")
-            
+
         elif self.recipe_name.text() == "":
             self.recipe_name.setText("No name")
             self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)

@@ -12,8 +12,10 @@ from pathlib import Path
 
 class CreateUserWindow(QWidget):
     """Create create_user_window class."""
-
     def __init__(self):
+        self.login_window_instance = login_window.LoginWindow()
+
+    def set_up_window(self):
         """Initialize the object."""
         super().__init__()
 
@@ -92,7 +94,8 @@ class CreateUserWindow(QWidget):
                                      email, hashed_pass)
 
         self.hide()
-        self.login = login_window.LoginWindow()
+        #self.login = login_window.LoginWindow()
+        self.login_window_instance.set_up_login()
 
     def validate_email(self, email):
         """Check if the email is set correctly."""
