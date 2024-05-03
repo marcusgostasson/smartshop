@@ -50,7 +50,7 @@ class RecipeSteps(QWidget):
             vertical_layout.addWidget(self.recipe_steps)
             self.recipe_steps.adjustSize()
         else:
-            self.recipe_name.setText(recipe)    # Ändrat från "stegen till" + recipe
+            self.recipe_name.setText(recipe)
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
@@ -76,34 +76,12 @@ class RecipeSteps(QWidget):
     def set_button_style(self):
         """Set the style for the button."""
         button_style = """QPushButton {
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-        min-width: 50px;
-        min-height: 40px;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }
+      background-color: rgb(44, 101, 164);
+      border-radius: 5px;
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      font-weight: bold;
+      height: 40px;
+      }
 """
         return button_style
