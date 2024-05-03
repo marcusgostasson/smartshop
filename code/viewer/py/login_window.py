@@ -29,12 +29,12 @@ class LoginWindow(QMainWindow):
         loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Logga in")
         viewer_path = Path(__file__).resolve().parent.parent
-        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
+        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo1.png'))
 
         # Logo
 
         self.logo_picture = self.findChild(QLabel, "logo")
-        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo1.png')
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
         self.logo_picture.setPixmap(logo_pixmap)
 
         # Center window
