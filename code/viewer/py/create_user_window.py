@@ -14,6 +14,7 @@ class CreateUserWindow(QWidget):
     """Create create_user_window class."""
     def __init__(self):
         self.login_window_instance = login_window.LoginWindow()
+        self.db_instance = smartshop_mysql.SmartShopDB()
 
     def set_up_window(self):
         """Initialize the object."""
@@ -43,10 +44,6 @@ class CreateUserWindow(QWidget):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-        # Instanses
-
-        self.db_instance = smartshop_mysql.SmartShopDB()
-
         # Text
 
         self.first_name = self.findChild(QLineEdit, "first_name")
@@ -74,19 +71,19 @@ class CreateUserWindow(QWidget):
 
         if not (first_name and last_name and username_create and email and
                 password_user and confirm_password):
-            self.error_message("Alla fält måste vara ifyllda.")
+            self.login_window_instance.error_message("Alla fält måste vara ifyllda.")
             return
 
         if not self.validate_email(email):
-            self.error_message("Formatet på E-mail är fel.")
+            self.login_window_instance.error_message("Formatet på E-mail är fel.")
             return
 
         if self.db_instance.get_username_data_base(username_create):
-            self.error_message("Användarnamn finns redan")
+            self.login_window_instance.error_message("Användarnamn finns redan")
             return
 
         if password_user != confirm_password:
-            self.error_message("Lösenorden stämmer inte överens, försök igen!")
+            self.login_window_instance.error_message("Lösenorden stämmer inte överens, försök igen!")
             return
 
         hashed_pass = bcrypt.hash(password_user)
@@ -104,11 +101,3 @@ class CreateUserWindow(QWidget):
             return True
         else:
             return False
-
-    def error_message(self, message):
-        """Error messages."""
-        self.message_box = QMessageBox()
-        self.message_box.setWindowTitle('Error')
-        self.message_box.setText(f'{message}')
-        self.message_box.setIcon(QMessageBox.Warning)
-        self.message_box.exec_()
