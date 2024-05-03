@@ -49,9 +49,11 @@ class CreateRecipeWindow(QWidget):
         elif self.recipe_name.text() == "":
             self.recipe_name.setText("No name")
             self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
+            self.hide()
             start_window.UIMainWindow(user_name)
         else:
             self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
+            self.hide()
             start_window.UIMainWindow(user_name)
 
     def add_ingredient(self, ingrediense):
