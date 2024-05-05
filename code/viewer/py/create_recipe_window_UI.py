@@ -4,11 +4,14 @@ from PyQt5.QtGui import *
 from PyQt5.uic import loadUi
 from pathlib import Path
 import smartshop_mysql
+import login_window
 import start_window
 
 
 class CreateRecipeWindow(QWidget):
     def set_up_create_recipe_window(self, user_name):
+        self.login_window = login_window.LoginWindow()
+
         self.db_instance = smartshop_mysql.SmartShopDB()
 
         super(CreateRecipeWindow, self).__init__()
@@ -44,7 +47,7 @@ class CreateRecipeWindow(QWidget):
     def create_recipe(self, user_name):
         does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
         if does_recipe_exist:
-            print("Pick another name for recipe name")
+            self.login_window.error_message("Pick another name for recipe name")
 
         elif self.recipe_name.text() == "":
             self.recipe_name.setText("No name")
