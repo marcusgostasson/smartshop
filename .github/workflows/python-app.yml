@@ -7,10 +7,9 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
         python-version: ['3.11']
     steps:
     - name: Checkout code
@@ -29,4 +28,3 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover
-

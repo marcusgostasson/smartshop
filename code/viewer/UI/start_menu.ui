@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1385</width>
-    <height>623</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,10 +30,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>20</y>
-      <width>381</width>
-      <height>154</height>
+      <x>190</x>
+      <y>50</y>
+      <width>441</width>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -52,7 +52,6 @@
         <font>
          <family>Arial Black</family>
          <pointsize>40</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -82,15 +81,13 @@
         <font>
          <family>Arial Black</family>
          <pointsize>18</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
          <kerning>false</kerning>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(44, 101, 164);
-selection-color: rgb(251, 108, 24);
-</string>
+selection-color: rgb(251, 108, 24);</string>
        </property>
       </widget>
      </item>
@@ -106,7 +103,6 @@ selection-color: rgb(251, 108, 24);
         <font>
          <family>Arial Black</family>
          <pointsize>14</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -130,7 +126,7 @@ color: rgb(255, 255, 255);
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>210</y>
+      <y>240</y>
       <width>441</width>
       <height>161</height>
      </rect>
@@ -146,10 +142,13 @@ color: rgb(255, 255, 255);
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <family>Arial Black</family>
+         <pointsize>40</pointsize>
+         <bold>true</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(251, 108, 24);</string>
        </property>
        <property name="text">
         <string>Dina recept</string>
@@ -167,10 +166,17 @@ color: rgb(255, 255, 255);
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(44, 101, 164);
+selection-color: rgb(251, 108, 24);</string>
+       </property>
       </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="your_horizontalLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
        <item>
         <widget class="QPushButton" name="your_get_ingredients_button">
          <property name="sizePolicy">
@@ -187,43 +193,19 @@ color: rgb(255, 255, 255);
          </property>
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
+           <family>Arial Black</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="mouseTracking">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
+          <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+</string>
          </property>
          <property name="text">
           <string>Hämta ingredienser</string>
@@ -246,43 +228,19 @@ color: rgb(255, 255, 255);
          </property>
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
+           <family>Arial Black</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="mouseTracking">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
+          <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+</string>
          </property>
          <property name="text">
           <string>Skapa recept</string>
@@ -305,38 +263,16 @@ color: rgb(255, 255, 255);
          </property>
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <family>Arial Black</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
+          <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+</string>
          </property>
          <property name="text">
           <string>Radera recept</string>
@@ -350,9 +286,9 @@ color: rgb(255, 255, 255);
    <widget class="QPushButton" name="logout_button">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>480</y>
-      <width>142</width>
+      <x>300</x>
+      <y>440</y>
+      <width>221</width>
       <height>50</height>
      </rect>
     </property>
@@ -370,43 +306,19 @@ color: rgb(255, 255, 255);
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <family>Arial Black</family>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="mouseTracking">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton { 
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }</string>
+     <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="text">
      <string>Logga ut</string>
@@ -418,8 +330,8 @@ color: rgb(255, 255, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1385</width>
-     <height>22</height>
+     <width>800</width>
+     <height>37</height>
     </rect>
    </property>
   </widget>
