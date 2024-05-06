@@ -35,4 +35,8 @@ jobs:
         git commit -m "Auto-format Python code with Black" || echo "No changes to commit"
       
     - name: Push changes
-      run: git push origin dev
+      uses: ad-d/github-push-actions@dev
+      with:
+        github_token: ${{ secrets.smartshop }}
+          
+    
