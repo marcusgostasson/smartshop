@@ -10,6 +10,9 @@ from functools import partial
 
 
 class CreateRecipeWindow(QWidget):
+    def __init__(self):
+        self.at_least_one_ingredient_picked = False
+
     def set_up_create_recipe_window(self, user_name):
         self.user_name = user_name
         self.login_window = login_window.LoginWindow()
@@ -29,7 +32,7 @@ class CreateRecipeWindow(QWidget):
         self.box.setLayout(scroll_area_layout)
 
         self.recipe_name = self.findChild(QLineEdit, "recept_name")
-        
+
         self.recipe_steps = self.findChild(QTextEdit, "recepie_steps")
 
         self.user_product_choice = self.findChild(QLineEdit, "type_in_recipe")
@@ -42,7 +45,8 @@ class CreateRecipeWindow(QWidget):
 
         self.add_ingredient_button = self.findChild(QPushButton, "add_ingrediense_button")
         self.add_ingredient_button.clicked.connect(lambda: self.add_ingredient(self.ingrediense_box.currentText()))
-        self.ingrediense_list = []
+        self.ingrediense_list_id = []
+        self.picked_ingrediens = []
 
         self.create_recipe_button = self.findChild(QPushButton, "create_recipe_button")
         self.create_recipe_button.clicked.connect(lambda: self.create_recipe(self.user_name))
@@ -55,30 +59,34 @@ class CreateRecipeWindow(QWidget):
         self.start_window.set_up_start_menu()
 
     def create_recipe(self, user_name):
-        does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
-        if does_recipe_exist:
-            self.login_window.error_message("Namnet på ditt recept finns redan, välj ett annat")
-
-        elif self.recipe_name.text() == "":
-            self.recipe_name.setText("No name")
-            self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
-            self.hide()
-            self.start_window.set_up_start_menu()
-        else:
-            self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
-            self.hide()
-            self.start_window.set_up_start_menu()
+        if not self.at_least_one_ingredient_picked:
+            self.login_window.error_message("Måste ha minst en ingrediens")
+            #self.set_up_create_recipe_window(user_name)
+        elif self.at_least_one_ingredient_picked:
+            does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
+            if does_recipe_exist:
+                self.login_window.error_message("Namnet på ditt recept finns redan, välj ett annat")
+            elif self.recipe_name.text() == "":
+                self.login_window.error_message("Du behöver namnge ditt recept")
+            else:
+                self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list_id)
+                self.hide()
+                self.start_window.set_up_start_menu()
 
     def add_ingredient(self, ingrediense):
         """add ingredient to the list of ingredients for the recipe."""
-        if ingrediense not in self.ingrediense_list:
+        self.at_least_one_ingredient_picked = True
+        if ingrediense not in self.picked_ingrediens:
             product_id = self.db_instance.get_product_id(ingrediense)
-            self.ingrediense_list.append(product_id)
+            self.ingrediense_list_id.append(product_id)
+            self.picked_ingrediens.append(ingrediense)
             ingredient = QLabel(ingrediense)
             ingredient.setStyleSheet("font: 14px 'Arial Black'; font-weight: bold; background-color: rgb(255, 255, 255);")
             ingredient.setFixedSize(237, 50)
             ingredient.setAlignment(Qt.AlignCenter)
-            self.box.layout().insertWidget(0, ingredient) 
+            self.box.layout().insertWidget(0, ingredient)
+        else:
+            self.login_window.error_message("Har redan " + ingrediense + " i ditt recept")
 
     def handle_search(self):
         product_name = self.user_product_choice.text()
