@@ -22,6 +22,7 @@ class IngredientPrice(QWidget):
         viewer_path = Path(__file__).resolve().parent.parent
         self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
         self.setGeometry(200, 200, 500, 200)
+        self.setStyleSheet("background-color: rgb(255, 255, 255);")
 
         recipe_price = self.db_instance.get_price_and_ingredients(recipe_name)
 
@@ -74,11 +75,11 @@ class IngredientPrice(QWidget):
         grid_layout.addWidget(store_label, 0, 0)
 
         ingredient_header = QLabel("Produkt namn")
-        ingredient_header.setStyleSheet("font-weight: bold;")
+        ingredient_header.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
         grid_layout.addWidget(ingredient_header, 1, 0)
 
         price_header = QLabel("Pris")
-        price_header.setStyleSheet("font-weight: bold;")
+        price_header.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
         grid_layout.addWidget(price_header, 1, 1)
 
         self.row = 2
@@ -102,12 +103,12 @@ class IngredientPrice(QWidget):
 
         if self.total_cost == self.lowest_total_cost:
             self.total_cost_label = QLabel(f"Total kostnad: {self.total_cost:.2f}")
-            self.total_cost_label.setStyleSheet("font-weight: bold; color: green; font-size: 20px;")
+            self.total_cost_label.setStyleSheet("font-weight: bold; color: green; font-size: 20px; background-color: rgb(255, 255, 255);")
             grid_layout.addWidget(self.total_cost_label, self.row, 0)
             self.lowest_total_cost = self.total_cost
         else:
             self.total_cost_label = QLabel(f"Total kostnad: {self.total_cost:.2f}")
-            self.total_cost_label.setStyleSheet("font-weight: bold;")
+            self.total_cost_label.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
             grid_layout.addWidget(self.total_cost_label, self.row, 0)
 
         return grid_layout
@@ -130,34 +131,10 @@ class IngredientPrice(QWidget):
     def set_button_style(self):
         """Set the style for the buttons."""
         button_style = """QPushButton {
-        border-style: solid;
-        border-width: 2px;
-        border-color: #9999aa;
-        border-radius: 10px;
-        color: white;
-        background-color: #3474eb;
+        background-color: rgb(44, 101, 164);
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
         min-width: 150px;
-        min-height: 100px;
-    }
-
-    QPushButton:enabled {
-        background-color: #3474eb;
-        color: white;
-    }
-
-    QPushButton:pressed {
-        background-color: #0d2f72;
-        color: #fffffe;
-    }
-
-    QPushButton:hover:!pressed {
-        background-color: #E1F4FF;
-        color: #0c2f70;
-    }
-
-    QPushButton:disabled {
-        background-color: #aaaaaa;
-        color: #ffffff;
-    }
-"""
+        min-height: 50px;
+        font: 14px 'Arial Black';}"""
         return button_style
