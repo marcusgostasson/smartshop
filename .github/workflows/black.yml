@@ -5,7 +5,6 @@ on:
     branches:
       - dev
 
-
 jobs:
   black:
     runs-on: ubuntu-latest
@@ -23,3 +22,15 @@ jobs:
 
       - name: Run Black
         run: black .
+
+      # Lägg till följande steg för att automatiskt commit:a ändringarna
+      - name: Commit changes if needed
+        run: |
+          git config --global user.email "github-actions@example.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Autoformatted by Black"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref == 'refs/heads/dev'
