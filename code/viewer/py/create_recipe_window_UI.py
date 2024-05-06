@@ -36,7 +36,7 @@ class CreateRecipeWindow(QWidget):
         self.search_ingrediense = self.findChild(QPushButton, "search_ingredient_button")
         self.search_ingrediense.clicked.connect(self.handle_search)
 
-        self.back_to_start_wind = self.findChild(QPushButton, "back_to_start_window")
+        self.back_to_start_wind = self.findChild(QPushButton, "back_to_start_wind")
         self.back_to_start_wind.clicked.connect(lambda: self.back_to_start_window(user_name))
 
         self.add_ingredient_button = self.findChild(QPushButton, "add_ingrediense_button")

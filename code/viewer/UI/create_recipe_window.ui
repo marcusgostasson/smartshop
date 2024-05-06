@@ -252,7 +252,7 @@ color: rgb(255, 255, 255);</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="back_to_start_window">
+  <widget class="QPushButton" name="back_to_start_wind">
    <property name="geometry">
     <rect>
      <x>610</x>
