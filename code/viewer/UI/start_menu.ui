@@ -131,7 +131,7 @@ color: rgb(255, 255, 255);
       <x>190</x>
       <y>240</y>
       <width>441</width>
-      <height>171</height>
+      <height>175</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="your_vertical_layout">
@@ -183,6 +183,13 @@ color: rgb(255, 255, 255);
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>18</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(44, 101, 164);
