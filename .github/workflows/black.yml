@@ -25,7 +25,7 @@ jobs:
         pip install black  # Installera Black
       
     - name: Run Black
-      run: black .  # Kör Black för att formatera all Python-kod i projektet
+      run: black .
       
     - name: Commit changes
       run: |
@@ -35,8 +35,6 @@ jobs:
         git commit -m "Auto-format Python code with Black" || echo "No changes to commit"
       
     - name: Push changes
-      run: |
-        git push https://$GH_USERNAME:$GH_PAT@github.com/marcusgostasson/smartshop.git dev
+      run: git push origin dev
       env:
-        GH_PAT: ${{ secrets.smartshop }}
-        GH_USERNAME: marcusgostasson
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
