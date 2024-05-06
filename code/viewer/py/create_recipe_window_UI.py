@@ -69,13 +69,15 @@ class CreateRecipeWindow(QWidget):
             start_window.UIMainWindow(user_name)
 
     def add_ingredient(self, ingrediense):
-        if ingrediense in self.ingrediense_list:
-            pass
-        else:
+        """add ingredient to the list of ingredients for the recipe."""
+        if ingrediense not in self.ingrediense_list:
             product_id = self.db_instance.get_product_id(ingrediense)
             self.ingrediense_list.append(product_id)
             ingredient = QLabel(ingrediense)
-            self.box.layout().addWidget(ingredient)
+            ingredient.setStyleSheet("font: 14px 'Arial Black'; font-weight: bold; background-color: rgb(255, 255, 255);")
+            ingredient.setFixedSize(237, 50)
+            ingredient.setAlignment(Qt.AlignCenter)
+            self.box.layout().insertWidget(0, ingredient) 
 
     def handle_search(self):
         product_name = self.user_product_choice.text()
