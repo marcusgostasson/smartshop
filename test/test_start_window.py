@@ -8,6 +8,9 @@ from unittest.mock import MagicMock
 
 sys.modules['smartshop_mysql'] = MagicMock()
 sys.modules['window_for_stores_and_ingredients_price'] = MagicMock()
+sys.modules['create_recipe_window_UI'] = MagicMock()
+sys.modules['login_window'] = MagicMock()
+
 
 script_dir = Path(__file__).resolve().parent
 sys.path.append(str(script_dir.parent.parent))
