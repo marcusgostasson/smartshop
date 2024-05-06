@@ -44,14 +44,38 @@
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-height: 30px;</string>
+       <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
       </property>
       <property name="text">
        <string>Skapa</string>
@@ -64,6 +88,7 @@ height: 30px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -88,6 +113,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -109,6 +135,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -130,6 +157,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -151,6 +179,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -172,6 +201,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -196,14 +226,38 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-height: 30px;</string>
+       <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
       </property>
       <property name="text">
        <string>Tillbaka</string>

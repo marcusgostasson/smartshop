@@ -33,7 +33,7 @@
       <x>190</x>
       <y>50</y>
       <width>441</width>
-      <height>161</height>
+      <height>192</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -55,6 +55,7 @@
         <font>
          <family>Arial Black</family>
          <pointsize>40</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -84,6 +85,7 @@
         <font>
          <family>Arial Black</family>
          <pointsize>18</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
          <kerning>false</kerning>
         </font>
@@ -106,6 +108,7 @@ selection-color: rgb(251, 108, 24);</string>
         <font>
          <family>Arial Black</family>
          <pointsize>14</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -113,10 +116,33 @@ selection-color: rgb(251, 108, 24);</string>
         <bool>true</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-</string>
+        <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
        </property>
        <property name="text">
         <string>Hämta ingredienser</string>
@@ -131,7 +157,7 @@ color: rgb(255, 255, 255);
       <x>190</x>
       <y>240</y>
       <width>441</width>
-      <height>175</height>
+      <height>207</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="your_vertical_layout">
@@ -162,6 +188,7 @@ color: rgb(255, 255, 255);
         <font>
          <family>Arial Black</family>
          <pointsize>40</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -188,6 +215,7 @@ color: rgb(255, 255, 255);
         <font>
          <family>Arial Black</family>
          <pointsize>18</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -220,6 +248,7 @@ selection-color: rgb(251, 108, 24);</string>
           <font>
            <family>Arial Black</family>
            <pointsize>12</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -227,10 +256,33 @@ selection-color: rgb(251, 108, 24);</string>
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-</string>
+          <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
          </property>
          <property name="text">
           <string>Hämta ingredienser</string>
@@ -255,6 +307,7 @@ color: rgb(255, 255, 255);
           <font>
            <family>Arial Black</family>
            <pointsize>12</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -262,10 +315,33 @@ color: rgb(255, 255, 255);
           <bool>true</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-</string>
+          <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
          </property>
          <property name="text">
           <string>Skapa recept</string>
@@ -290,13 +366,38 @@ color: rgb(255, 255, 255);
           <font>
            <family>Arial Black</family>
            <pointsize>12</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
+          <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}
 </string>
          </property>
          <property name="text">
@@ -333,6 +434,7 @@ color: rgb(255, 255, 255);
      <font>
       <family>Arial Black</family>
       <pointsize>14</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -340,10 +442,33 @@ color: rgb(255, 255, 255);
      <bool>true</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);
-</string>
+     <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
     </property>
     <property name="text">
      <string>Logga ut</string>
@@ -356,7 +481,7 @@ color: rgb(255, 255, 255);
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>37</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

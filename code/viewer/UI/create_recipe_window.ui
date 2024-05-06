@@ -35,6 +35,7 @@
     <font>
      <family>Arial Black</family>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -77,6 +78,7 @@ padding:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -98,6 +100,7 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>12</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -119,13 +122,38 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
+       <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
       </property>
       <property name="text">
        <string>Sök</string>
@@ -138,6 +166,7 @@ color: rgb(255, 255, 255);</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -153,13 +182,38 @@ selection-color: rgb(251, 108, 24);</string>
        <font>
         <family>Arial Black</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
+       <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
       </property>
       <property name="text">
        <string>Lägg till</string>
@@ -172,6 +226,7 @@ color: rgb(255, 255, 255);</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -193,8 +248,8 @@ padding:7px;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>267</width>
-         <height>353</height>
+         <width>271</width>
+         <height>298</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -221,13 +276,38 @@ padding:7px;</string>
     <font>
      <family>Arial Black</family>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
+    <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
    </property>
    <property name="text">
     <string>Skapa recept</string>
@@ -265,13 +345,38 @@ color: rgb(255, 255, 255);</string>
     <font>
      <family>Arial Black</family>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(44, 101, 164);
-border-radius: 5px;
-color: rgb(255, 255, 255);</string>
+    <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
    </property>
    <property name="text">
     <string>Tillbaka</string>

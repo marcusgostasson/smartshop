@@ -76,12 +76,32 @@ class RecipeSteps(QWidget):
     def set_button_style(self):
         """Set the style for the button."""
         button_style = """QPushButton {
-      background-color: rgb(44, 101, 164);
-      border-radius: 5px;
-      color: rgb(255, 255, 255);
-      font-size: 14px;
-      font-weight: bold;
-      height: 40px;
-      }
-"""
+    border-style: solid;
+    border-color: #9999aa;
+    border-radius: 25px; /* Adjust border-radius to half of min-height for QPushButton */
+    color: white;
+    background-color: #3474eb;
+    min-width: 150px;
+    min-height: 50px;
+}
+
+QPushButton:enabled {
+    background-color: #2C65A4;
+    color: white;
+}
+
+QPushButton:pressed {
+    background-color: #0d2f72;
+    color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+    background-color: #0034AB;
+    color: white;
+}
+
+QPushButton:disabled {
+    background-color: #aaaaaa;
+    color: #ffffff;
+}"""
         return button_style
