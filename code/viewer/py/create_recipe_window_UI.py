@@ -56,7 +56,7 @@ class CreateRecipeWindow(QWidget):
     def create_recipe(self, user_name):
         does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
         if does_recipe_exist:
-            self.login_window.error_message("Pick another name for recipe name")
+            self.login_window.error_message("Namnet på ditt recept finns redan, välj ett annat")
 
         elif self.recipe_name.text() == "":
             self.recipe_name.setText("No name")
