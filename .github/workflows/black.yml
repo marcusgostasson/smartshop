@@ -1,0 +1,40 @@
+name: Black Format on Push
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  format:
+    name: Format Python code with Black
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install black  # Installera Black
+      
+    - name: Run Black
+      run: black .  # Kör Black för att formatera all Python-kod i projektet
+      
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Auto-format Python code with Black" || echo "No changes to commit"
+      
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
