@@ -22,10 +22,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install black
+        pip install black  # Installera Black
       
     - name: Run Black
-      run: black .
+      run: black .  # Kör Black för att formatera all Python-kod i projektet
       
     - name: Commit changes
       run: |
@@ -35,8 +35,8 @@ jobs:
         git commit -m "Auto-format Python code with Black" || echo "No changes to commit"
       
     - name: Push changes
-      uses: ad-d/github-push-actions@dev
-      with:
-        github_token: ${{ secrets.smartshop }}
-          
-    
+      run: |
+        git push https://$GH_USERNAME:$GH_PAT@github.com/marcusgostasson/smartshop.git dev
+      env:
+        GH_PAT: ${{ secrets.smartshop }}
+        GH_USERNAME: marcusgostasson
