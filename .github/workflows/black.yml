@@ -35,6 +35,6 @@ jobs:
         git commit -m "Auto-format Python code with Black" || echo "No changes to commit"
       
     - name: Push changes
-      uses: ad-m/github-push-action@dev
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
