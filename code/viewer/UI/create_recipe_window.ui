@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>795</width>
-    <height>440</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,87 +19,172 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QComboBox" name="ingrediense_box">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QTextEdit" name="recepie_steps">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>150</y>
-     <width>181</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="ingrediense_label">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
+     <x>340</x>
      <y>30</y>
-     <width>111</width>
-     <height>31</height>
+     <width>241</width>
+     <height>541</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
+     <family>Arial Black</family>
+     <pointsize>14</pointsize>
      <bold>true</bold>
     </font>
    </property>
-   <property name="text">
-    <string>Ingredienser</string>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding:7px;</string>
+   </property>
+   <property name="placeholderText">
+    <string>Receptsteg 1. xxxxxxxxxx</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="add_ingrediense_button">
+  <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>140</y>
-     <width>101</width>
-     <height>31</height>
+     <x>20</x>
+     <y>10</y>
+     <width>291</width>
+     <height>561</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Lägg till</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="type_in_recipe">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>110</y>
-     <width>181</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="search_ingredient_button">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>100</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Sök</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>190</y>
-     <width>221</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetDefaultConstraint</enum>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
     <item>
+     <widget class="QLineEdit" name="recept_name">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Receptnamn</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="type_in_recipe">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Sökord (ingridienser)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="search_ingredient_button">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Sök</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ingrediense_box">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(44, 101, 164);
+selection-color: rgb(251, 108, 24);</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="add_ingrediense_button">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Lägg till</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QScrollArea" name="scrollArea">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding:7px;</string>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -108,8 +193,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>217</width>
-         <height>167</height>
+         <width>267</width>
+         <height>341</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -126,60 +211,45 @@
   <widget class="QPushButton" name="create_recipe_button">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>380</y>
-     <width>101</width>
-     <height>31</height>
+     <x>610</x>
+     <y>360</y>
+     <width>158</width>
+     <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Skapa recept</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="recept_name">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>70</y>
-     <width>191</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>70</y>
-     <width>81</width>
-     <height>20</height>
+     <x>590</x>
+     <y>120</y>
+     <width>191</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="text">
-    <string>Recept namn</string>
+    <string/>
    </property>
-  </widget>
-  <widget class="QTextEdit" name="recepie_steps">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>200</y>
-     <width>241</width>
-     <height>151</height>
-    </rect>
+   <property name="pixmap">
+    <pixmap>../../../../../Bilder/smartshoplogo1.png</pixmap>
    </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>160</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Recept steg</string>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
