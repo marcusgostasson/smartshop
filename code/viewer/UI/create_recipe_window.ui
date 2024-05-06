@@ -194,7 +194,7 @@ padding:7px;</string>
          <x>0</x>
          <y>0</y>
          <width>267</width>
-         <height>341</height>
+         <height>353</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -250,6 +250,31 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_to_start_window">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>420</y>
+     <width>158</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Tillbaka</string>
    </property>
   </widget>
  </widget>

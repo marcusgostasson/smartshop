@@ -38,6 +38,26 @@
     <property name="bottomMargin">
      <number>30</number>
     </property>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="create">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(44, 101, 164);
+border-radius: 5px;
+color: rgb(255, 255, 255);
+height: 30px;</string>
+      </property>
+      <property name="text">
+       <string>Skapa</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QLineEdit" name="first_name">
       <property name="font">
@@ -62,27 +82,6 @@ padding-bottom:7px;</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="last_name">
-      <property name="font">
-       <font>
-        <family>Arial Black</family>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);
-padding-bottom:7px;</string>
-      </property>
-      <property name="placeholderText">
-       <string>Efternamn</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="0">
      <widget class="QLineEdit" name="username">
       <property name="font">
@@ -101,6 +100,48 @@ padding-bottom:7px;</string>
       </property>
       <property name="placeholderText">
        <string>Användarnamn</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="confirm_password">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Bekräfta Lösenord</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="last_name">
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Efternamn</string>
       </property>
      </widget>
     </item>
@@ -149,29 +190,8 @@ padding-bottom:7px;</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QLineEdit" name="confirm_password">
-      <property name="font">
-       <font>
-        <family>Arial Black</family>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);
-padding-bottom:7px;</string>
-      </property>
-      <property name="placeholderText">
-       <string>Bekräfta Lösenord</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QPushButton" name="create">
+    <item row="9" column="0">
+     <widget class="QPushButton" name="back">
       <property name="font">
        <font>
         <family>Arial Black</family>
@@ -186,7 +206,7 @@ color: rgb(255, 255, 255);
 height: 30px;</string>
       </property>
       <property name="text">
-       <string>Skapa</string>
+       <string>Tillbaka</string>
       </property>
      </widget>
     </item>

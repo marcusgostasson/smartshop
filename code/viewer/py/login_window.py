@@ -19,7 +19,7 @@ class LoginWindow(QMainWindow):
         super().__init__()
 
         # Instans
-    
+
         self.database = smartshop_mysql.SmartShopDB()
 
         # Screen

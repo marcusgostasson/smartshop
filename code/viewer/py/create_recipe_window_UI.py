@@ -6,12 +6,13 @@ from pathlib import Path
 import smartshop_mysql
 import login_window
 import start_window
+from functools import partial
 
 
 class CreateRecipeWindow(QWidget):
     def set_up_create_recipe_window(self, user_name):
         self.login_window = login_window.LoginWindow()
-
+        self.start_window = start_window.UIMainWindow(user_name)
         self.db_instance = smartshop_mysql.SmartShopDB()
 
         super(CreateRecipeWindow, self).__init__()
@@ -35,6 +36,9 @@ class CreateRecipeWindow(QWidget):
         self.search_ingrediense = self.findChild(QPushButton, "search_ingredient_button")
         self.search_ingrediense.clicked.connect(self.handle_search)
 
+        self.back_to_start_wind = self.findChild(QPushButton, "back_to_start_window")
+        self.back_to_start_wind.clicked.connect(lambda: self.back_to_start_window(user_name))
+
         self.add_ingredient_button = self.findChild(QPushButton, "add_ingrediense_button")
         self.add_ingredient_button.clicked.connect(lambda: self.add_ingredient(self.ingrediense_box.currentText()))
         self.ingrediense_list = []
@@ -43,6 +47,11 @@ class CreateRecipeWindow(QWidget):
         self.create_recipe_button.clicked.connect(lambda: self.create_recipe(user_name))
 
         self.show()
+
+    def back_to_start_window(self, user_name):
+        """back to start window"""
+        self.hide()
+        start_window.UIMainWindow(user_name)
 
     def create_recipe(self, user_name):
         does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())

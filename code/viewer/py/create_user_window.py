@@ -60,6 +60,14 @@ class CreateUserWindow(QWidget):
         self.create = self.findChild(QPushButton, "create")
         self.create.clicked.connect(self.create_account)
 
+        self.back = self.findChild(QPushButton, "back")
+        self.back.clicked.connect(self.back_to_login)
+
+    def back_to_login(self):
+        """Go back to login window."""
+        self.hide()
+        self.login_window_instance.set_up_login()
+
     def create_account(self):
         """Create account."""
         first_name = self.first_name.text().strip().title()
