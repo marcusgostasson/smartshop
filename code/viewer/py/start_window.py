@@ -19,15 +19,16 @@ class UIMainWindow(QMainWindow):
 
     def __init__(self, user_name):
         """Initialize the object."""
+        self.user_name = user_name
         self.create_recipe_instance = create_recipe_window_UI.CreateRecipeWindow()
 
         self.second_window = window_for_stores_and_ingredients_price.IngredientPrice()
 
         self.login_window = login_window.LoginWindow()
 
-        self.set_up_start_menu(user_name)
+        #self.set_up_start_menu(user_name)
 
-    def set_up_start_menu(self, user_name):
+    def set_up_start_menu(self):
         """Set up the window."""
         self.db_instance = smartshop_mysql.SmartShopDB()
         super(UIMainWindow, self).__init__()
@@ -51,7 +52,7 @@ class UIMainWindow(QMainWindow):
         self.ingredients_for_recipe = self.findChild(QComboBox, "chosen_recipe")
         self.ingredients_for_recipe.addItems(recipe_list)
 
-        user_recipe_list = self.fill_up_recipe_list(user_name)
+        user_recipe_list = self.fill_up_recipe_list(self.user_name)
         self.user_ingredients_for_recipe = self.findChild(QComboBox, "your_chosen_recipe")
         self.user_ingredients_for_recipe.addItems(user_recipe_list)
 
@@ -64,16 +65,16 @@ class UIMainWindow(QMainWindow):
         #self.get_ingredients_button.clicked.connect(lambda: self.get_ingredients(user_name))
         
         self.get_ingredient_button = self.findChild(QPushButton, "get_ingredients_button")
-        self.get_ingredient_button.clicked.connect(lambda: self.get_ingredients(user_name))
+        self.get_ingredient_button.clicked.connect(lambda: self.get_ingredients(self.user_name))
         
         self.user_get_ingredients_button = self.findChild(QPushButton, "your_get_ingredients_button")
-        self.user_get_ingredients_button.clicked.connect(lambda: self.user_get_ingredients(user_name))
+        self.user_get_ingredients_button.clicked.connect(lambda: self.user_get_ingredients(self.user_name))
 
         self.create_recipe_button = self.findChild(QPushButton, "create_recipe_button")
-        self.create_recipe_button.clicked.connect(lambda: self.create_recipe_window(user_name))
+        self.create_recipe_button.clicked.connect(lambda: self.create_recipe_window(self.user_name))
         
         self.delete_recipe_button = self.findChild(QPushButton, "delete_recipe_button")
-        self.delete_recipe_button.clicked.connect(lambda: self.delete_recipe(self.user_ingredients_for_recipe.currentText(), user_name))
+        self.delete_recipe_button.clicked.connect(lambda: self.delete_recipe(self.user_ingredients_for_recipe.currentText(), self.user_name))
 
         self.logout_button = self.findChild(QPushButton, "logout_button")
         self.logout_button.clicked.connect(self.logout)

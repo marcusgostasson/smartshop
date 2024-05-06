@@ -122,7 +122,7 @@ class IngredientPrice(QWidget):
     def return_to_start_window(self):
         """Hide current window and return to the start menu."""
         self.hide()
-        self.start_menu_window.set_up_start_menu(self.user_name)
+        self.start_menu_window.set_up_start_menu()
 
     def closeEvent(self, event):
         """So the program stops running when you close the window."""

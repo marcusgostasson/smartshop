@@ -11,6 +11,7 @@ from functools import partial
 
 class CreateRecipeWindow(QWidget):
     def set_up_create_recipe_window(self, user_name):
+        self.user_name = user_name
         self.login_window = login_window.LoginWindow()
         self.start_window = start_window.UIMainWindow(user_name)
         self.db_instance = smartshop_mysql.SmartShopDB()
@@ -37,21 +38,21 @@ class CreateRecipeWindow(QWidget):
         self.search_ingrediense.clicked.connect(self.handle_search)
 
         self.back_to_start_wind = self.findChild(QPushButton, "back_to_start_wind")
-        self.back_to_start_wind.clicked.connect(lambda: self.back_to_start_window(user_name))
+        self.back_to_start_wind.clicked.connect(self.back_to_start_window)
 
         self.add_ingredient_button = self.findChild(QPushButton, "add_ingrediense_button")
         self.add_ingredient_button.clicked.connect(lambda: self.add_ingredient(self.ingrediense_box.currentText()))
         self.ingrediense_list = []
 
         self.create_recipe_button = self.findChild(QPushButton, "create_recipe_button")
-        self.create_recipe_button.clicked.connect(lambda: self.create_recipe(user_name))
+        self.create_recipe_button.clicked.connect(lambda: self.create_recipe(self.user_name))
 
         self.show()
 
-    def back_to_start_window(self, user_name):
+    def back_to_start_window(self):
         """back to start window"""
         self.hide()
-        start_window.UIMainWindow(user_name)
+        self.start_window.set_up_start_menu()
 
     def create_recipe(self, user_name):
         does_recipe_exist = self.db_instance.get_recipe_name(self.recipe_name.text())
@@ -62,11 +63,11 @@ class CreateRecipeWindow(QWidget):
             self.recipe_name.setText("No name")
             self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
             self.hide()
-            start_window.UIMainWindow(user_name)
+            self.start_window.set_up_start_menu()
         else:
             self.db_instance.insert_user_recipe(self.recipe_name.text(), user_name, self.recipe_steps.toPlainText(), self.ingrediense_list)
             self.hide()
-            start_window.UIMainWindow(user_name)
+            self.start_window.set_up_start_menu()
 
     def add_ingredient(self, ingrediense):
         """add ingredient to the list of ingredients for the recipe."""

@@ -19,7 +19,6 @@ class LoginWindow(QMainWindow):
         super().__init__()
 
         # Instans
-
         self.database = smartshop_mysql.SmartShopDB()
 
         # Screen
@@ -75,7 +74,7 @@ class LoginWindow(QMainWindow):
                                                      stored_hash):
                 self.hide()
                 self.start_window = start_window.UIMainWindow(username)
-                self.start_window.show()
+                self.start_window.set_up_start_menu()
             else:
                 self.error_message("""Användarnamn eller lösenord är felaktigt,
 försök igen!""")
