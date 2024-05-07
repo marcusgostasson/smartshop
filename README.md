@@ -12,7 +12,7 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 * **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area. 
 * **Smart Shopping Lists:** Build your shopping list directly from recipes with a single tap. No more scrambling for ingredients or forgetting something essential.
 * **Weekly Meal Planning:**  Plan your meals for the week and ensure you always have the ingredients on hand to avoid impulse purchases.
-* **Save Money:** SmartShop helps you find the best deals and discounts on groceries, so you can stretch your budget further.
+* **Save Money:** SmartShop helps you find the best deals and discounts on groceries, so you can stretch your budget further. .
 
 
 **Get Started with SmartShop**
