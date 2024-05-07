@@ -25,3 +25,9 @@ jobs:
 
     - name: Run Black
       run: black .
+
+    - name: Commit and push changes
+      run: |
+        git add .
+        git commit -m "Auto-format code with Black"
+        git push
