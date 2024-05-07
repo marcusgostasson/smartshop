@@ -4,7 +4,7 @@
 
 **What is SmartShop**
 
-SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank..
+SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank.
 
 **Features**
 
