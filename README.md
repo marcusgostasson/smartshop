@@ -52,4 +52,4 @@ We appreciate your input! If you have any questions or suggestions, please feel 
 * Visit our website: [link to website] (coming soon!)
 * Follow us on social media for recipe inspiration and exclusive deals:
     * Facebook: [link to Facebook page] (coming soon!)
-    * Instagram: [link to Instagram page] (coming soon!).
+    * Instagram: [link to Instagram page] (coming soon!)
