@@ -28,7 +28,7 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config user.name "SmartShop dev"
+        git config user.name "RazmusRosen"
         git config user.email "dev@smartshop.com"
         git add .
         git commit -m "Auto-format code with Black"
