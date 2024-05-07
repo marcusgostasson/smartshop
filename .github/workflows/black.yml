@@ -1,15 +1,13 @@
-name: Black Formatting Check
+name: Pre-commit Check
 
-on:
+on: 
   push:
-    branches:
-      - dev
 
 jobs:
-  black:
+  pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Python
@@ -17,20 +15,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Black
-        run: pip install black
-
-      - name: Run Black
-        run: black .
-
-      # Lägg till följande steg för att automatiskt commit:a ändringarna
-      - name: Commit changes if needed
+      - name: Install dependencies
         run: |
-          git config --global user.email "github-actions@example.com"
-          git config --global user.name "GitHub Actions"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Autoformatted by Black"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: github.ref == 'refs/heads/dev'
+          python -m pip install --upgrade pip
+          pip install pre-commit
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all-files

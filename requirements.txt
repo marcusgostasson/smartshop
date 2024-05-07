@@ -25,3 +25,9 @@ mysql-connector-python
 
 # Properties
 jproperties
+
+# codeformatter
+black
+
+# pre-commit
+pre-commit
