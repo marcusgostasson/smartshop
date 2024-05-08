@@ -18,221 +18,11 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Loggain">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>60</y>
-      <width>371</width>
-      <height>155</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>48</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(44, 101, 164);</string>
-    </property>
-    <property name="text">
-     <string>Logga in</string>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="username_line_edit">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>240</y>
-      <width>321</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>18</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::DefaultContextMenu</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);
-padding-bottom:7px;</string>
-    </property>
-    <property name="placeholderText">
-     <string>Användarnamn</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="password_line_edit">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>300</y>
-      <width>321</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>18</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);
-padding-bottom:7px;</string>
-    </property>
-    <property name="placeholderText">
-     <string>Lösenord</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="login_button">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>410</y>
-      <width>169</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	border-style: solid;
-	border-color: #9999aa;
-	border-radius: 5px;
-	color: white;
-	background-color: #3474eb
-}
-
-QPushButton:enabled {
-	background-color: #2C65A4;
-	color: white;
-}
-
-QPushButton:pressed {
-	background-color: #0d2f72;
-	color: #fffffe;
-}
-
-QPushButton:hover:!pressed {
-	background-color: #0034AB;
-	color: white;
-}
-
-QPushButton:disabled {
-	background-color: #aaaaaa;
-	color: #ffffff;
-}</string>
-    </property>
-    <property name="text">
-     <string>Logga in</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="create_account_button">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>410</y>
-      <width>181</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	border-style: solid;
-	border-color: #9999aa;
-	border-radius: 5px;
-	color: white;
-	background-color: #3474eb
-}
-
-QPushButton:enabled {
-	background-color: #2C65A4;
-	color: white;
-}
-
-QPushButton:pressed {
-	background-color: #0d2f72;
-	color: #fffffe;
-}
-
-QPushButton:hover:!pressed {
-	background-color: #0034AB;
-	color: white;
-}
-
-QPushButton:disabled {
-	background-color: #aaaaaa;
-	color: #ffffff;
-}</string>
-    </property>
-    <property name="text">
-     <string>Skapa ny användare</string>
-    </property>
-    <property name="autoRepeatDelay">
-     <number>300</number>
-    </property>
-   </widget>
    <widget class="QLabel" name="logo">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
+      <x>0</x>
+      <y>80</y>
       <width>400</width>
       <height>420</height>
      </rect>
@@ -247,6 +37,224 @@ QPushButton:disabled {
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>20</y>
+      <width>321</width>
+      <height>520</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>40</number>
+     </property>
+     <property name="topMargin">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="Loggain">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>48</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(44, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>Logga in</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="username_line_edit">
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>Användarnamn</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="password_line_edit">
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>Lösenord</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="login_button">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>2000</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb;
+	Height: 40px
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
+       </property>
+       <property name="text">
+        <string>Logga in</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="create_account_button">
+       <property name="maximumSize">
+        <size>
+         <width>2000</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb;
+	Height: 40px;
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
+       </property>
+       <property name="text">
+        <string>Skapa ny användare</string>
+       </property>
+       <property name="autoRepeatDelay">
+        <number>300</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -254,7 +262,7 @@ QPushButton:disabled {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -31,17 +31,17 @@ class IngredientPrice(QWidget):
         main_layout = QHBoxLayout(self)
         for store_name, products in recipe_price.items():
             store_layout = self.create_store_layout(store_name, products)
-            spacer = QSpacerItem(100, 200)
+            spacer = QSpacerItem(50, 100)
             main_layout.addItem(spacer)
             main_layout.addLayout(store_layout)
 
         style = self.set_button_style()
-        return_to_start_window_button = QPushButton("Tillbaka till meny")
+        return_to_start_window_button = QPushButton("   " + " Tillbaka till meny " + "  ")
         return_to_start_window_button.setStyleSheet(style)
         main_layout.addWidget(return_to_start_window_button)
         return_to_start_window_button.clicked.connect(self.return_to_start_window)
 
-        get_steps_for_recipe_button = QPushButton("Stegen till receptet")
+        get_steps_for_recipe_button = QPushButton("  " + " Stegen till receptet " + "  ")
         get_steps_for_recipe_button.setStyleSheet(style)
         main_layout.addWidget(get_steps_for_recipe_button)
         get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
@@ -130,34 +130,27 @@ class IngredientPrice(QWidget):
 
     def set_button_style(self):
         """Set the style for the buttons."""
-        button_style = """QPushButton {
-    border-style: solid;
-    border-color: #9999aa;
-    border-radius: 25px; /* Adjust border-radius to half of min-height for QPushButton */
-    color: white;
-    background-color: #3474eb;
-    min-width: 150px;
-    min-height: 50px;
-}
-
-QPushButton:enabled {
-    background-color: #2C65A4;
-    color: white;
-}
-
-QPushButton:pressed {
-    background-color: #0d2f72;
-    color: #fffffe;
-}
-
-QPushButton:hover:!pressed {
-    background-color: #0034AB;
-    color: white;
-}
-
-QPushButton:disabled {
-    background-color: #aaaaaa;
-    color: #ffffff;
-}
+        button_style = """QPushButton {\n	
+        border-style: solid;\n	
+        border-color: #9999aa;\n	
+        border-radius: 5px;\n	
+        color: white;\n	
+        background-color: #3474eb;
+        font-family: Arial Black;
+        font-size: 16px;
+        Height: 50px
+        \n}\n
+        \nQPushButton:enabled {\n	
+        background-color: #2C65A4;\n	
+        color: white;\n}\n
+        \nQPushButton:pressed {\n	
+        background-color: #0d2f72;\n	
+        color: #fffffe;\n}\n
+        \nQPushButton:hover:!pressed {\n	
+        background-color: #0034AB;\n	
+        color: white;\n}\n
+        \nQPushButton:disabled {\n	
+        background-color: #aaaaaa;\n	
+        color: #ffffff;\n}
 """
         return button_style

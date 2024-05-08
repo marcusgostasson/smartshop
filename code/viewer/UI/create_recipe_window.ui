@@ -111,13 +111,31 @@ border-bottom:2px solid rgba(46, 82, 101, 200);
 color:rgba(0, 0, 0, 240);
 padding-bottom:7px;</string>
       </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
       <property name="placeholderText">
-       <string>Sökord (ingridienser)</string>
+       <string>Sökord (ingredienser)</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="search_ingredient_button">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>2000</width>
+        <height>40</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <family>Arial Black</family>
@@ -178,6 +196,18 @@ selection-color: rgb(251, 108, 24);</string>
     </item>
     <item>
      <widget class="QPushButton" name="add_ingrediense_button">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>2000</width>
+        <height>40</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <family>Arial Black</family>
@@ -249,7 +279,7 @@ padding:7px;</string>
          <x>0</x>
          <y>0</y>
          <width>271</width>
-         <height>298</height>
+         <height>278</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -269,8 +299,20 @@ padding:7px;</string>
      <x>610</x>
      <y>360</y>
      <width>158</width>
-     <height>32</height>
+     <height>40</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>2000</width>
+     <height>40</height>
+    </size>
    </property>
    <property name="font">
     <font>
@@ -286,7 +328,7 @@ padding:7px;</string>
 	border-color: #9999aa;
 	border-radius: 5px;
 	color: white;
-	background-color: #3474eb
+	background-color: #3474eb;
 }
 
 QPushButton:enabled {
@@ -310,7 +352,7 @@ QPushButton:disabled {
 }</string>
    </property>
    <property name="text">
-    <string>Skapa recept</string>
+    <string>  Skapa recept  </string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -338,8 +380,20 @@ QPushButton:disabled {
      <x>610</x>
      <y>420</y>
      <width>158</width>
-     <height>32</height>
+     <height>40</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>2000</width>
+     <height>40</height>
+    </size>
    </property>
    <property name="font">
     <font>
@@ -379,7 +433,7 @@ QPushButton:disabled {
 }</string>
    </property>
    <property name="text">
-    <string>Tillbaka</string>
+    <string>  Tillbaka  </string>
    </property>
   </widget>
  </widget>
