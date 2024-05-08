@@ -97,22 +97,23 @@ class CreateRecipeWindow(QWidget):
     def add_ingredient(self, ingrediense):
         """add ingredient to the list of ingredients for the recipe."""
         self.at_least_one_ingredient_picked = True
-        just_product_name = ingrediense.split(" ")[0]
-        if ingrediense not in self.picked_ingrediens:
-            product_id = self.db_instance.get_product_id(just_product_name)
-            self.ingrediense_list_id.append(product_id)
-            self.picked_ingrediens.append(ingrediense)
-            ingredient = QLabel(ingrediense)
-            ingredient.setStyleSheet(
-                "font: 14px 'Arial Black'; font-weight: bold; background-color: rgb(255, 255, 255);"
-            )
-            ingredient.setFixedSize(237, 50)
-            ingredient.setAlignment(Qt.AlignCenter)
-            self.box.layout().insertWidget(0, ingredient)
-        else:
-            self.login_window.error_message(
-                "Har redan " + ingrediense + " i ditt recept"
-            )
+        if ingrediense != "":
+            just_product_name = ingrediense.split(" ")[0]
+            if ingrediense not in self.picked_ingrediens:
+                product_id = self.db_instance.get_product_id(just_product_name)
+                self.ingrediense_list_id.append(product_id)
+                self.picked_ingrediens.append(ingrediense)
+                ingredient = QLabel(ingrediense)
+                ingredient.setStyleSheet(
+                    "font: 14px 'Arial Black'; font-weight: bold; background-color: rgb(255, 255, 255);"
+                )
+                ingredient.setFixedSize(237, 50)
+                ingredient.setAlignment(Qt.AlignCenter)
+                self.box.layout().insertWidget(0, ingredient)
+            else:
+                self.login_window.error_message(
+                    "Har redan " + ingrediense + " i ditt recept"
+                )
 
     def handle_search(self):
         """Handle search for ingredients."""
