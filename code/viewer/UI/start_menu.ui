@@ -33,99 +33,127 @@
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
-      <width>521</width>
-      <height>229</height>
+      <x>10</x>
+      <y>30</y>
+      <width>784</width>
+      <height>441</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <property name="spacing">
-      <number>20</number>
+      <number>0</number>
      </property>
-     <property name="leftMargin">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
       <number>0</number>
      </property>
      <item>
-      <widget class="QLabel" name="recept_label">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>20</number>
        </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>40</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
+       <property name="leftMargin">
+        <number>50</number>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(251, 108, 24);</string>
+       <property name="topMargin">
+        <number>0</number>
        </property>
-       <property name="text">
-        <string>Recept</string>
+       <property name="rightMargin">
+        <number>50</number>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="chosen_recipe">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>18</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <kerning>false</kerning>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(44, 101, 164);
+       <item>
+        <widget class="QLabel" name="recept_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial Black</family>
+           <pointsize>40</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(251, 108, 24);</string>
+         </property>
+         <property name="text">
+          <string>Recept</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="chosen_recipe">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial Black</family>
+           <pointsize>18</pointsize>
+           <bold>false</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(44, 101, 164);
 selection-color: rgb(251, 108, 24);</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="get_ingredients_button">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>2000</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="leftMargin">
+          <number>265</number>
+         </property>
+         <property name="topMargin">
+          <number>30</number>
+         </property>
+         <property name="rightMargin">
+          <number>265</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="get_ingredients_button">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>2000</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
@@ -152,126 +180,132 @@ QPushButton:disabled {
 	background-color: #aaaaaa;
 	color: #ffffff;
 }</string>
-       </property>
-       <property name="text">
-        <string>Hämta ingredienser</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>300</y>
-      <width>521</width>
-      <height>207</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="your_vertical_layout">
-     <property name="spacing">
-      <number>20</number>
-     </property>
-     <property name="sizeConstraint">
-      <enum>QLayout::SetDefaultConstraint</enum>
-     </property>
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="your_recipe_label">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>40</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(251, 108, 24);</string>
-       </property>
-       <property name="text">
-        <string>Dina Recept</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
+           </property>
+           <property name="text">
+            <string>Hämta ingredienser</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QComboBox" name="your_chosen_recipe">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>18</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(44, 101, 164);
-selection-color: rgb(251, 108, 24);</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="your_horizontalLayout">
+      <layout class="QVBoxLayout" name="your_vertical_layout">
        <property name="spacing">
         <number>20</number>
        </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="leftMargin">
+        <number>50</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>50</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
-        <widget class="QPushButton" name="create_recipe_button">
+        <widget class="QLabel" name="your_recipe_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial Black</family>
+           <pointsize>40</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(251, 108, 24);</string>
+         </property>
+         <property name="text">
+          <string>Dina Recept</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="your_chosen_recipe">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>2000</width>
-           <height>40</height>
-          </size>
-         </property>
          <property name="font">
           <font>
            <family>Arial Black</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
+           <pointsize>18</pointsize>
            <bold>true</bold>
           </font>
          </property>
-         <property name="mouseTracking">
-          <bool>true</bool>
-         </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton {
+          <string notr="true">color: rgb(44, 101, 164);
+selection-color: rgb(251, 108, 24);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="your_horizontalLayout">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <property name="leftMargin">
+          <number>30</number>
+         </property>
+         <property name="topMargin">
+          <number>28</number>
+         </property>
+         <property name="rightMargin">
+          <number>30</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="create_recipe_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>2000</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
@@ -299,45 +333,44 @@ QPushButton:disabled {
 	background-color: #aaaaaa;
 	color: #ffffff;
 }</string>
-         </property>
-         <property name="text">
-          <string>Skapa recept</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="your_get_ingredients_button">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>2000</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Arial Black</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="mouseTracking">
-          <bool>true</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+           </property>
+           <property name="text">
+            <string>Skapa recept</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="your_get_ingredients_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>2000</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
@@ -365,45 +398,44 @@ QPushButton:disabled {
 	background-color: #aaaaaa;
 	color: #ffffff;
 }</string>
-         </property>
-         <property name="text">
-          <string>  Hämta ingredienser  </string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="delete_recipe_button">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>2000</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Arial Black</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="mouseTracking">
-          <bool>true</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+           </property>
+           <property name="text">
+            <string>  Hämta ingredienser  </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="delete_recipe_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>2000</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial Black</family>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
@@ -432,55 +464,75 @@ QPushButton:disabled {
 	color: #ffffff;
 }
 </string>
-         </property>
-         <property name="text">
-          <string>Radera recept</string>
-         </property>
-        </widget>
+           </property>
+           <property name="text">
+            <string>Radera recept</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="logout_button">
+   <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>101</width>
-      <height>50</height>
+      <y>470</y>
+      <width>781</width>
+      <height>140</height>
      </rect>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>2000</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Black</family>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="mouseTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>295</number>
+     </property>
+     <property name="topMargin">
+      <number>15</number>
+     </property>
+     <property name="rightMargin">
+      <number>290</number>
+     </property>
+     <property name="bottomMargin">
+      <number>30</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="logout_button">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>2000</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
 	color: white;
-	background-color: #3474eb
+	background-color: #3474eb;
+	height: 40px
 }
 
 QPushButton:enabled {
@@ -502,10 +554,13 @@ QPushButton:disabled {
 	background-color: #aaaaaa;
 	color: #ffffff;
 }</string>
-    </property>
-    <property name="text">
-     <string>Logga ut</string>
-    </property>
+       </property>
+       <property name="text">
+        <string>Logga ut</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -514,7 +569,7 @@ QPushButton:disabled {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>

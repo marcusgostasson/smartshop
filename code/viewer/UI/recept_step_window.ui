@@ -29,13 +29,29 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>431</width>
-     <height>241</height>
+     <x>10</x>
+     <y>10</y>
+     <width>771</width>
+     <height>571</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="recept_picture">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QLabel" name="recept_name">
       <property name="font">
@@ -46,16 +62,6 @@
         <underline>true</underline>
        </font>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="recept_picture">
       <property name="text">
        <string/>
       </property>
@@ -81,12 +87,65 @@
        </font>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
      </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>200</number>
+      </property>
+      <property name="rightMargin">
+       <number>200</number>
+      </property>
+      <property name="bottomMargin">
+       <number>25</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb;
+	Height: 40px;
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

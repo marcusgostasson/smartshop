@@ -19,10 +19,10 @@
   <widget class="QWidget" name="Create">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>430</x>
      <y>0</y>
-     <width>391</width>
-     <height>601</height>
+     <width>351</width>
+     <height>672</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -36,49 +36,32 @@
      <number>35</number>
     </property>
     <property name="bottomMargin">
-     <number>30</number>
+     <number>98</number>
     </property>
-    <item row="8" column="0">
-     <widget class="QPushButton" name="create">
+    <property name="verticalSpacing">
+     <number>40</number>
+    </property>
+    <item row="6" column="0">
+     <widget class="QLineEdit" name="password_user">
       <property name="font">
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-	border-style: solid;
-	border-color: #9999aa;
-	border-radius: 5px;
-	color: white;
-	background-color: #3474eb
-}
-
-QPushButton:enabled {
-	background-color: #2C65A4;
-	color: white;
-}
-
-QPushButton:pressed {
-	background-color: #0d2f72;
-	color: #fffffe;
-}
-
-QPushButton:hover:!pressed {
-	background-color: #0034AB;
-	color: white;
-}
-
-QPushButton:disabled {
-	background-color: #aaaaaa;
-	color: #ffffff;
-}</string>
+       <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+color:rgba(0, 0, 0, 240);
+padding-bottom:7px;</string>
       </property>
       <property name="text">
-       <string>Skapa</string>
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Lösenord</string>
       </property>
      </widget>
     </item>
@@ -88,7 +71,6 @@ QPushButton:disabled {
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -113,7 +95,6 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -129,35 +110,12 @@ padding-bottom:7px;</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QLineEdit" name="confirm_password">
-      <property name="font">
-       <font>
-        <family>Arial Black</family>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);
-padding-bottom:7px;</string>
-      </property>
-      <property name="placeholderText">
-       <string>Bekräfta Lösenord</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QLineEdit" name="last_name">
       <property name="font">
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -179,7 +137,6 @@ padding-bottom:7px;</string>
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -195,13 +152,12 @@ padding-bottom:7px;</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QLineEdit" name="password_user">
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="confirm_password">
       <property name="font">
        <font>
         <family>Arial Black</family>
         <pointsize>14</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -212,31 +168,33 @@ border-bottom:2px solid rgba(46, 82, 101, 200);
 color:rgba(0, 0, 0, 240);
 padding-bottom:7px;</string>
       </property>
-      <property name="text">
-       <string/>
-      </property>
       <property name="placeholderText">
-       <string>Lösenord</string>
+       <string>Bekräfta Lösenord</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="back">
-      <property name="font">
-       <font>
-        <family>Arial Black</family>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
+    <item row="8" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>40</number>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+      <item>
+       <widget class="QPushButton" name="create">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 	border-style: solid;
 	border-color: #9999aa;
 	border-radius: 5px;
 	color: white;
-	background-color: #3474eb
+	background-color: #3474eb;
+	height: 40px
 }
 
 QPushButton:enabled {
@@ -258,11 +216,57 @@ QPushButton:disabled {
 	background-color: #aaaaaa;
 	color: #ffffff;
 }</string>
-      </property>
-      <property name="text">
-       <string>Tillbaka</string>
-      </property>
-     </widget>
+        </property>
+        <property name="text">
+         <string>Skapa</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="back">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border-style: solid;
+	border-color: #9999aa;
+	border-radius: 5px;
+	color: white;
+	background-color: #3474eb;
+	height: 40px
+}
+
+QPushButton:enabled {
+	background-color: #2C65A4;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: #0d2f72;
+	color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+	background-color: #0034AB;
+	color: white;
+}
+
+QPushButton:disabled {
+	background-color: #aaaaaa;
+	color: #ffffff;
+}</string>
+        </property>
+        <property name="text">
+         <string>Tillbaka</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
