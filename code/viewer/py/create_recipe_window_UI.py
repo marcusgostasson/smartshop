@@ -1,14 +1,17 @@
-from PyQt5.QtWidgets import *
+from pathlib import Path
+
+import login_window
+import smartshop_mysql
+import start_window
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from pathlib import Path
-import smartshop_mysql
-import login_window
-import start_window
 
 
 class CreateRecipeWindow(QWidget):
+    """class for the create recipe window."""
+
     def __init__(self):
         self.at_least_one_ingredient_picked = False
 
@@ -19,7 +22,7 @@ class CreateRecipeWindow(QWidget):
         self.start_window = start_window.UIMainWindow(user_name)
         self.db_instance = smartshop_mysql.SmartShopDB()
 
-        super(CreateRecipeWindow, self).__init__()
+        super().__init__()
         # Get the path to the viewer folder
         viewer_path = Path(__file__).resolve().parent.parent
         # Construct the path to the UI file relative to the viewer folder
@@ -67,6 +70,7 @@ class CreateRecipeWindow(QWidget):
         self.start_window.set_up_start_menu()
 
     def create_recipe(self, user_name):
+        """Create a recipe."""
         if not self.at_least_one_ingredient_picked:
             self.login_window.error_message("Måste ha minst en ingrediens")
             # self.set_up_create_recipe_window(user_name)
@@ -110,6 +114,7 @@ class CreateRecipeWindow(QWidget):
             )
 
     def handle_search(self):
+        """Handle search for ingredients."""
         product_name = self.user_product_choice.text()
         ingredients = self.db_instance.get_ingrediense(product_name)
         self.ingrediense_box.clear()

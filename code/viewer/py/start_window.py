@@ -1,17 +1,14 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.uic import loadUi
-import smartshop_mysql
-import window_for_stores_and_ingredients_price
+import sys
+from pathlib import Path
+
 import create_recipe_window_UI
 import login_window
-import sys
-from PyQt5.QtWidgets import *
+import smartshop_mysql
+import window_for_stores_and_ingredients_price
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-
-from pathlib import Path
 
 
 class UIMainWindow(QMainWindow):
@@ -29,7 +26,7 @@ class UIMainWindow(QMainWindow):
     def set_up_start_menu(self):
         """Set up the window."""
         self.db_instance = smartshop_mysql.SmartShopDB()
-        super(UIMainWindow, self).__init__()
+        super().__init__()
         # Get the path to the viewer folder
         viewer_path = Path(__file__).resolve().parent.parent
 
@@ -84,15 +81,18 @@ class UIMainWindow(QMainWindow):
         self.show()
 
     def delete_recipe(self, recipe, user_name):
+        """delete the chosen recipe."""
         self.db_instance.delete_recipe(recipe, user_name)
         self.update_recipe_list(user_name)
 
     def update_recipe_list(self, user_name):
+        """update the recipe list."""
         self.user_ingredients_for_recipe.clear()
         user_recipe_list = self.fill_up_recipe_list(user_name)
         self.user_ingredients_for_recipe.addItems(user_recipe_list)
 
     def fill_up_recipe_list(self, user_name=None):
+        """Fill up the recipe list."""
         if not user_name:
             recipes = self.db_instance.get_recipe()
         else:
@@ -100,6 +100,7 @@ class UIMainWindow(QMainWindow):
         return recipes
 
     def create_recipe_window(self, user_name):
+        """Hide current window and set up second window."""
         self.hide()
         self.create_recipe_instance.set_up_create_recipe_window(user_name)
 

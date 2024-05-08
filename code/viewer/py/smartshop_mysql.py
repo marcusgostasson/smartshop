@@ -81,6 +81,7 @@ WHERE recipe.recipe_name= %s; """,
         return recipes
 
     def get_ingrediense(self, product_name):
+        """get the ingrediense for the recipe."""
         if not product_name:
             return []
         self.mycursor.execute(
@@ -146,6 +147,7 @@ WHERE recipe.recipe_name= %s; """,
             return None
 
     def get_recipe_name(self, recipe_name):
+        """get the recipe name from the database."""
         self.mycursor.execute(
             "SELECT recipe_name FROM recipe WHERE recipe_name = %s", (recipe_name,)
         )
@@ -158,6 +160,7 @@ WHERE recipe.recipe_name= %s; """,
     def insert_user_recipe(
         self, recipe_name, user_name, recipe_steps, ingrediense_list
     ):
+        """insert the user for recipe to the database."""
         self.mycursor.execute(
             "INSERT INTO recipe(recipe_name, recipe_step, user_user_name) VALUES(%s, %s, %s)",
             (recipe_name, recipe_steps, user_name),
@@ -174,6 +177,7 @@ WHERE recipe.recipe_name= %s; """,
             self.db.commit()
 
     def get_product_id(self, ingrediens):
+        """Get the product id from the database."""
         self.mycursor.execute(
             "SELECT product_id FROM product WHERE product_name = %s", (ingrediens,)
         )
