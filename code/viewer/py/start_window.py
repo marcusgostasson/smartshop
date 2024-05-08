@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 class UIMainWindow(QMainWindow):
-    """Class for the window after user has logged in.."""
+    """Class for the window after user has logged in."""
 
     def __init__(self, user_name):
         """Initialize the object."""
