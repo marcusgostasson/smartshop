@@ -84,14 +84,15 @@ WHERE recipe.recipe_name= %s; """,
         if not product_name:
             return []
         self.mycursor.execute(
-            "SELECT product_name FROM product WHERE product_name LIKE %s",
+            "SELECT product_name, product_amount, product_amount_type FROM product WHERE product_name LIKE %s",
             ("%" + product_name + "%",),
         )
         all_ingrediense = self.mycursor.fetchall()
         ingredienses = []
         for ingrediense in all_ingrediense:
-            for i in ingrediense:
-                ingredienses.append(i)
+            ingrediense_name, amount, type = ingrediense
+            label_name = f"{ingrediense_name} {amount} {type}"
+            ingredienses.append(label_name)
         return ingredienses
 
     def get_steps_for_recipe(self, recipe_name):
