@@ -16,6 +16,7 @@ class IngredientPrice(QWidget):
         self.recipe_name = recipe_name
         self.user_name = user_name
         self.db_instance = smartshop_mysql.SmartShopDB()
+        self.steps_for_chosen_recipe = steps_for_recipe.RecipeSteps()
         super().__init__()
         self.start_menu_window = start_menu
 
@@ -35,16 +36,29 @@ class IngredientPrice(QWidget):
             spacer = QSpacerItem(50, 100)
             main_layout.addItem(spacer)
             main_layout.addLayout(store_layout)
+        spacer_for_grid = QSpacerItem(50, 50)
+        main_layout.addSpacerItem(spacer_for_grid)
+
+        vertical_layout = QVBoxLayout()
+        main_layout.addLayout(vertical_layout)
 
         style = self.set_button_style()
-        return_to_start_window_button = QPushButton("   " + " Tillbaka till meny " + "  ")
+        return_to_start_window_button = QPushButton(
+            "   " + " Tillbaka till meny " + "  "
+        )
         return_to_start_window_button.setStyleSheet(style)
-        main_layout.addWidget(return_to_start_window_button)
+        vertical_layout.addWidget(return_to_start_window_button)
+
+        spacer_button = QSpacerItem(50, -325)
+        vertical_layout.addSpacerItem(spacer_button)
+
         return_to_start_window_button.clicked.connect(self.return_to_start_window)
 
-        get_steps_for_recipe_button = QPushButton("  " + " Stegen till receptet " + "  ")
+        get_steps_for_recipe_button = QPushButton(
+            "  " + " Stegen till receptet " + "  "
+        )
         get_steps_for_recipe_button.setStyleSheet(style)
-        main_layout.addWidget(get_steps_for_recipe_button)
+        vertical_layout.addWidget(get_steps_for_recipe_button)
         get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
 
         self.setLayout(main_layout)
@@ -125,7 +139,6 @@ class IngredientPrice(QWidget):
     def create_recipe_step_window(self):
         """Hide current window and open steps for recipe window."""
         self.hide()
-        self.steps_for_chosen_recipe = steps_for_recipe.RecipeSteps()
         self.steps_for_chosen_recipe.set_up_recipe_step_window(
             self.db_instance, self.recipe_name, self.start_menu_window, self.user_name
         )
@@ -141,27 +154,27 @@ class IngredientPrice(QWidget):
 
     def set_button_style(self):
         """Set the style for the buttons."""
-        button_style = """QPushButton {\n	
-        border-style: solid;\n	
-        border-color: #9999aa;\n	
-        border-radius: 5px;\n	
-        color: white;\n	
+        button_style = """QPushButton {\n
+        border-style: solid;\n
+        border-color: #9999aa;\n
+        border-radius: 5px;\n
+        color: white;\n
         background-color: #3474eb;
         font-family: Arial Black;
         font-size: 16px;
         Height: 50px
         \n}\n
-        \nQPushButton:enabled {\n	
-        background-color: #2C65A4;\n	
+        \nQPushButton:enabled {\n
+        background-color: #2C65A4;\n
         color: white;\n}\n
-        \nQPushButton:pressed {\n	
-        background-color: #0d2f72;\n	
+        \nQPushButton:pressed {\n
+        background-color: #0d2f72;\n
         color: #fffffe;\n}\n
-        \nQPushButton:hover:!pressed {\n	
-        background-color: #0034AB;\n	
+        \nQPushButton:hover:!pressed {\n
+        background-color: #0034AB;\n
         color: white;\n}\n
-        \nQPushButton:disabled {\n	
-        background-color: #aaaaaa;\n	
+        \nQPushButton:disabled {\n
+        background-color: #aaaaaa;\n
         color: #ffffff;\n}
 """
         return button_style
