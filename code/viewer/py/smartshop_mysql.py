@@ -28,22 +28,22 @@ class SmartShopDB:
         """Fetch all ingredients and the price for the selected recipe."""
         self.mycursor.execute(
             """
-SELECT store.store_name , product.product_name , product_price_for_each_store.product_price, ingredients_recipe.portionsize
-FROM ingredients_recipe
-JOIN recipe on recipe.recipe_id=ingredients_recipe.recipe_recipe_id
-JOIN product on product.product_id=ingredients_recipe.product_product_id
-JOIN product_price_for_each_store on product_price_for_each_store.p_product_id=product_product_id
-join store on store_id = product_price_for_each_store.store_store_id
-WHERE recipe.recipe_name= %s; """,
+SELECT store.store_name, product.product_name, product.product_amount, product.product_amount_type, product_price_for_each_store.product_price
+FROM recipe
+JOIN ingredients_recipe ON recipe.recipe_id = ingredients_recipe.recipe_recipe_id
+JOIN product ON ingredients_recipe.product_product_id = product.product_id
+JOIN product_price_for_each_store ON product.product_id = product_price_for_each_store.p_product_id
+JOIN store ON product_price_for_each_store.store_store_id = store.store_id
+WHERE recipe.recipe_name = %s; """,
             (recipe_name,),
         )
         recipe_ingredient = self.mycursor.fetchall()
         organized_data = {}
 
-        for store, product, price, portionsize in recipe_ingredient:
+        for store, product_name, amount, type, price in recipe_ingredient:
             if store not in organized_data:
                 organized_data[store] = []
-            organized_data[store].append((product, price, portionsize))
+            organized_data[store].append((product_name, amount, type, price))
         return organized_data
 
     def delete_recipe(self, recipe, user_name):
@@ -174,6 +174,7 @@ WHERE recipe.recipe_name= %s; """,
             self.db.commit()
 
     def get_product_id(self, ingrediens):
+
         self.mycursor.execute(
             "SELECT product_id FROM product WHERE product_name = %s", (ingrediens,)
         )

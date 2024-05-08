@@ -1,11 +1,12 @@
-from PyQt5.QtWidgets import *
+from pathlib import Path
+
+import login_window
+import smartshop_mysql
+import start_window
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from pathlib import Path
-import smartshop_mysql
-import login_window
-import start_window
 
 
 class CreateRecipeWindow(QWidget):
@@ -19,7 +20,7 @@ class CreateRecipeWindow(QWidget):
         self.start_window = start_window.UIMainWindow(user_name)
         self.db_instance = smartshop_mysql.SmartShopDB()
 
-        super(CreateRecipeWindow, self).__init__()
+        super().__init__()
         # Get the path to the viewer folder
         viewer_path = Path(__file__).resolve().parent.parent
         # Construct the path to the UI file relative to the viewer folder
@@ -93,8 +94,9 @@ class CreateRecipeWindow(QWidget):
     def add_ingredient(self, ingrediense):
         """add ingredient to the list of ingredients for the recipe."""
         self.at_least_one_ingredient_picked = True
+        just_product_name = ingrediense.split(" ")[0]
         if ingrediense not in self.picked_ingrediens:
-            product_id = self.db_instance.get_product_id(ingrediense)
+            product_id = self.db_instance.get_product_id(just_product_name)
             self.ingrediense_list_id.append(product_id)
             self.picked_ingrediens.append(ingrediense)
             ingredient = QLabel(ingrediense)

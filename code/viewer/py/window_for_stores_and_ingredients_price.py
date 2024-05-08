@@ -1,10 +1,11 @@
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+import sys
+from pathlib import Path
+
 import smartshop_mysql
 import steps_for_recipe
-from pathlib import Path
-import sys
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class IngredientPrice(QWidget):
@@ -55,7 +56,7 @@ class IngredientPrice(QWidget):
         for store_name, products in recipe_price.items():
             self.total_cost = 0
             for product in products:
-                self.total_cost += product[1]
+                self.total_cost += product[3]
             if self.total_cost < lowest_total_cost:
                 lowest_total_cost = self.total_cost
         return lowest_total_cost
@@ -89,14 +90,14 @@ class IngredientPrice(QWidget):
         self.row = 2
         self.total_cost = 0
         product_price = {}
-        for product, price, portionsize in products:
+        for product, amount, type, price in products:
             product_price[product] = price
             # eller kan jag har i varje loop här en dictionary med key är produkt namn sen value är price sen med spinboxen ta * med priset sen när jag ska ta total kost så går jag igenom dictionaryn
             # sen i funktionen så tar jag vilken ingrediens från label och sätter jag value för den nycklen i dict med spinbox value gånger priset
             # sen vet jag inte om det blir fel med att ingredienserna heter ju samma men olika butiker men då kanske ta primarykey eller det som är unikt
             # sen bara jämföra om primary keyn är samma som "labelns namn" i dictionaryn
             self.total_cost += price
-            product_name_label = QLabel(product)
+            product_name_label = QLabel(f"{product} {amount} {type}")
             grid_layout.addWidget(product_name_label, self.row, 0)
 
             price_label = QLabel(str(price) + " kr")
