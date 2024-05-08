@@ -9,7 +9,9 @@ import window_for_stores_and_ingredients_price
 class RecipeSteps(QWidget):
     """Recipe steps class."""
 
-    def set_up_recipe_step_window(self, db_instance, recipe, start_menu_window, user_name):
+    def set_up_recipe_step_window(
+        self, db_instance, recipe, start_menu_window, user_name
+    ):
         """Set up the window."""
         self.user_name = user_name
         self.start_menu_window = start_menu_window
@@ -45,7 +47,7 @@ class RecipeSteps(QWidget):
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
-            self.recipe_steps.setText("No steps for this recipe")
+            self.recipe_steps.setText("Inga steg till detta recept")
             vertical_layout.addWidget(self.recipe_steps)
             self.recipe_steps.adjustSize()
         else:
@@ -70,7 +72,9 @@ class RecipeSteps(QWidget):
     def return_to_previous_window(self):
         """Hide current window and opens IngredientPrice class."""
         self.hide()
-        self.previous_window.set_up_ingredient_price_window(self.start_menu_window, self.recipe, self.user_name)
+        self.previous_window.set_up_ingredient_price_window(
+            self.start_menu_window, self.recipe, self.user_name
+        )
 
     def set_button_style(self):
         """Set the style for the button."""

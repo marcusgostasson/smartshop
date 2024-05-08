@@ -121,6 +121,7 @@ class UIMainWindow(QMainWindow):
         )
 
     def logout(self):
+        """Open login_window."""
         self.hide()
         self.login_window.set_up_login()
 

@@ -8,7 +8,7 @@ import sys
 
 
 class IngredientPrice(QWidget):
-    """Ingredient and price class.."""
+    """Ingredient and price class."""
 
     def set_up_ingredient_price_window(self, start_menu, recipe_name, user_name):
         """Set up the window."""
@@ -20,7 +20,7 @@ class IngredientPrice(QWidget):
 
         self.setWindowTitle("Ingredienser för receptet")
         viewer_path = Path(__file__).resolve().parent.parent
-        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo.png'))
+        self.setWindowIcon(QIcon(f"{viewer_path}/pictures/smartshoplogo.png"))
         self.setGeometry(200, 200, 500, 200)
         self.setStyleSheet("background-color: rgb(255, 255, 255);")
 
@@ -51,7 +51,7 @@ class IngredientPrice(QWidget):
 
     def store_with_lowest_cost(self, recipe_price):
         """Calculate the store with the lowest cost."""
-        lowest_total_cost = float('inf')
+        lowest_total_cost = float("inf")
         for store_name, products in recipe_price.items():
             self.total_cost = 0
             for product in products:
@@ -75,11 +75,15 @@ class IngredientPrice(QWidget):
         grid_layout.addWidget(store_label, 0, 0)
 
         ingredient_header = QLabel("Produkt namn")
-        ingredient_header.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
+        ingredient_header.setStyleSheet(
+            "font-weight: bold; background-color: rgb(255, 255, 255);"
+        )
         grid_layout.addWidget(ingredient_header, 1, 0)
 
         price_header = QLabel("Pris")
-        price_header.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
+        price_header.setStyleSheet(
+            "font-weight: bold; background-color: rgb(255, 255, 255);"
+        )
         grid_layout.addWidget(price_header, 1, 1)
 
         self.row = 2
@@ -103,12 +107,16 @@ class IngredientPrice(QWidget):
 
         if self.total_cost == self.lowest_total_cost:
             self.total_cost_label = QLabel(f"Total kostnad: {self.total_cost:.2f}")
-            self.total_cost_label.setStyleSheet("font-weight: bold; color: green; font-size: 20px; background-color: rgb(255, 255, 255);")
+            self.total_cost_label.setStyleSheet(
+                "font-weight: bold; color: green; font-size: 20px; background-color: rgb(255, 255, 255);"
+            )
             grid_layout.addWidget(self.total_cost_label, self.row, 0)
             self.lowest_total_cost = self.total_cost
         else:
             self.total_cost_label = QLabel(f"Total kostnad: {self.total_cost:.2f}")
-            self.total_cost_label.setStyleSheet("font-weight: bold; background-color: rgb(255, 255, 255);")
+            self.total_cost_label.setStyleSheet(
+                "font-weight: bold; background-color: rgb(255, 255, 255);"
+            )
             grid_layout.addWidget(self.total_cost_label, self.row, 0)
 
         return grid_layout
@@ -117,7 +125,9 @@ class IngredientPrice(QWidget):
         """Hide current window and open steps for recipe window."""
         self.hide()
         self.steps_for_chosen_recipe = steps_for_recipe.RecipeSteps()
-        self.steps_for_chosen_recipe.set_up_recipe_step_window(self.db_instance, self.recipe_name, self.start_menu_window, self.user_name)
+        self.steps_for_chosen_recipe.set_up_recipe_step_window(
+            self.db_instance, self.recipe_name, self.start_menu_window, self.user_name
+        )
 
     def return_to_start_window(self):
         """Hide current window and return to the start menu."""
