@@ -10,6 +10,8 @@ from PyQt5.uic import loadUi
 
 
 class CreateRecipeWindow(QWidget):
+    """class for the create recipe window."""
+
     def __init__(self):
         self.at_least_one_ingredient_picked = False
 
@@ -68,6 +70,7 @@ class CreateRecipeWindow(QWidget):
         self.start_window.set_up_start_menu()
 
     def create_recipe(self, user_name):
+        """Create a recipe."""
         if not self.at_least_one_ingredient_picked:
             self.login_window.error_message("Måste ha minst en ingrediens")
             # self.set_up_create_recipe_window(user_name)
@@ -112,6 +115,7 @@ class CreateRecipeWindow(QWidget):
             )
 
     def handle_search(self):
+        """Handle search for ingredients."""
         product_name = self.user_product_choice.text()
         ingredients = self.db_instance.get_ingrediense(product_name)
         self.ingrediense_box.clear()
