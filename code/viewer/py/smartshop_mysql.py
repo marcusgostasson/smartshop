@@ -6,7 +6,7 @@ class SmartShopDB:
     """Smartshop database class."""
 
     def __init__(self):
-        """Initialize the connection to the smartshop database."""
+        """Initialize the connection to the smartshop database.."""
         configs = Properties()
         with open('db.properties', 'rb') as config_file:
             configs.load(config_file)
