@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 class LoginWindow(QMainWindow):
-    """Login window class for user authentication.."""
+    """Login window class for user authentication."""
 
     def set_up_login(self):
         """Initialize the object."""

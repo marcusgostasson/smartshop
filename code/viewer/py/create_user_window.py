@@ -69,7 +69,7 @@ class CreateUserWindow(QWidget):
         self.login_window_instance.set_up_login()
 
     def create_account(self):
-        """Create account."""
+        """Create useraccount."""
         first_name = self.first_name.text().strip().title()
         last_name = self.last_name.text().strip().title()
         username_create = self.username_create.text().strip()

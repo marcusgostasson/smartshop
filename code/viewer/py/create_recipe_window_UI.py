@@ -6,7 +6,6 @@ from pathlib import Path
 import smartshop_mysql
 import login_window
 import start_window
-from functools import partial
 
 
 class CreateRecipeWindow(QWidget):

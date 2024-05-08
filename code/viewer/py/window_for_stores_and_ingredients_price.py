@@ -8,7 +8,7 @@ import sys
 
 
 class IngredientPrice(QWidget):
-    """Ingredient and price class."""
+    """Ingredient and price class.."""
 
     def set_up_ingredient_price_window(self, start_menu, recipe_name, user_name):
         """Set up the window."""

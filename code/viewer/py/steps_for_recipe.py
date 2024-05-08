@@ -22,7 +22,6 @@ class RecipeSteps(QWidget):
 
         # Load the UI file
         loadUi(ui_file_path, self)
-        # self.setGeometry(650, 100, 500, 200)
 
         self.recipe = recipe
 

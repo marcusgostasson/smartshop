@@ -26,8 +26,6 @@ class UIMainWindow(QMainWindow):
 
         self.login_window = login_window.LoginWindow()
 
-        # self.set_up_start_menu(user_name)
-
     def set_up_start_menu(self):
         """Set up the window."""
         self.db_instance = smartshop_mysql.SmartShopDB()
@@ -41,10 +39,6 @@ class UIMainWindow(QMainWindow):
 
         self.start_up_window = self.findChild(QMainWindow, "mainwindow")
 
-        # self.logo_picture = self.findChild(QLabel, "logo1")
-        # logo_pixmap = QPixmap(f'{viewer_path}/pictures/tacos.png')
-        # self.logo_picture.setPixmap(logo_pixmap)
-
         self.recept_label = self.findChild(QLabel, "recept_label")
         self.recept_label.adjustSize()
 
@@ -57,14 +51,6 @@ class UIMainWindow(QMainWindow):
             QComboBox, "your_chosen_recipe"
         )
         self.user_ingredients_for_recipe.addItems(user_recipe_list)
-
-        # recipe_list = self.fill_up_recipe_list(user_name)
-        # self.ingredients_for_recipe = self.findChild(QComboBox, "chosen_recipe")
-        # self.ingredients_for_recipe.addItems(recipe_list)
-        # self.ingredients_for_recipe.adjustSize()
-
-        # self.get_ingredients_button = self.findChild(QPushButton, "get_ingredients_button")
-        # self.get_ingredients_button.clicked.connect(lambda: self.get_ingredients(user_name))
 
         self.get_ingredient_button = self.findChild(
             QPushButton, "get_ingredients_button"
