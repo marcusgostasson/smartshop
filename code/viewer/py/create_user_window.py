@@ -1,4 +1,5 @@
 """Class for create_user_window."""
+
 import login_window
 import smartshop_mysql
 import re
@@ -12,6 +13,7 @@ from pathlib import Path
 
 class CreateUserWindow(QWidget):
     """Create create_user_window class."""
+
     def __init__(self):
         self.login_window_instance = login_window.LoginWindow()
         self.db_instance = smartshop_mysql.SmartShopDB()
@@ -33,7 +35,7 @@ class CreateUserWindow(QWidget):
         # Logo
 
         self.logo_picture = self.findChild(QLabel, "logo")
-        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        logo_pixmap = QPixmap(f"{viewer_path}/pictures/smartshoplogo.png")
         self.logo_picture.setPixmap(logo_pixmap)
 
         # Center window
@@ -69,7 +71,7 @@ class CreateUserWindow(QWidget):
         self.login_window_instance.set_up_login()
 
     def create_account(self):
-        """Create account."""
+        """Create useraccount."""
         first_name = self.first_name.text().strip().title()
         last_name = self.last_name.text().strip().title()
         username_create = self.username_create.text().strip()
@@ -77,8 +79,14 @@ class CreateUserWindow(QWidget):
         password_user = self.password_user.text().strip()
         confirm_password = self.confirm_password.text().strip()
 
-        if not (first_name and last_name and username_create and email and
-                password_user and confirm_password):
+        if not (
+            first_name
+            and last_name
+            and username_create
+            and email
+            and password_user
+            and confirm_password
+        ):
             self.login_window_instance.error_message("Alla fält måste vara ifyllda.")
             return
 
@@ -91,20 +99,23 @@ class CreateUserWindow(QWidget):
             return
 
         if password_user != confirm_password:
-            self.login_window_instance.error_message("Lösenorden stämmer inte överens, försök igen!")
+            self.login_window_instance.error_message(
+                "Lösenorden stämmer inte överens, försök igen!"
+            )
             return
 
         hashed_pass = bcrypt.hash(password_user)
-        self.db_instance.create_user(first_name, last_name, username_create,
-                                     email, hashed_pass)
+        self.db_instance.create_user(
+            first_name, last_name, username_create, email, hashed_pass
+        )
 
         self.hide()
-        #self.login = login_window.LoginWindow()
+        # self.login = login_window.LoginWindow()
         self.login_window_instance.set_up_login()
 
     def validate_email(self, email):
         """Check if the email is set correctly."""
-        pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         if re.match(pattern, email):
             return True
         else:

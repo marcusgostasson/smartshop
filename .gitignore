@@ -1,3 +1,4 @@
 db.properties
 test_smartshop_mysql.py
 __pycache__
+.pre-commit-config.yaml

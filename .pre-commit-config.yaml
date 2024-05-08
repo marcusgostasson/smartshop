@@ -1,6 +1,28 @@
 repos:
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.12.0
+    hooks:
+      - id: reorder-python-imports
+        args: ["--application-directories=.:src", "--py36-plus"]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.2
+    hooks:
+      - id: pyupgrade
+        args: [--py36-plus]
+
   - repo: https://github.com/psf/black
-    rev: 20.8b1
+    rev: 24.4.2
     hooks:
       - id: black
-        args: ['--safe']
+        args: [--safe]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: debug-statements
+        language_version: python3
