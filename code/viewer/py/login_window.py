@@ -1,4 +1,5 @@
 """Class for login_window."""
+
 import sys
 import create_user_window
 import start_window
@@ -12,7 +13,7 @@ from pathlib import Path
 
 
 class LoginWindow(QMainWindow):
-    """Login window class for user authentication."""
+    """Login window class for user authentication.."""
 
     def set_up_login(self):
         """Initialize the object."""
@@ -28,12 +29,12 @@ class LoginWindow(QMainWindow):
         loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Logga in")
         viewer_path = Path(__file__).resolve().parent.parent
-        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo1.png'))
+        self.setWindowIcon(QIcon(f"{viewer_path}/pictures/smartshoplogo1.png"))
 
         # Logo
 
         self.logo_picture = self.findChild(QLabel, "logo")
-        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        logo_pixmap = QPixmap(f"{viewer_path}/pictures/smartshoplogo.png")
         self.logo_picture.setPixmap(logo_pixmap)
 
         # Center window
@@ -54,8 +55,7 @@ class LoginWindow(QMainWindow):
 
         self.login = self.findChild(QPushButton, "login_button")
         self.login.clicked.connect(self.login_user)
-        self.create_account = self.findChild(QPushButton,
-                                             "create_account_button")
+        self.create_account = self.findChild(QPushButton, "create_account_button")
         self.create_account.clicked.connect(self.create_account_user)
 
         self.show()
@@ -70,14 +70,15 @@ class LoginWindow(QMainWindow):
         """Validate credentials against stored data."""
         try:
             stored_hash = self.database.get_password_hash(username)
-            if stored_hash and self.compare_password(input_password,
-                                                     stored_hash):
+            if stored_hash and self.compare_password(input_password, stored_hash):
                 self.hide()
                 self.start_window = start_window.UIMainWindow(username)
                 self.start_window.set_up_start_menu()
             else:
-                self.error_message("""Användarnamn eller lösenord är felaktigt,
-försök igen!""")
+                self.error_message(
+                    """Användarnamn eller lösenord är felaktigt,
+försök igen!"""
+                )
         except Exception as e:
             self.error_message(f"Login error: {str(e)}")
 
@@ -103,8 +104,8 @@ försök igen!""")
     def error_message(self, message):
         """Error messages."""
         self.message_box = QMessageBox()
-        self.message_box.setWindowTitle('Error')
-        self.message_box.setText(f'{message}')
+        self.message_box.setWindowTitle("Error")
+        self.message_box.setText(f"{message}")
         self.message_box.setIcon(QMessageBox.Warning)
         self.message_box.exec_()
 
