@@ -205,7 +205,7 @@ QPushButton:disabled {
         <string notr="true">color: rgb(251, 108, 24);</string>
        </property>
        <property name="text">
-        <string>Dina recept</string>
+        <string>Dina Recept</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

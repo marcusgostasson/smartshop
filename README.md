@@ -8,8 +8,8 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 
 **Features**
 
-* **Recipe Discovery:** Search through a vast database of recipes based on your dietary needs, preferences, and budget. 
-* **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area. 
+* **Recipe Discovery:** Search through a vast database of recipes based on your dietary needs, preferences, and budget.
+* **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area.
 * **Smart Shopping Lists:** Build your shopping list directly from recipes with a single tap. No more scrambling for ingredients or forgetting something essential.
 * **Weekly Meal Planning:**  Plan your meals for the week and ensure you always have the ingredients on hand to avoid impulse purchases.
 * **Save Money:** SmartShop helps you find the best deals and discounts on groceries, so you can stretch your budget further.
@@ -52,4 +52,4 @@ We appreciate your input! If you have any questions or suggestions, please feel 
 * Visit our website: [link to website] (coming soon!)
 * Follow us on social media for recipe inspiration and exclusive deals:
     * Facebook: [link to Facebook page] (coming soon!)
-    * Instagram: [link to Instagram page] (coming soon!).
+    * Instagram: [link to Instagram page] (coming soon!)
