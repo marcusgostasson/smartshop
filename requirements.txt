@@ -16,12 +16,18 @@ coverage
 # GUI
 pyqt5
 
-#crypto
+# Crypto
 passlib
 bcrypt
 
-#mysql
+# MySQL
 mysql-connector-python
 
-#properties
+# Properties
 jproperties
+
+# codeformatter
+black
+
+# pre-commit
+pre-commit

@@ -1,20 +1,19 @@
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QWidget
 from PyQt5.uic import loadUi
 from pathlib import Path
 import window_for_stores_and_ingredients_price
 
 
-class Recipe_steps(QWidget):
-    def __init__(self):
-        pass
+class RecipeSteps(QWidget):
+    """Recipe steps class."""
 
-    def set_up_recipe_step_window(self, db_instance, recipe, start_menu_window):
+    def set_up_recipe_step_window(self, db_instance, recipe, start_menu_window, user_name):
+        """Set up the window."""
+        self.user_name = user_name
         self.start_menu_window = start_menu_window
-        self.previous_window = window_for_stores_and_ingredients_price.ingredient_price()
+        self.previous_window = window_for_stores_and_ingredients_price.IngredientPrice()
         super().__init__()
         viewer_path = Path(__file__).resolve().parent.parent
 
@@ -23,7 +22,8 @@ class Recipe_steps(QWidget):
 
         # Load the UI file
         loadUi(ui_file_path, self)
-        self.setGeometry(100,100,100,100)
+        # self.setGeometry(650, 100, 500, 200)
+
         self.recipe = recipe
 
         vertical_layout = QVBoxLayout()
@@ -33,11 +33,9 @@ class Recipe_steps(QWidget):
 
         self.recipe_picture = self.findChild(QLabel, "recept_picture")
         viewer_path = Path(__file__).resolve().parent.parent
-
         ui_file_path_for_picture = viewer_path / "pictures"
-
         recipe_image = QPixmap(f"{ui_file_path_for_picture}/{recipe}.png")
-
+        recipe_image = recipe_image.scaled(400, 400)
         self.recipe_picture.setPixmap(recipe_image)
         vertical_layout.addWidget(self.recipe_picture)
 
@@ -52,8 +50,7 @@ class Recipe_steps(QWidget):
             vertical_layout.addWidget(self.recipe_steps)
             self.recipe_steps.adjustSize()
         else:
-            self.recipe_name.setText("Stegen till " + recipe)
-            
+            self.recipe_name.setText(recipe)
             vertical_layout.addWidget(self.recipe_name)
             self.recipe_name.adjustSize()
 
@@ -62,13 +59,49 @@ class Recipe_steps(QWidget):
             self.recipe_steps.adjustSize()
 
         self.return_button = QPushButton("Tillbaka")
+        style = self.set_button_style()
+        self.return_button.setStyleSheet(style)
         vertical_layout.addWidget(self.return_button)
         self.return_button.clicked.connect(self.return_to_previous_window)
-        
+
         self.setLayout(vertical_layout)
-        
+
         self.show()
 
     def return_to_previous_window(self):
+        """Hide current window and opens IngredientPrice class."""
         self.hide()
-        self.previous_window.set_up_ingredient_price_window(self.start_menu_window, self.recipe)
+        self.previous_window.set_up_ingredient_price_window(self.start_menu_window, self.recipe, self.user_name)
+
+    def set_button_style(self):
+        """Set the style for the button."""
+        button_style = """QPushButton {
+    border-style: solid;
+    border-color: #9999aa;
+    border-radius: 25px; /* Adjust border-radius to half of min-height for QPushButton */
+    color: white;
+    background-color: #3474eb;
+    min-width: 150px;
+    min-height: 50px;
+}
+
+QPushButton:enabled {
+    background-color: #2C65A4;
+    color: white;
+}
+
+QPushButton:pressed {
+    background-color: #0d2f72;
+    color: #fffffe;
+}
+
+QPushButton:hover:!pressed {
+    background-color: #0034AB;
+    color: white;
+}
+
+QPushButton:disabled {
+    background-color: #aaaaaa;
+    color: #ffffff;
+}"""
+        return button_style

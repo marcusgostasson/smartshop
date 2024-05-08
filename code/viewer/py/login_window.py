@@ -1,32 +1,43 @@
 """Class for login_window."""
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit, QMessageBox, QGridLayout, QDesktopWidget
-from PyQt5.uic import loadUi
-from passlib.hash import bcrypt
-from pathlib import Path
 import create_user_window
 import start_window
 import smartshop_mysql
+from PyQt5.uic import loadUi
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from passlib.hash import bcrypt
+from pathlib import Path
 
 
 class LoginWindow(QMainWindow):
     """Login window class for user authentication."""
-    def __init__(self):
+
+    def set_up_login(self):
+        """Initialize the object."""
         super().__init__()
 
         # Instans
-        
-        self.database = smartshop_mysql.SMARTSHOP_DB()
+        self.database = smartshop_mysql.SmartShopDB()
 
         # Screen
-        # Get the path to the viewer folder
+
         viewer_path = Path(__file__).resolve().parent.parent
-
-        # Construct the path to the UI file relative to the viewer folder
         ui_file_path = viewer_path / "UI/login.ui"
-
         loadUi(f"{ui_file_path}", self)
         self.setWindowTitle("Logga in")
+        viewer_path = Path(__file__).resolve().parent.parent
+        self.setWindowIcon(QIcon(f'{viewer_path}/pictures/smartshoplogo1.png'))
+
+        # Logo
+
+        self.logo_picture = self.findChild(QLabel, "logo")
+        logo_pixmap = QPixmap(f'{viewer_path}/pictures/smartshoplogo.png')
+        self.logo_picture.setPixmap(logo_pixmap)
+
+        # Center window
+
         grid = QGridLayout()
         self.setLayout(grid)
         qr = self.frameGeometry()
@@ -46,6 +57,7 @@ class LoginWindow(QMainWindow):
         self.create_account = self.findChild(QPushButton,
                                              "create_account_button")
         self.create_account.clicked.connect(self.create_account_user)
+
         self.show()
 
     def login_user(self):
@@ -61,8 +73,8 @@ class LoginWindow(QMainWindow):
             if stored_hash and self.compare_password(input_password,
                                                      stored_hash):
                 self.hide()
-                self.start_window = start_window.UI_main_window()
-                self.start_window.show()
+                self.start_window = start_window.UIMainWindow(username)
+                self.start_window.set_up_start_menu()
             else:
                 self.error_message("""Användarnamn eller lösenord är felaktigt,
 försök igen!""")
@@ -85,6 +97,7 @@ försök igen!""")
         """Switch to account creation window."""
         self.hide()
         self.create_user_window = create_user_window.CreateUserWindow()
+        self.create_user_window.set_up_window()
         self.create_user_window.show()
 
     def error_message(self, message):
@@ -99,4 +112,5 @@ försök igen!""")
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     loginWindow = LoginWindow()
+    loginWindow.set_up_login()
     sys.exit(app.exec_())
