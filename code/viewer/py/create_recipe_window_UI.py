@@ -114,6 +114,7 @@ class CreateRecipeWindow(QWidget):
                 self.login_window.error_message(
                     "Har redan " + ingrediense + " i ditt recept"
                 )
+        self.login_window.error_message("Du har inte valt någon ingrediens")
 
     def handle_search(self):
         """Handle search for ingredients."""
