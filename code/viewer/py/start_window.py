@@ -82,8 +82,9 @@ class UIMainWindow(QMainWindow):
 
     def delete_recipe(self, recipe, user_name):
         """delete the chosen recipe."""
-        self.db_instance.delete_recipe(recipe, user_name)
-        self.update_recipe_list(user_name)
+        if self.user_ingredients_for_recipe.currentText() != "":
+            self.db_instance.delete_recipe(recipe, user_name)
+            self.update_recipe_list(user_name)
 
     def update_recipe_list(self, user_name):
         """update the recipe list."""
