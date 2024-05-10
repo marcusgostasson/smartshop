@@ -21,17 +21,19 @@ from smartshop.code.viewer.py import start_window
 
 class TestApp(unittest.TestCase):
     def test_window_title(self):
+        """Testing if the name of the window is correct."""
         self.app = QApplication(sys.argv)
         user_name = "raz"
         self.window = start_window.UIMainWindow(user_name)
+        self.window.set_up_start_menu()
         self.assertEqual(self.window.windowTitle(), "SmartShop")
 
     def test_button(self):
+        """Testing if pressing 'Hämta ingredienser' is opening other window."""
         self.app = QApplication(sys.argv)
         self.window = start_window.UIMainWindow("raz")
+        self.window.set_up_start_menu()
         button = self.window.get_ingredients_button
-
-        self.window.second_window.set_up_ingredient_price_window = MagicMock()
 
         QTest.mouseClick(button, Qt.LeftButton)
 
