@@ -1,15 +1,16 @@
-import unittest
 import sys
-from PyQt5.QtCore import Qt
-from PyQt5.QtTest import QTest
-from PyQt5.QtWidgets import QApplication
+import unittest
 from pathlib import Path
 from unittest.mock import MagicMock
 
-sys.modules['smartshop_mysql'] = MagicMock()
-sys.modules['window_for_stores_and_ingredients_price'] = MagicMock()
-sys.modules['create_recipe_window_UI'] = MagicMock()
-sys.modules['login_window'] = MagicMock()
+from PyQt5.QtCore import Qt
+from PyQt5.QtTest import QTest
+from PyQt5.QtWidgets import QApplication
+
+sys.modules["smartshop_mysql"] = MagicMock()
+sys.modules["window_for_stores_and_ingredients_price"] = MagicMock()
+sys.modules["create_recipe_window_UI"] = MagicMock()
+sys.modules["login_window"] = MagicMock()
 
 
 script_dir = Path(__file__).resolve().parent
@@ -17,10 +18,12 @@ sys.path.append(str(script_dir.parent.parent))
 
 from smartshop.code.viewer.py import start_window
 
+
 class TestApp(unittest.TestCase):
     def test_window_title(self):
         self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
+        user_name = "raz"
+        self.window = start_window.UIMainWindow(user_name)
         self.assertEqual(self.window.windowTitle(), "SmartShop")
 
     def test_button(self):
@@ -35,5 +38,5 @@ class TestApp(unittest.TestCase):
         self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
