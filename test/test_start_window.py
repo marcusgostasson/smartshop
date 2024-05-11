@@ -71,6 +71,15 @@ class TestApp(unittest.TestCase):
         QTest.mouseClick(button, Qt.LeftButton)
         self.assertTrue(self.window.db_instance.delete_recipe.called)
 
+    def test_click_logout_button(self):
+        """Testing if the user can logout."""
+        self.app = QApplication(sys.argv)
+        self.window = start_window.UIMainWindow("raz")
+        self.window.set_up_start_menu()
+        button = self.window.logout_button
+        QTest.mouseClick(button, Qt.LeftButton)
+        self.assertTrue(self.window.login_window.set_up_login.called)
+
 
 if __name__ == "__main__":
     unittest.main()
