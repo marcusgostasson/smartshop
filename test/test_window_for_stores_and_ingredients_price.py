@@ -51,6 +51,18 @@ class TestIngredientPrice(unittest.TestCase):
             self.window.steps_for_chosen_recipe.set_up_recipe_step_window.called
         )
 
+    def test_store_with_lowest_cost(self):
+        """Testing that it finds the store with the lowest price."""
+        self.app = QApplication(sys.argv)
+        self.window = window_for_stores_and_ingredients_price.IngredientPrice()
+        recipe_price = {
+            "Willys": [("Pastasås", 400.0, "DL", 43), ("Pasta", 500.0, "G", 59.3)],
+            "Ica": [("Pastasås", 400.0, "DL", 31), ("Pasta", 500.0, "G", 58)],
+            "Coop": [("Pastasås", 400.0, "DL", 82.5), ("Pasta", 500.0, "G", 5)],
+        }
+        cost = self.window.store_with_lowest_cost(recipe_price)
+        self.assertEqual(cost, 87.5)
+
 
 if __name__ == "__main__":
     unittest.main()
