@@ -61,6 +61,16 @@ class TestApp(unittest.TestCase):
             self.window.create_recipe_instance.set_up_create_recipe_window.called
         )
 
+    def test_click_delete_recipe_button(self):
+        """Testing the 'Radera recept' button."""
+        self.app = QApplication(sys.argv)
+        self.window = start_window.UIMainWindow("raz")
+        self.window.set_up_start_menu()
+        self.window.user_ingredients_for_recipe = MagicMock()
+        button = self.window.delete_recipe_button
+        QTest.mouseClick(button, Qt.LeftButton)
+        self.assertTrue(self.window.db_instance.delete_recipe.called)
+
 
 if __name__ == "__main__":
     unittest.main()
