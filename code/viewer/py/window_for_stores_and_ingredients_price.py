@@ -43,23 +43,23 @@ class IngredientPrice(QWidget):
         main_layout.addLayout(vertical_layout)
 
         style = self.set_button_style()
-        return_to_start_window_button = QPushButton(
+        self.return_to_start_window_button = QPushButton(
             "   " + " Tillbaka till meny " + "  "
         )
-        return_to_start_window_button.setStyleSheet(style)
-        vertical_layout.addWidget(return_to_start_window_button)
+        self.return_to_start_window_button.setStyleSheet(style)
+        vertical_layout.addWidget(self.return_to_start_window_button)
 
         spacer_button = QSpacerItem(50, -325)
         vertical_layout.addSpacerItem(spacer_button)
 
-        return_to_start_window_button.clicked.connect(self.return_to_start_window)
+        self.return_to_start_window_button.clicked.connect(self.return_to_start_window)
 
-        get_steps_for_recipe_button = QPushButton(
+        self.get_steps_for_recipe_button = QPushButton(
             "  " + " Stegen till receptet " + "  "
         )
-        get_steps_for_recipe_button.setStyleSheet(style)
-        vertical_layout.addWidget(get_steps_for_recipe_button)
-        get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
+        self.get_steps_for_recipe_button.setStyleSheet(style)
+        vertical_layout.addWidget(self.get_steps_for_recipe_button)
+        self.get_steps_for_recipe_button.clicked.connect(self.create_recipe_step_window)
 
         self.setLayout(main_layout)
         self.show()
