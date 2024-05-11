@@ -28,7 +28,7 @@ class TestApp(unittest.TestCase):
         self.window.set_up_start_menu()
         self.assertEqual(self.window.windowTitle(), "SmartShop")
 
-    def test_button(self):
+    def test_button_click_get_ingredients(self):
         """Testing if pressing 'Hämta ingredienser' is opening other window."""
         self.app = QApplication(sys.argv)
         self.window = start_window.UIMainWindow("raz")
@@ -38,6 +38,28 @@ class TestApp(unittest.TestCase):
         QTest.mouseClick(button, Qt.LeftButton)
 
         self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
+
+    def test_button_click_user_get_ingredients(self):
+        """Testing if pressing users 'Hämta ingredienser' is opening other window."""
+        self.app = QApplication(sys.argv)
+        self.window = start_window.UIMainWindow("raz")
+        self.window.set_up_start_menu()
+        button = self.window.user_get_ingredients_button
+
+        QTest.mouseClick(button, Qt.LeftButton)
+        self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
+
+    def test_click_create_recipe_button(self):
+        """Testing the 'Skapa recept' button works."""
+        self.app = QApplication(sys.argv)
+        self.window = start_window.UIMainWindow("raz")
+        self.window.set_up_start_menu()
+        button = self.window.create_recipe_button
+
+        QTest.mouseClick(button, Qt.LeftButton)
+        self.assertTrue(
+            self.window.create_recipe_instance.set_up_create_recipe_window.called
+        )
 
 
 if __name__ == "__main__":
