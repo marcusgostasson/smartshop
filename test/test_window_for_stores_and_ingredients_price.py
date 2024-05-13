@@ -19,7 +19,7 @@ sys.path.append(str(script_dir.parent.parent))
 from smartshop.code.viewer.py import window_for_stores_and_ingredients_price
 
 
-class TestIngredientPrice(unittest.TestCase):
+class TestWindowForStoresAndIngredientsPrice(unittest.TestCase):
     def test_window_title(self):
         """Testing if the windows name is correct."""
         self.app = QApplication(sys.argv)
