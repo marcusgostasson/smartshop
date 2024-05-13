@@ -16,7 +16,7 @@ sys.modules["login_window"] = MagicMock()
 script_dir = Path(__file__).resolve().parent
 sys.path.append(str(script_dir.parent.parent))
 
-from smartshop.code.viewer.py import window_for_stores_and_ingredients_price
+from smartshop.code.py import window_for_stores_and_ingredients_price
 
 
 class TestIngredientPrice(unittest.TestCase):
