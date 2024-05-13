@@ -1,9 +1,10 @@
-from PyQt5.QtWidgets import *
+from pathlib import Path
+
+import window_for_stores_and_ingredients_price
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from pathlib import Path
-import window_for_stores_and_ingredients_price
 
 
 class RecipeSteps(QWidget):
@@ -78,27 +79,27 @@ class RecipeSteps(QWidget):
 
     def set_button_style(self):
         """Set the style for the button."""
-        button_style = """QPushButton {\n	
-        border-style: solid;\n	
-        border-color: #9999aa;\n	
-        border-radius: 5px;\n	
-        color: white;\n	
+        button_style = """QPushButton {\n
+        border-style: solid;\n
+        border-color: #9999aa;\n
+        border-radius: 5px;\n
+        color: white;\n
         background-color: #3474eb;
         font-family: Arial Black;
         font-size: 16px;
         Height: 50px
         \n}\n
-        \nQPushButton:enabled {\n	
-        background-color: #2C65A4;\n	
+        \nQPushButton:enabled {\n
+        background-color: #2C65A4;\n
         color: white;\n}\n
-        \nQPushButton:pressed {\n	
-        background-color: #0d2f72;\n	
+        \nQPushButton:pressed {\n
+        background-color: #0d2f72;\n
         color: #fffffe;\n}\n
-        \nQPushButton:hover:!pressed {\n	
-        background-color: #0034AB;\n	
+        \nQPushButton:hover:!pressed {\n
+        background-color: #0034AB;\n
         color: white;\n}\n
-        \nQPushButton:disabled {\n	
-        background-color: #aaaaaa;\n	
+        \nQPushButton:disabled {\n
+        background-color: #aaaaaa;\n
         color: #ffffff;\n}
         """
         return button_style

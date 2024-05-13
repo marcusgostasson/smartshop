@@ -1,14 +1,15 @@
 """Class for create_user_window."""
 
+import re
+from pathlib import Path
+
 import login_window
 import smartshop_mysql
-import re
-from PyQt5.QtWidgets import *
+from passlib.hash import bcrypt
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
-from passlib.hash import bcrypt
-from pathlib import Path
 
 
 class CreateUserWindow(QWidget):
