@@ -1,6 +1,6 @@
-import sys
-from pathlib import Path
+"""Class for the start window."""
 
+from pathlib import Path
 import create_recipe_window_UI
 import login_window
 import smartshop_mysql
@@ -126,7 +126,3 @@ class UIMainWindow(QMainWindow):
         """Open login_window."""
         self.hide()
         self.login_window.set_up_login()
-
-    def closeEvent(self, event):
-        """So the program stops running when you close the window."""
-        sys.exit()

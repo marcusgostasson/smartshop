@@ -1,9 +1,7 @@
 """Class for login_window."""
 
-import os
 import sys
 from pathlib import Path
-
 import create_user_window
 import smartshop_mysql
 import start_window
@@ -22,6 +20,7 @@ class LoginWindow(QMainWindow):
         super().__init__()
 
         # Instans
+
         self.database = smartshop_mysql.SmartShopDB()
 
         # Screen

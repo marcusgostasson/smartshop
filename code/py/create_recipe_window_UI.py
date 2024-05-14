@@ -1,5 +1,6 @@
-from pathlib import Path
+"""Class for the create recipe window."""
 
+from pathlib import Path
 import login_window
 import smartshop_mysql
 import start_window
@@ -73,7 +74,6 @@ class CreateRecipeWindow(QWidget):
         """Create a recipe."""
         if not self.at_least_one_ingredient_picked:
             self.login_window.error_message("Måste ha minst en ingrediens")
-            # self.set_up_create_recipe_window(user_name)
         elif self.at_least_one_ingredient_picked:
             does_recipe_exist = self.db_instance.get_recipe_name(
                 self.recipe_name.text()

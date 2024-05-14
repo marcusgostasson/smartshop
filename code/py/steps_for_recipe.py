@@ -1,5 +1,6 @@
-from pathlib import Path
+"""Class for recipe steps."""
 
+from pathlib import Path
 import window_for_stores_and_ingredients_price
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
