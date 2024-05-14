@@ -1,29 +1,26 @@
+# Variabler
+PYTHON := python3
+PIP := pip3
+
+# Installera beroenden
 install:
-	$(PYTHON) -m pip install -r requirements.txt
+	$(PIP) install -r requirements.txt
 
-venv:
-	[ -d .venv ] || $(PYTHON) -m venv .venv
-	@printf "Now activate the Python virtual environment.\n"
-	@printf "On Unix and Mac, do:\n"
-	@printf ". .venv/bin/activate\n"
-	@printf "On Windows (bash terminal), do:\n"
-	@printf ". .venv/Scripts/activate\n"
-	@printf "Type 'deactivate' to deactivate.\n"
-installed:
-	$(PYTHON) -m pip list
-	@printf "installed"
-lint:
-	flake8 .
-	pylint .
+# Kör programmet
+run:
+	$(PYTHON) src/login_window.py
 
-docs:
-	pdoc --html code --output-dir docs
+# Rensa upp
+clean:
+	rm -rf __pycache__
+	rm -rf *.pyc
+	rm -rf .pytest_cache
 
-test:
-	coverage run -m pytest
-	coverage report -m
-
-robot-test:
-	robot code.robot
-
-.PHONY: install lint docs sphinx test robot-test
+# Generera dokumentation med pyreverse
+pyreverse:
+	@echo "Generating UML diagrams with pyreverse..."
+	mkdir -p doc/pyreverse
+	pyreverse code/*.py
+	dot -Tpng classes.dot -o doc/pyreverse/classes.png
+	dot -Tpng packages.dot -o doc/pyreverse/packages.png
+	rm -f classes.dot packages.dot
