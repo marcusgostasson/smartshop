@@ -13,10 +13,21 @@ graphviz
 # Coverage
 coverage
 
-# automatic test case
-Hypothesis
-Robot Framework
-
 # GUI
-pillow
-customtkinter
+pyqt5
+
+# Crypto
+passlib
+bcrypt
+
+# MySQL
+mysql-connector-python
+
+# Properties
+jproperties
+
+# codeformatter
+black
+
+# pre-commit
+pre-commit

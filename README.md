@@ -1,15 +1,15 @@
 <p align="center">
-    <img width="350" alt="Bildens beskrivning" src="https://github.com/marcusgostasson/Aktivo/assets/143846336/8b85d329-58fc-482a-94d0-07e79a7b9041">
+    <img width="320" alt="smartshoplogo" src="https://github.com/marcusgostasson/smartshop/assets/143846336/f1097435-1004-411d-8747-279634d3da42">
 </p>
 
 **What is SmartShop**
 
-SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank. 
+SmartShop is a mobile app that helps you save money on groceries by finding the cheapest recipes and ingredients. Whether you're a seasoned cook or just starting out, SmartShop makes it easy to plan your meals, compare prices at nearby stores, and create shopping lists that won't break the bank.
 
 **Features**
 
-* **Recipe Discovery:** Search through a vast database of recipes based on your dietary needs, preferences, and budget. 
-* **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area. 
+* **Recipe Discovery:** Search through a vast database of recipes based on your dietary needs, preferences, and budget.
+* **Price Comparison:** See real-time price comparisons for ingredients from different grocery stores in your area.
 * **Smart Shopping Lists:** Build your shopping list directly from recipes with a single tap. No more scrambling for ingredients or forgetting something essential.
 * **Weekly Meal Planning:**  Plan your meals for the week and ensure you always have the ingredients on hand to avoid impulse purchases.
 * **Save Money:** SmartShop helps you find the best deals and discounts on groceries, so you can stretch your budget further.
