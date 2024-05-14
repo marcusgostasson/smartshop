@@ -1,6 +1,8 @@
 # Variabler
 PYTHON := python3
 PIP := pip3
+PYTHONPATH := $(shell pwd)
+export PYTHONPATH
 
 # Installera beroenden
 install:
@@ -29,9 +31,9 @@ uml:
 	mv classes_smartshop.png doc/classes.png
 	mv packages_smartshop.png doc/packages.png
 
-.PHONY: pydoc
+.PHONY: pdoc
 
-pydoc:
+pdoc:
 	@echo "Generating HTML documentation with pdoc...\n"
-	$(PYTHON) -m pdoc --html --output-dir doc $(code/py)
+	$(PYTHON) -m pdoc -o doc code/py
 	@echo "Documentation generated in doc/pydoc/ directory."
