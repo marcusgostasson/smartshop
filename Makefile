@@ -4,24 +4,27 @@ PIP := pip3
 
 # Installera beroenden
 install:
+	@echo "Installing dependencies...\n"
 	$(PIP) install -r requirements.txt
 
 # Kör programmet
 run:
+	@echo "Running the program...\n"
 	$(PYTHON) code/py/login_window.py
 
 # Rensa upp
 clean:
+	@echo "Cleaning up...\n"
 	rm -rf __pycache__
 	rm -rf *.pyc
 	rm -rf .pytest_cache
 
 # Generera dokumentation med pyreverse
-pyreverse:
-	@echo "Generating UML diagrams with pyreverse..."
-	mkdir -p doc/pyreverse
-	find code/py -name "*.py" | xargs pyreverse -o png -p project_name
-	pyreverse code /*.py
-	dot -Tpng classes.dot -o doc/pyreverse/classes.png
-	dot -Tpng packages.dot -o doc/pyreverse/packages.png
-	rm -f classes.dot packages.dot
+.PHONY: uml
+
+uml:
+	@echo "Generating UML diagrams with pyreverse...\n"
+	mkdir -p doc
+	find code/py -name "*.py" | xargs pyreverse -o png -p smartshop
+	mv classes.png doc/classes.png
+	mv packages.png doc/packages.png
