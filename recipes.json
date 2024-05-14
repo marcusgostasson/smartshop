@@ -1,0 +1,206 @@
+
+
+{
+  "recipes": [
+    {
+      "name": "Spaghetti Bolognese",
+      "ingredients": ["spaghetti", "ground beef", "tomato sauce", "onions", "garlic", "parmesan cheese"]
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "ingredients": ["chicken breast", "bell peppers", "onions", "carrots", "soy sauce", "sesame oil"]
+    },
+    {
+      "name": "Beef Tacos",
+      "ingredients": ["tortillas", "ground beef", "lettuce", "tomatoes", "cheese", "salsa"]
+    },
+    {
+      "name": "Margherita Pizza",
+      "ingredients": ["pizza dough", "tomato sauce", "mozzarella", "basil", "olive oil"]
+    },
+    {
+      "name": "Caesar Salad",
+      "ingredients": ["lettuce", "croutons", "parmesan", "Caesar dressing"]
+    },
+    {
+      "name": "Beef Stew",
+      "ingredients": ["beef stew meat", "potatoes", "carrots", "onions", "beef broth", "tomato paste"]
+    },
+    {
+      "name": "Vegetable Curry",
+      "ingredients": ["potatoes", "carrots", "bell peppers", "onions", "coconut milk", "curry powder"]
+    },
+    {
+      "name": "Pancakes",
+      "ingredients": ["flour", "milk", "eggs", "baking powder", "sugar", "butter"]
+    },
+    {
+      "name": "Chicken Alfredo Pasta",
+      "ingredients": ["pasta", "chicken breast", "heavy cream", "parmesan cheese", "butter", "garlic"]
+    },
+    {
+      "name": "Beef Burritos",
+      "ingredients": ["flour tortillas", "ground beef", "rice", "black beans", "cheese", "salsa"]
+    },
+    {
+      "name": "Vegetable Soup",
+      "ingredients": ["carrots", "potatoes", "onions", "celery", "tomatoes", "vegetable broth"]
+    },
+    {
+      "name": "Omelette",
+      "ingredients": ["eggs", "cheese", "ham", "bell peppers", "onions", "mushrooms"]
+    },
+    {
+      "name": "Fried Rice",
+      "ingredients": ["rice", "eggs", "carrots", "peas", "soy sauce", "sesame oil"]
+    },
+    {
+      "name": "BBQ Ribs",
+      "ingredients": ["pork ribs", "BBQ sauce", "salt", "pepper", "garlic powder", "onion powder"]
+    },
+    {
+      "name": "Shrimp Scampi",
+      "ingredients": ["shrimp", "pasta", "butter", "garlic", "lemon juice", "parsley"]
+    },
+    {
+      "name": "Caprese Salad",
+      "ingredients": ["tomatoes", "mozzarella", "fresh basil", "balsamic vinegar", "olive oil", "salt"]
+    },
+    {
+      "name": "Chicken Enchiladas",
+      "ingredients": ["tortillas", "chicken", "enchilada sauce", "cheese", "sour cream", "cilantro"]
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "ingredients": ["bread", "cheese", "butter"]
+    },
+    {
+      "name": "Mushroom Risotto",
+      "ingredients": ["rice", "mushrooms", "onions", "garlic", "vegetable broth", "parmesan"]
+    },
+    {
+      "name": "Tuna Salad",
+      "ingredients": ["tuna", "mayonnaise", "celery", "onions", "pickle relish", "lemon juice"]
+    },
+    {
+      "name": "Beef Chili",
+      "ingredients": ["ground beef", "kidney beans", "tomato sauce", "onions", "peppers", "chili powder"]
+    },
+    {
+      "name": "Lemon Garlic Chicken",
+      "ingredients": ["chicken breast", "lemon", "garlic", "olive oil", "salt", "pepper"]
+    },
+    {
+      "name": "Eggplant Parmesan",
+      "ingredients": ["eggplant", "breadcrumbs", "eggs", "marinara sauce", "mozzarella", "parmesan cheese"]
+    },
+    {
+      "name": "Beef Lasagna",
+      "ingredients": ["lasagna noodles", "ground beef", "ricotta cheese", "mozzarella", "marinara sauce", "parmesan"]
+    },
+    {
+      "name": "Chicken Noodle Soup",
+      "ingredients": ["chicken breast", "carrots", "celery", "onions", "egg noodles", "chicken broth"]
+    },
+    {
+      "name": "Cobb Salad",
+      "ingredients": ["lettuce", "chicken", "avocado", "eggs", "bacon", "dressing"]
+    },
+    {
+      "name": "Pulled Pork Sandwiches",
+      "ingredients": ["pork", "BBQ sauce", "hamburger buns", "coleslaw"]
+    },
+    {
+      "name": "Quinoa Salad",
+      "ingredients": ["quinoa", "cucumber", "tomatoes", "red onion", "olive oil", "lemon juice", "feta cheese"]
+    },
+    {
+      "name": "Chicken Caesar Wrap",
+      "ingredients": ["chicken", "lettuce", "Caesar dressing", "parmesan", "tortilla"]
+    },
+    {
+      "name": "Beef Stir-Fry",
+      "ingredients": ["beef sirloin", "broccoli", "bell peppers", "carrots", "soy sauce", "ginger", "garlic"]
+    },
+    {
+      "name": "Baked Salmon",
+      "ingredients": ["salmon fillets", "lemon", "butter", "garlic", "dill", "salt", "pepper"]
+    },
+    {
+      "name": "Vegetable Lasagna",
+      "ingredients": ["lasagna noodles", "zucchini", "yellow squash", "spinach", "ricotta cheese", "marinara sauce", "mozzarella"]
+    },
+    {
+      "name": "Beef Tacos",
+      "ingredients": ["tortillas", "ground beef", "lettuce", "tomatoes", "cheese", "salsa"]
+    },
+    {
+      "name": "Chicken Parmesan",
+      "ingredients": ["chicken breast", "breadcrumbs", "eggs", "marinara sauce", "mozzarella cheese", "parmesan cheese"]
+    },
+    {
+      "name": "Vegetable Stir-Fry",
+      "ingredients": ["broccoli", "carrots", "bell peppers", "snap peas", "soy sauce", "sesame oil", "garlic"]
+    },
+    {
+      "name": "Beef Wellington",
+      "ingredients": ["beef tenderloin", "puff pastry", "mushrooms", "prosciutto", "Dijon mustard", "egg"]
+    },
+    {
+      "name": "Chicken Alfredo Pizza",
+      "ingredients": ["pizza dough", "chicken breast", "alfredo sauce", "mozzarella cheese", "parmesan cheese", "garlic"]
+    },
+    {
+      "name": "Hamburger",
+      "ingredients": ["ground beef", "hamburger buns", "lettuce", "tomato", "onion", "ketchup", "mustard"]
+    },
+    {
+      "name": "Vegetable Curry",
+      "ingredients": ["potatoes", "carrots", "bell peppers", "onions", "coconut milk", "curry powder"]
+    },
+    {
+      "name": "Beef Stroganoff",
+      "ingredients": ["beef sirloin", "egg noodles", "mushrooms", "onions", "beef broth", "sour cream"]
+    },
+    {
+      "name": "Fish Tacos",
+      "ingredients": ["tilapia fillets", "tortillas", "cabbage", "avocado", "salsa", "lime"]
+    },
+    {
+      "name": "Pesto Pasta",
+      "ingredients": ["pasta", "pesto sauce", "cherry tomatoes", "parmesan cheese", "pine nuts"]
+    },
+    {
+      "name": "Chicken Quesadillas",
+      "ingredients": ["flour tortillas", "chicken", "cheese", "salsa", "sour cream"]
+    },
+    {
+      "name": "Tomato Soup",
+      "ingredients": ["tomatoes", "onion", "garlic", "vegetable broth", "cream", "basil", "croutons"]
+    },
+    {
+      "name": "Stuffed Bell Peppers",
+      "ingredients": ["bell peppers", "ground beef", "rice", "tomato sauce", "cheese"]
+    },
+    {
+      "name": "Lemon Herb Roast Chicken",
+      "ingredients": ["whole chicken", "lemon", "garlic", "rosemary", "thyme", "olive oil"]
+    },
+    {
+      "name": "Vegetable Frittata",
+      "ingredients": ["eggs", "milk", "bell peppers", "onions", "spinach", "cheese"]
+    },
+    {
+      "name": "Shrimp Pasta",
+      "ingredients": ["pasta", "shrimp", "garlic", "olive oil", "tomatoes", "parsley"]
+    },
+    {
+      "name": "Tuna Casserole",
+      "ingredients": ["noodles", "canned tuna", "cream of mushroom soup", "frozen peas", "breadcrumbs"]
+    },
+    {
+      "name": "Chicken Fajitas",
+      "ingredients": ["chicken", "bell peppers", "onions", "tortillas", "salsa", "guacamole", "sour cream"]
+    }
+  ]
+}

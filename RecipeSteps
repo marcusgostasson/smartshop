@@ -1,0 +1,43 @@
+
+let recipeSteps = [
+    "Spaghetti Bolognese": [
+        "Cook spaghetti according to package instructions.",
+        "In a large skillet, cook ground beef over medium heat until browned.",
+        "Add chopped onions and minced garlic to the skillet and cook until softened.",
+        "Stir in tomato sauce and simmer for 10-15 minutes.",
+        "Serve the cooked spaghetti topped with the bolognese sauce and grated Parmesan cheese."
+    ],
+    
+    "Chicken Stir-Fry": [
+        "Slice chicken breast into thin strips.",
+        "Heat sesame oil in a large pan or wok over medium-high heat.",
+        "Add chicken strips and cook until browned.",
+        "Add sliced bell peppers, onions, and julienned carrots to the pan.",
+        "Stir in soy sauce and continue cooking until vegetables are tender and chicken is cooked through."
+    ],
+    
+    "Beef Tacos": [
+        "Cook ground beef in a skillet over medium heat until browned.",
+        "Warm tortillas in a separate skillet or in the oven.",
+        "Assemble tacos by placing a spoonful of cooked beef onto each tortilla.",
+        "Top with shredded lettuce, diced tomatoes, grated cheese, and salsa."
+    ],
+    
+    "Margherita Pizza": [
+        "Preheat your oven to the temperature specified on the pizza dough package.",
+        "Roll out the pizza dough into a circle on a baking sheet.",
+        "Spread tomato sauce evenly over the dough.",
+        "Sprinkle shredded mozzarella cheese over the sauce.",
+        "Arrange fresh basil leaves on top.",
+        "Drizzle with olive oil.",
+        "Bake in the preheated oven until the crust is golden and the cheese is melted and bubbly."
+    ],
+    
+    "Caesar Salad": [
+        "Tear lettuce leaves into bite-sized pieces and place them in a large salad bowl.",
+        "Add croutons to the bowl.",
+        "Grate Parmesan cheese over the salad.",
+        "Drizzle Caesar dressing over the salad.",
+        "Toss everything together until well combined."
+    ]
+]

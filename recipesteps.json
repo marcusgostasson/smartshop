@@ -1,0 +1,408 @@
+{
+  "recipes": [
+    {
+      "name": "Spaghetti Bolognese",
+      "steps": [
+        "Cook spaghetti according to package instructions.",
+        "In a skillet, cook ground beef until browned. Add chopped onions and minced garlic. Cook until onions are soft.",
+        "Pour in tomato sauce and simmer for 10 minutes.",
+        "Serve spaghetti topped with the meat sauce and garnish with grated Parmesan cheese."
+      ]
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "steps": [
+        "Slice chicken breast into thin strips.",
+        "Heat oil in a wok or skillet over high heat. Add chicken and stir-fry until cooked through.",
+        "Add sliced bell peppers, onions, and carrots. Cook until vegetables are tender-crisp.",
+        "Stir in soy sauce and sesame oil. Cook for another minute.",
+        "Serve hot."
+      ]
+    },
+    {
+      "name": "Beef Tacos",
+      "steps": [
+        "Brown ground beef in a skillet over medium heat. Drain excess fat.",
+        "Warm tortillas in a separate skillet or in the microwave.",
+        "Assemble tacos by filling each tortilla with cooked beef, shredded lettuce, diced tomatoes, grated cheese, and salsa."
+      ]
+    },
+    {
+      "name": "Margherita Pizza",
+      "steps": [
+        "Preheat oven to 475°F (245°C).",
+        "Roll out pizza dough and place on a baking sheet.",
+        "Spread tomato sauce over the dough. Top with sliced mozzarella cheese and fresh basil leaves.",
+        "Drizzle olive oil over the pizza.",
+        "Bake for 10-12 minutes, until crust is golden and cheese is bubbly."
+      ]
+    },
+    {
+      "name": "Caesar Salad",
+      "steps": [
+        "Tear lettuce into bite-sized pieces and place in a salad bowl.",
+        "Add croutons and grated Parmesan cheese.",
+        "Drizzle Caesar dressing over the salad.",
+        "Toss well to coat evenly."
+      ]
+    },
+    {
+      "name": "Beef Stew",
+      "steps": [
+        "In a large pot, brown beef stew meat over medium-high heat.",
+        "Add chopped onions, carrots, and potatoes. Cook until vegetables start to soften.",
+        "Stir in beef broth and tomato paste. Bring to a boil, then reduce heat and simmer for 1-2 hours, until beef is tender.",
+        "Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Vegetable Curry",
+      "steps": [
+        "Heat oil in a large skillet over medium heat. Add chopped onions and cook until softened.",
+        "Stir in curry powder and cook for 1 minute.",
+        "Add diced potatoes, carrots, bell peppers, and coconut milk. Bring to a simmer and cook until vegetables are tender.",
+        "Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Pancakes",
+      "steps": [
+        "In a mixing bowl, whisk together flour, sugar, baking powder, and salt.",
+        "In another bowl, beat eggs, then stir in milk and melted butter.",
+        "Pour wet ingredients into dry ingredients and stir until just combined.",
+        "Heat a lightly oiled griddle or frying pan over medium-high heat. Pour batter onto the griddle, using approximately 1/4 cup for each pancake. Cook until bubbles form on the surface, then flip and cook until golden brown on the other side."
+      ]
+    },
+    {
+      "name": "Chicken Alfredo Pasta",
+      "steps": [
+        "Cook pasta according to package instructions. Drain and set aside.",
+        "In a large skillet, heat butter over medium heat. Add minced garlic and cook until fragrant.",
+        "Add sliced chicken breast and cook until browned and cooked through.",
+        "Pour in heavy cream and grated Parmesan cheese. Stir until the sauce thickens.",
+        "Toss cooked pasta in the sauce until well coated. Serve hot."
+      ]
+    },
+    {
+      "name": "Beef Burritos",
+      "steps": [
+        "Cook rice according to package instructions.",
+        "In a skillet, brown ground beef over medium heat. Season with taco seasoning.",
+        "Warm tortillas in the microwave or on a skillet. Spread a spoonful of refried beans on each tortilla.",
+        "Layer cooked rice, seasoned beef, shredded cheese, and salsa onto each tortilla.",
+        "Fold in the sides and roll up tightly to form burritos."
+      ]
+    },
+    {
+      "name": "Vegetable Soup",
+      "steps": [
+        "In a large pot, heat oil over medium heat. Add chopped onions, carrots, and celery. Cook until softened.",
+        "Stir in diced tomatoes and vegetable broth. Bring to a boil, then reduce heat and simmer for 20-30 minutes.",
+        "Add diced potatoes and cook until tender.",
+        "Season with salt, pepper, and any other desired herbs or spices."
+      ]
+    },
+    {
+      "name": "Omelette",
+      "steps": [
+        "In a bowl, beat eggs until well mixed. Season with salt and pepper.",
+        "Heat butter in a non-stick skillet over medium heat. Pour in beaten eggs.",
+        "As the eggs begin to set, lift the edges with a spatula and tilt the skillet to let the uncooked eggs flow underneath.",
+        "Sprinkle shredded cheese, diced ham, sliced bell peppers, onions, and mushrooms over one half of the omelette.",
+        "Fold the other half of the omelette over the filling. Cook for a few more minutes until the cheese is melted and the omelette is cooked through."
+      ]
+    },
+    {
+      "name": "Fried Rice",
+      "steps": [
+        "Cook rice according to package instructions. Let cool completely.",
+        "In a large skillet or wok, heat oil over medium-high heat. Add beaten eggs and scramble until cooked. Remove from skillet and set aside.",
+        "Add more oil to the skillet if needed. Stir in diced carrots, peas, and any other desired vegetables. Cook until tender.",
+        "Add cooked rice to the skillet, breaking up any clumps. Stir in soy sauce and sesame oil.",
+        "Return scrambled eggs to the skillet and toss everything together until well combined."
+      ]
+    },
+    {
+      "name": "BBQ Ribs",
+      "steps": [
+        "Preheat oven to 300°F (150°C).",
+        "Season pork ribs with salt, pepper, garlic powder, and onion powder.",
+        "Wrap ribs tightly in aluminum foil and place on a baking sheet.",
+        "Bake in the preheated oven for 2.5 to 3 hours, until tender.",
+        "Remove ribs from the foil and brush with BBQ sauce.",
+        "Grill ribs over medium-high heat for 10-15 minutes, basting with additional BBQ sauce, until caramelized."
+      ]
+    },
+    {
+      "name": "Shrimp Scampi",
+      "steps": [
+        "Cook pasta according to package instructions. Drain and set aside.",
+        "In a large skillet, melt butter over medium heat. Add minced garlic and cook until fragrant.",
+        "Add shrimp to the skillet and cook until pink and opaque.",
+        "Stir in lemon juice, chopped parsley, and cooked pasta. Toss until well coated.",
+        "Season with salt and pepper to taste. Serve hot."
+      ]
+    },
+    {
+      "name": "Caprese Salad",
+      "steps": [
+        "Slice tomatoes and fresh mozzarella cheese into 1/4-inch thick slices.",
+        "Arrange alternating slices of tomato, mozzarella, and fresh basil leaves on a serving platter.",
+        "Drizzle with balsamic vinegar and olive oil.",
+        "Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Chicken Enchiladas",
+      "steps": [
+        "Preheat oven to 375°F (190°C).",
+        "In a skillet, cook diced chicken breast until no longer pink. Stir in enchilada sauce and heat through.",
+        "Spread a spoonful of the chicken mixture onto each tortilla. Roll up tightly and place seam-side down in a baking dish.",
+        "Pour additional enchilada sauce over the rolled tortillas. Sprinkle with shredded cheese.",
+        "Bake in the preheated oven for 20-25 minutes, until cheese is melted and bubbly."
+      ]
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "steps": [
+        "Heat a skillet or griddle over medium heat.",
+        "Spread butter on one side of each slice of bread.",
+        "Place a slice of bread, butter-side down, on the skillet. Top with cheese slices and another slice of bread, butter-side up.",
+        "Cook until golden brown on the bottom, then flip and cook until cheese is melted and bread is golden brown on the other side."
+      ]
+    },
+    {
+      "name": "Mushroom Risotto",
+      "steps": [
+        "In a saucepan, heat olive oil over medium heat. Add chopped onions and minced garlic. Cook until softened.",
+        "Stir in Arborio rice and cook for 1-2 minutes, until rice is lightly toasted.",
+        "Gradually add hot vegetable broth, one ladleful at a time, stirring frequently until absorbed.",
+        "Stir in sliced mushrooms and continue adding broth until rice is creamy and tender.",
+        "Stir in grated Parmesan cheese and season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Tuna Salad",
+      "steps": [
+        "In a mixing bowl, combine drained canned tuna, mayonnaise, diced celery, chopped onions, pickle relish, and lemon juice.",
+        "Season with salt and pepper to taste. Mix well to combine.",
+        "Serve tuna salad on sandwiches, wraps, or over a bed of lettuce."
+      ]
+    },
+    {
+      "name": "Beef Chili",
+      "steps": [
+        "In a large pot, cook ground beef over medium heat until browned. Drain excess fat.",
+        "Add chopped onions, diced peppers, and minced garlic. Cook until vegetables are softened.",
+        "Stir in kidney beans, tomato sauce, chili powder, and any other desired spices.",
+        "Simmer for 20-30 minutes, stirring occasionally.",
+        "Serve hot with shredded cheese, diced onions, and sour cream as toppings."
+      ]
+    },
+    {
+      "name": "Lemon Garlic Chicken",
+      "steps": [
+        "Season chicken breast with salt, pepper, minced garlic, and lemon zest.",
+        "Heat olive oil in a skillet over medium-high heat. Add chicken breasts and cook until golden brown on both sides and cooked through.",
+        "Squeeze fresh lemon juice over the chicken before serving."
+      ]
+    },
+    {
+      "name": "Eggplant Parmesan",
+      "steps": [
+        "Preheat oven to 375°F (190°C).",
+        "Slice eggplant into 1/4-inch thick rounds. Dip each slice into beaten eggs, then coat with breadcrumbs.",
+        "Place breaded eggplant slices on a baking sheet and bake for 15-20 minutes, until golden brown and tender.",
+        "Spread marinara sauce in the bottom of a baking dish. Layer baked eggplant slices, mozzarella cheese, and Parmesan cheese. Repeat layers.",
+        "Bake for an additional 20-25 minutes, until cheese is melted and bubbly."
+      ]
+    },
+    {
+      "name": "Beef Lasagna",
+      "steps": [
+        "Preheat oven to 375°F (190°C).",
+        "Cook lasagna noodles according to package instructions. Drain and set aside.",
+        "In a skillet, brown ground beef over medium heat. Stir in marinara sauce and simmer for 10 minutes.",
+        "In a separate bowl, mix together ricotta cheese, grated Parmesan cheese, and beaten eggs.",
+        "Spread a layer of meat sauce in the bottom of a baking dish. Layer with cooked noodles, ricotta mixture, and shredded mozzarella cheese. Repeat layers.",
+        "Cover with foil and bake for 30 minutes. Remove foil and bake for an additional 15 minutes, until bubbly and golden."
+      ]
+    },
+    {
+      "name": "Chicken Noodle Soup",
+      "steps": [
+        "In a large pot, heat oil over medium heat. Add chopped onions, carrots, and celery. Cook until softened.",
+        "Add diced chicken breast and cook until browned.",
+        "Pour in chicken broth and bring to a boil. Add egg noodles and cook until tender.",
+        "Season with salt, pepper, and any other desired herbs or spices."
+      ]
+    },
+    {
+      "name": "Cobb Salad",
+      "steps": [
+        "Arrange chopped lettuce in a large salad bowl.",
+        "Top with sliced grilled chicken breast, diced avocado, hard-boiled eggs, crispy bacon strips, and diced tomatoes.",
+        "Drizzle with your favorite dressing and sprinkle with crumbled blue cheese or shredded cheddar cheese."
+      ]
+    },
+    {
+      "name": "Pulled Pork Sandwiches",
+      "steps": [
+        "Season pork with salt, pepper, and any desired spices. Place in a slow cooker.",
+        "Pour BBQ sauce over the pork and cook on low for 6-8 hours, until tender and easily shredded with a fork.",
+        "Shred the pork using two forks and mix with the BBQ sauce.",
+        "Serve pulled pork on hamburger buns with coleslaw on top."
+      ]
+    },
+    {
+      "name": "Quinoa Salad",
+      "steps": [
+        "Cook quinoa according to package instructions. Let cool completely.",
+        "In a large bowl, combine cooked quinoa, diced cucumber, halved cherry tomatoes, finely chopped red onion, crumbled feta cheese, and chopped parsley.",
+        "Drizzle with olive oil and lemon juice. Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Chicken Caesar Wrap",
+      "steps": [
+        "Warm tortillas in the microwave or on a skillet.",
+        "Spread Caesar dressing over each tortilla.",
+        "Top with sliced grilled chicken breast, chopped lettuce, grated Parmesan cheese, and croutons.",
+        "Roll up tightly to form wraps."
+      ]
+    },
+    {
+      "name": "Beef Stir-Fry",
+      "steps": [
+        "Slice beef sirloin into thin strips. Marinate in soy sauce, ginger, and minced garlic for 30 minutes.",
+        "Heat oil in a wok or skillet over high heat. Add beef and stir-fry until browned.",
+        "Add sliced bell peppers, broccoli florets, sliced carrots, and any other desired vegetables. Stir-fry until vegetables are tender-crisp.",
+        "Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Baked Salmon",
+      "steps": [
+        "Preheat oven to 375°F (190°C). Line a baking sheet with parchment paper.",
+        "Place salmon fillets on the prepared baking sheet. Season with salt, pepper, minced garlic, chopped dill, and a squeeze of lemon juice.",
+        "Dot the tops of the salmon with small cubes of butter.",
+        "Bake for 12-15 minutes, until salmon flakes easily with a fork."
+      ]
+    },
+    {
+      "name": "Vegetable Lasagna",
+      "steps": [
+        "Preheat oven to 375°F (190°C).",
+        "Cook lasagna noodles according to package instructions. Drain and set aside.",
+        "In a skillet, cook chopped onions and minced garlic until softened. Add sliced zucchini, yellow squash, and chopped spinach. Cook until vegetables are tender.",
+        "In a baking dish, layer marinara sauce, cooked noodles, sautéed vegetables, ricotta cheese, shredded mozzarella cheese, and marinara sauce again. Repeat layers.",
+        "Cover with foil and bake for 30 minutes. Remove foil and bake for an additional 15 minutes, until bubbly and golden."
+      ]
+    },
+    {
+      "name": "Chicken Parmesan",
+      "steps": [
+        "Preheat oven to 375°F (190°C).",
+        "Season chicken breasts with salt and pepper. Dredge in flour, dip in beaten eggs, then coat with breadcrumbs.",
+        "Heat oil in a skillet over medium-high heat. Cook chicken until golden brown on both sides.",
+        "Transfer chicken to a baking dish. Top with marinara sauce, shredded mozzarella cheese, and grated Parmesan cheese.",
+        "Bake for 20-25 minutes, until cheese is melted and bubbly."
+      ]
+    },
+    {
+      "name": "Vegetable Stir-Fry",
+      "steps": [
+        "Heat oil in a wok or skillet over high heat. Add minced garlic and sliced onions. Cook until fragrant.",
+        "Add sliced bell peppers, broccoli florets, snap peas, and any other desired vegetables. Stir-fry until tender-crisp.",
+        "Stir in soy sauce and sesame oil. Cook for another minute."
+      ]
+    },
+    {
+      "name": "Beef Wellington",
+      "steps": [
+        "Preheat oven to 425°F (220°C).",
+        "Season beef tenderloin with salt and pepper. Sear in a hot skillet until browned on all sides. Let cool.",
+        "Spread Dijon mustard over the cooled beef. Wrap in prosciutto slices.",
+        "Roll out puff pastry and place beef in the center. Fold pastry over the beef to enclose.",
+        "Brush pastry with beaten egg. Bake for 35-40 minutes, until pastry is golden brown and beef is cooked to desired doneness."
+      ]
+    },
+    {
+      "name": "Chicken Alfredo Pizza",
+      "steps": [
+        "Preheat oven to 475°F (245°C).",
+        "Roll out pizza dough and place on a baking sheet.",
+        "Spread Alfredo sauce over the dough. Top with sliced grilled chicken breast, shredded mozzarella cheese, and grated Parmesan cheese.",
+        "Sprinkle minced garlic over the pizza.",
+        "Bake for 12-15 minutes, until crust is golden and cheese is bubbly."
+      ]
+    },
+    {
+      "name": "Hamburger",
+      "steps": [
+        "Season ground beef with salt and pepper. Form into patties.",
+        "Heat a skillet or grill over medium-high heat. Cook patties for 4-5 minutes per side, until browned and cooked through.",
+        "Toast hamburger buns on the grill or in a toaster.",
+        "Assemble burgers by placing cooked patties on toasted buns. Top with lettuce, tomato slices, onion slices, ketchup, and mustard."
+      ]
+    },
+    {
+      "name": "Vegetable Curry",
+      "steps": [
+        "Heat oil in a large skillet or Dutch oven over medium heat. Add chopped onions and cook until softened.",
+        "Stir in curry powder and cook for 1 minute.",
+        "Add diced potatoes, carrots, bell peppers, and any other desired vegetables. Cook until vegetables are tender.",
+        "Pour in coconut milk and simmer for 10-15 minutes.",
+        "Season with salt and pepper to taste."
+      ]
+    },
+    {
+      "name": "Beef Stroganoff",
+      "steps": [
+        "Cook egg noodles according to package instructions. Drain and set aside.",
+        "In a skillet, heat oil over medium-high heat. Add sliced onions and cook until softened.",
+        "Add sliced mushrooms and cook until browned. Remove from skillet and set aside.",
+        "In the same skillet, brown sliced beef sirloin. Stir in beef broth and sour cream. Cook until heated through.",
+        "Return cooked mushrooms to the skillet. Season with salt and pepper to taste.",
+        "Serve beef stroganoff over cooked egg noodles."
+      ]
+    },
+    {
+      "name": "Fish Tacos",
+      "steps": [
+        "Season tilapia fillets with salt, pepper, and any desired spices.",
+        "Heat oil in a skillet over medium-high heat. Cook fish fillets for 3-4 minutes per side, until golden brown and cooked through.",
+        "Warm tortillas in the microwave or on a skillet.",
+        "Flake cooked fish and place on warmed tortillas. Top with shredded cabbage, sliced avocado, salsa, and a squeeze of lime juice."
+      ]
+    },
+    {
+      "name": "Pesto Pasta",
+      "steps": [
+        "Cook pasta according to package instructions. Drain and set aside.",
+        "In a large skillet, heat pesto sauce over medium heat. Add halved cherry tomatoes and cooked pasta. Toss until well coated.",
+        "Stir in grated Parmesan cheese and toasted pine nuts.",
+        "Serve hot, garnished with additional Parmesan cheese and chopped parsley if desired."
+      ]
+    },
+    {
+      "name": "Chicken Quesadillas",
+      "steps": [
+        "Heat a skillet over medium heat. Place a flour tortilla in the skillet.",
+        "Sprinkle shredded cheese over half of the tortilla. Top with cooked diced chicken, salsa, and sour cream.",
+        "Fold the other half of the tortilla over the filling. Cook for 2-3 minutes per side, until golden brown and crispy.",
+        "Cut quesadilla into wedges and serve hot."
+      ]
+    },
+    {
+      "name": "Tomato Soup",
+      "steps": [
+        "Heat oil in a large pot over medium heat. Add chopped onions and minced garlic. Cook until softened.",
+        "Stir in diced tomatoes, tomato paste, and vegetable broth. Bring to a simmer and cook for 15-20 minutes.",
+        "Use an immersion blender to puree the soup until smooth.",
+        "Stir in cream and chopped basil. Season with salt and pepper to taste.",
+        "Serve hot with croutons on"
+      ]
+    }
+  ]
+}
