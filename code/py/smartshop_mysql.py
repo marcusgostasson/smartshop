@@ -1,3 +1,5 @@
+"""Database class for the SmartShop application."""
+
 import mysql.connector
 from jproperties import Properties
 

@@ -2,7 +2,6 @@
 
 import re
 from pathlib import Path
-
 import login_window
 import smartshop_mysql
 from passlib.hash import bcrypt
@@ -111,7 +110,6 @@ class CreateUserWindow(QWidget):
         )
 
         self.hide()
-        # self.login = login_window.LoginWindow()
         self.login_window_instance.set_up_login()
 
     def validate_email(self, email):

@@ -1,6 +1,6 @@
-import sys
-from pathlib import Path
+"""Class for the start window."""
 
+from pathlib import Path
 import create_recipe_window_UI
 import login_window
 import smartshop_mysql

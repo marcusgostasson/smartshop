@@ -1,6 +1,7 @@
+"""Class for ingredient price."""
+
 import sys
 from pathlib import Path
-
 import smartshop_mysql
 import steps_for_recipe
 from PyQt5.QtCore import *
@@ -106,10 +107,6 @@ class IngredientPrice(QWidget):
         product_price = {}
         for product, amount, type, price in products:
             product_price[product] = price
-            # eller kan jag har i varje loop här en dictionary med key är produkt namn sen value är price sen med spinboxen ta * med priset sen när jag ska ta total kost så går jag igenom dictionaryn
-            # sen i funktionen så tar jag vilken ingrediens från label och sätter jag value för den nycklen i dict med spinbox value gånger priset
-            # sen vet jag inte om det blir fel med att ingredienserna heter ju samma men olika butiker men då kanske ta primarykey eller det som är unikt
-            # sen bara jämföra om primary keyn är samma som "labelns namn" i dictionaryn
             self.total_cost += price
             product_name_label = QLabel(f"{product} {amount} {type}")
             grid_layout.addWidget(product_name_label, self.row, 0)
@@ -117,7 +114,6 @@ class IngredientPrice(QWidget):
             price_label = QLabel(str(price) + " kr")
             grid_layout.addWidget(price_label, self.row, 1)
 
-            # eller kan man skicka med totalkostnads labeln för den gridlayouten och vilken price label som ligger till vänster av spinboxen
             self.row += 1
 
         if self.total_cost == self.lowest_total_cost:
@@ -147,10 +143,6 @@ class IngredientPrice(QWidget):
         """Hide current window and return to the start menu."""
         self.hide()
         self.start_menu_window.set_up_start_menu()
-
-    def closeEvent(self, event):
-        """So the program stops running when you close the window."""
-        sys.exit()
 
     def set_button_style(self):
         """Set the style for the buttons."""
