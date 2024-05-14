@@ -1,5 +1,6 @@
 """Class for login_window."""
 
+import os
 import sys
 from pathlib import Path
 
