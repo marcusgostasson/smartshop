@@ -9,16 +9,16 @@ struct FlowersView: View {
                     .scaledToFit()
                     .frame(width: 750, height: 220)
                     .padding(.top)
-                
+
                 Image(uiImage: UIImage(named: "flowers")!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 550, height: 200)
                     .padding()
-                
+
                 VStack (spacing: -70){
                     Spacer().frame(height: 10)
-                    
+
                     NavigationLink(destination: FlowersSelectionView(storeId: 1)) {
                         Image(uiImage: UIImage(named: "willys")!)
                             .resizable()
@@ -27,7 +27,7 @@ struct FlowersView: View {
                     }
                     .buttonStyle(ImageButtonStyle())
                     .padding(.top)
-                    
+
                     NavigationLink(destination: FlowersSelectionView(storeId: 2)) {
                         Image(uiImage: UIImage(named: "ica")!)
                             .resizable()
@@ -36,7 +36,7 @@ struct FlowersView: View {
                     }
                     .buttonStyle(ImageButtonStyle())
                     .padding()
-                    
+
                     NavigationLink(destination: FlowersSelectionView(storeId: 3)) {
                         Image(uiImage: UIImage(named: "coop")!)
                             .resizable()
@@ -55,7 +55,7 @@ struct FlowersView: View {
 struct FlowersSelectionView: View {
     let storeId: Int
     let flowers = ["Roser 9p 40cm", "Roser 7p 35cm", "Other flowers"]
-    
+
     var body: some View {
         ScrollView {
             VStack {
@@ -72,13 +72,13 @@ struct FlowersSelectionView: View {
 
 struct FlowerDetailView: View {
     let flower: String // Assuming this is the name of the flower
-    
+
     var body: some View {
         VStack {
             Text(flower)
                 .font(.title)
                 .padding()
-            
+
             // Add more details about the flower here if needed
         }
         .navigationTitle(flower)

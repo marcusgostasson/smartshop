@@ -7,14 +7,14 @@ struct IngredientsResponse: Decodable {
         var storeName: String
         var productName: String
         var productPrice: Double
-        
+
         enum CodingKeys: String, CodingKey {
             case storeName, productName, productPrice
         }
     }
-    
+
     var ingredients: [Ingredient]?
-        
+
 }
 
 extension IngredientsResponse.Ingredient: Hashable {
@@ -30,11 +30,11 @@ struct Iphone1415ProMax3: View {
     @State private var selectedRecipe: RecipeWrapper? = nil
     @State private var ingredients: [[String : String]] = []
     @State private var showIngredientsView = false
-    
+
     var body: some View {
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
-            
+
             NavigationView {
                 VStack {
                     Text("Your Recipies")
@@ -76,7 +76,7 @@ struct Iphone1415ProMax3: View {
                                 .tracking(2)
                                 .padding(.vertical, 15)
                                 .frame(maxWidth: .infinity)
-                              
+
                                 .background(Color.white)
                                 .foregroundColor(.black)
                                 .cornerRadius(10)
@@ -86,11 +86,11 @@ struct Iphone1415ProMax3: View {
                         }
                         .padding()
                         .padding(.top, 85)
-                        
+
                         Spacer()
                         HStack(spacing:-60) {
                             Spacer()
-                            
+
                             NavigationLink(destination: ChatbotView()) {
                                 Text("Chefbot")
                                     .font(.headline)
@@ -105,7 +105,7 @@ struct Iphone1415ProMax3: View {
                             }
                             .padding()
                             .padding(.bottom,-75)
-                            
+
                             NavigationLink(destination: FlowersView()) {
                                 Text("Flowers")
                                     .font(.headline)
@@ -120,16 +120,16 @@ struct Iphone1415ProMax3: View {
                             }
                             .padding()
                             .padding(.bottom,-75)
-                            
+
                             Spacer()
                         }
                         .padding()
                         .padding(.bottom)
-                        
-                        
+
+
                         HStack (spacing: -60){
                             Spacer()
-                            
+
                             NavigationLink(destination: RecipeSelectionViewComp1()) {
                                 Text("Comparison")
                                     .font(.headline)
@@ -144,8 +144,8 @@ struct Iphone1415ProMax3: View {
                             }
                             .padding()
                             .padding(.bottom)
-                            
-                            
+
+
                             NavigationLink(destination: CreateRecipeView()) {
                                 Text("Create Recipe")
                                     .font(.headline)
@@ -161,7 +161,7 @@ struct Iphone1415ProMax3: View {
                             .padding()
                             .padding(.bottom)
                             Spacer()
-                            
+
                         }
                         .padding()
                         .padding(.bottom,-30)
@@ -184,13 +184,13 @@ struct Iphone1415ProMax3: View {
                     )
                 }
             }
-        
-    
-        
-        
+
+
+
+
         func fetchRecipesBeta() {
 
-            
+
             recipes.append(RecipeWrapper(recipeName: "Spaghetti Bolognese"))
             recipes.append(RecipeWrapper(recipeName: "Chicken Stir-Fry"))
             recipes.append(RecipeWrapper(recipeName: "Vegetable Curry"))
@@ -205,53 +205,53 @@ struct Iphone1415ProMax3: View {
             recipes.append(RecipeWrapper(recipeName: "Healthy Curry"))
             recipes.append(RecipeWrapper(recipeName: "Healthy Bolognese"))
         }
-    
+
         func fetchRecipes() {
                 isLoading = true
-                
+
                 guard let url = URL(string: "http://127.0.0.1:5000/recipe") else {
                     print("Invalid URL")
                     isLoading = false
                     return
                 }
-                
+
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     guard let data = data else {
                         print("No data")
                         isLoading = false
                         return
                     }
-                    
+
                     do {
                         let recipeNames = try JSONDecoder().decode([String].self, from: data)
                         recipes = recipeNames.map { RecipeWrapper(recipeName: $0) }
-                        
+
                         isLoading = false
                     } catch {
                         print("Error decoding data: \(error)")
                         isLoading = false
-                        
+
                     }
                 }.resume()
             }
 
-        
+
         func fetchRecipeDetails(recipe: RecipeWrapper) {
             guard let recipeName = recipe.recipeName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
                 return
             }
-            
+
             guard let url = URL(string: "http://127.0.0.1:5000/recipe/ingredients/\(recipeName)") else {
                 print("Invalid URL")
                 return
             }
-            
+
             URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else {
                     print("No data")
                     return
                 }
-                
+
                 do {
                     let ingredientsResponse = try JSONDecoder().decode(IngredientsResponse.self, from: data)
                     if let ingredients = ingredientsResponse.ingredients {
@@ -276,23 +276,23 @@ struct Iphone1415ProMax3: View {
                 }
             }.resume()
         }
-        
+
         func fetchRecipeSteps(recipe: RecipeWrapper) {
             guard let recipeName = recipe.recipeName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
                 return
             }
-            
+
             guard let url = URL(string: "http://127.0.0.1:5000/recipe/steps/\(recipeName)") else {
                 print("Invalid URL")
                 return
             }
-            
+
             URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else {
                     print("No data")
                     return
                 }
-                
+
                 do {
                     let stepsResponse = try JSONDecoder().decode(StepsResponse.self, from: data)
                     if let steps = stepsResponse.steps {
@@ -305,7 +305,7 @@ struct Iphone1415ProMax3: View {
                             alert.setValue(UIHostingController(rootView: stepView), forKey: "contentViewController")
                             UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
                         }
-                        
+
                     } else {
                         print("Steps data is nil")
                     }
@@ -314,27 +314,27 @@ struct Iphone1415ProMax3: View {
                 }
             }.resume()
         }
-        
+
         func removeIngredient(ingredientToRemove: String) {
             if let index = ingredients.firstIndex(where: { $0["productName"] == ingredientToRemove }) {
                 ingredients.remove(at: index)
-                
+
                 showIngredientsView = true
             }
         }
     }
-    
+
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             Iphone1415ProMax3()
         }
     }
-    
+
     struct IngredientsView: View {
         var ingredients: [String]
         var onRemove: (String) -> Void
         var onClose: () -> Void // Closure to handle closing the view
-        
+
         var body: some View {
             VStack(alignment: .leading) {
                 Text("Ingredients:")
@@ -349,7 +349,7 @@ struct Iphone1415ProMax3: View {
                                 Spacer()
                                 Button(action: {
                                     onRemove(ingredient)
-                                    
+
                                 }) {
                                     Image(systemName: "minus.circle")
                                 }
@@ -370,12 +370,12 @@ struct Iphone1415ProMax3: View {
             .padding()
         }
     }
-    
+
     struct RecipeOptionView: View {
         let recipe: RecipeWrapper
         let onIngredientsTapped: () -> Void
         let onStepsTapped: () -> Void
-        
+
         var body: some View {
             VStack {
                 VStack {
@@ -398,11 +398,11 @@ struct Iphone1415ProMax3: View {
             }
         }
     }
-    
+
     struct RecipeStepView: View {
         let step: String
         let onClose: () -> Void // Add onClose argument
-        
+
         var body: some View {
             VStack {
                 Text(step)
@@ -416,12 +416,12 @@ struct Iphone1415ProMax3: View {
             }
         }
     }
-    
+
     struct RecipeWrapper: Codable, Identifiable {
         var id = UUID()
         var recipeName: String
     }
-    
+
     struct StepsResponse: Codable {
         var steps: String?
     }

@@ -14,13 +14,13 @@ struct Recipe: Codable, Identifiable {
 
 struct RecipeDetailsView: View {
     let recipe: Recipe
-    
+
     var body: some View {
         VStack {
             Text(recipe.name)
                 .font(.title)
                 .padding()
-            
+
             ScrollView {
                 Text(recipe.ingredients.map { "• \($0)" }.joined(separator: "\n"))
                     .padding()
@@ -45,13 +45,13 @@ struct ChatbotView: View {
     private func sendMessage() {
         guard !userInput.isEmpty else { return }
         addMessage(userInput, isUser: true)
-        
+
         if isFirstMessage {
             addMessage("Chefbot: What ingredients do you have at home today?", isUser: false)
             isFirstMessage = false
         } else {
             let lowercasedInput = userInput.lowercased()
-            
+
             if let recipe = recipes.first(where: { $0.name.lowercased() == userInput.lowercased() }) {
                 selectedRecipe = recipe
                 addMessage("Chefbot: Here are the ingredients for \(recipe.name): \(recipe.ingredients.joined(separator: ", "))", isUser: false)
@@ -82,7 +82,7 @@ struct ChatbotView: View {
 
     private func checkIngredients(_ ingredients: [String]) -> [(recipe: String, additionalIngredients: [String])] {
         var matches: [(recipe: String, additionalIngredients: [String])] = []
-        
+
         for recipe in recipes {
             let matchingIngredients = recipe.ingredients.filter { ingredients.contains($0.lowercased()) }
             if !matchingIngredients.isEmpty {
@@ -90,7 +90,7 @@ struct ChatbotView: View {
                 matches.append((recipe.name, additionalIngredients))
             }
         }
-        
+
         return matches
     }
 
@@ -110,13 +110,13 @@ struct ChatbotView: View {
                     }
                     .padding()
                 }
-                
+
                 HStack {
                     TextField("Type your message", text: $userInput)
                         .padding()
                         .background(Color.gray.opacity(0.1))
                         .cornerRadius(10)
-                    
+
                     Button(action: sendMessage) {
                         Text("Send")
                             .padding()
@@ -139,19 +139,19 @@ struct ChatbotView: View {
             }
         }
     }
-    
+
     private func loadRecipeSteps() {
         guard let url = Bundle.main.url(forResource: "recipesteps", withExtension: "json") else {
             print("Unable to locate recipesteps.json")
             return
         }
-        
+
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             self.recipeSteps = try decoder.decode([String: [String]].self, from: data)
-            
+
             for (recipeName, steps) in recipeSteps {
                 print("\(recipeName): \(steps)")
             }
@@ -159,14 +159,14 @@ struct ChatbotView: View {
             print("Error loading recipe steps from JSON: \(error)")
         }
     }
-    
+
 
     private func loadRecipes() {
         guard let url = Bundle.main.url(forResource: "recipes", withExtension: "json") else {
             print("Unable to locate recipes.json")
             return
         }
-        
+
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()

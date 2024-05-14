@@ -17,7 +17,7 @@ struct CreateRecipeView: View {
     @State private var newStep = ""
     @State private var searchText = ""
     @State private var showIngredientList = false
-    
+
     var filteredIngredients: [String] {
         if searchText.isEmpty {
             return ingredients
@@ -25,20 +25,20 @@ struct CreateRecipeView: View {
             return ingredients.filter { $0.localizedCaseInsensitiveContains(searchText) }
         }
     }
-    
+
     var body: some View {
         VStack {
             TextField("Recipe Name", text: $recipeName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-            
+
             Divider()
-            
+
             Text("Ingredients")
                 .font(.headline)
                 .padding(.vertical, -2)
                 .padding(.horizontal, -12)
-            
+
             ScrollView {
                 LazyVStack {
                     ForEach(filteredIngredients, id: \.self) { ingredient in
@@ -52,33 +52,33 @@ struct CreateRecipeView: View {
                 }
             }
             .frame(height: 160)
-            
+
             HStack {
                 TextField("Search", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                
+
                 Button("Search") {
                     showIngredientList = true
-                    
+
                 }
                 Spacer()
             }
-            
+
             Divider()
-            
+
             Text("Steps")
                 .font(.headline)
                 .padding(.vertical,-2)
                 .padding(.horizontal)
-            
+
             List {
                 ForEach(steps, id: \.self) { step in
                     Text(step)
                 }
                 .onDelete(perform: removeStep)
             }
-            
+
             HStack {
                 TextField("New Step", text: $newStep)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -88,9 +88,9 @@ struct CreateRecipeView: View {
                 }
             }
             .padding()
-            
+
             Spacer()
-            
+
             Button(action: saveRecipe) {
                 Text("Save Recipe")
                     .padding()
@@ -113,7 +113,7 @@ struct CreateRecipeView: View {
     struct IngredientListView: View {
         @Binding var searchText: String
         var ingredients: [String]
-        
+
         var filteredIngredients: [String] {
             if searchText.isEmpty {
                 return ingredients
@@ -121,13 +121,13 @@ struct CreateRecipeView: View {
                 return ingredients.filter { $0.localizedCaseInsensitiveContains(searchText) }
             }
         }
-        
+
         var body: some View {
             VStack {
                 TextField("Search", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                
+
                 ScrollView {
                     LazyVStack {
                         ForEach(filteredIngredients, id: \.self) { ingredient in
@@ -145,20 +145,20 @@ struct CreateRecipeView: View {
             .navigationBarTitle("Ingredients")
         }
     }
-    
-    
+
+
     func fetchIngredients() {
         guard let url = URL(string: "http://127.0.0.1:5000/ingredients") else {
             print("Invalid URL")
             return
         }
-        
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print("No data")
                 return
             }
-            
+
             do {
                 let ingredientNames = try JSONDecoder().decode([String].self, from: data)
                 DispatchQueue.main.async {
@@ -169,18 +169,18 @@ struct CreateRecipeView: View {
             }
         }.resume()
     }
-    
+
     func addStep() {
         if !newStep.isEmpty {
             steps.append(newStep)
             newStep = "" // Clear the text field after adding the step
         }
     }
-    
+
     func removeStep(at offsets: IndexSet) {
         steps.remove(atOffsets: offsets)
     }
-    
+
     func saveRecipe() {
         // Implement saving the recipe
     }

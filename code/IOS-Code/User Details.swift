@@ -6,11 +6,11 @@ struct UserDetailView: View {
     var efternamn: String
     var användarnamne: String
     var mail: String
-    
+
     var body: some View {
         ZStack {
             Color.clear
-            
+
             VStack(spacing: 22) {
                 Rectangle()
                     .foregroundColor(.white)
@@ -44,9 +44,9 @@ struct UserDetailView: View {
                         .foregroundColor(.black)
                         .padding()
                         )
-            
-              
-            
+
+
+
                 Rectangle()
                     .foregroundColor(.white)
                           .frame(width: 130, height: 40)
@@ -60,7 +60,7 @@ struct UserDetailView: View {
                           )
                   }
                   .padding()
-                  
+
               }
               .frame(width: 430, height: 932)
               .background(Color(red: 0.97, green: 0.67, blue: 0.08))
@@ -70,4 +70,3 @@ struct UserDetailView: View {
     UserDetailView(förnamn: "", efternamn: "", användarnamne: "", mail: "")
         .modelContainer(for: Item.self, inMemory: true)
 }
-

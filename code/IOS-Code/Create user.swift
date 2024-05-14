@@ -10,11 +10,11 @@ struct Iphone1415ProMax2: View {
     @State private var repeatPassword: String = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
+
     var passwordsMatch: Bool {
         return password == repeatPassword
     }
-    
+
     var body: some View {
         NavigationView {
             VStack (spacing: 10){
@@ -22,7 +22,7 @@ struct Iphone1415ProMax2: View {
                 Text("Create Account")
                     .font(.title)
                     .padding()
-                
+
                 TextField("First Name", text: $firstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -30,8 +30,8 @@ struct Iphone1415ProMax2: View {
                     .cornerRadius(10)
                     .font(.system(size: 26))
                     .padding(.horizontal)
-                
-                
+
+
                 TextField("Last Name", text: $lastName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -39,7 +39,7 @@ struct Iphone1415ProMax2: View {
                     .background(Color.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
-                
+
                 TextField("Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -47,7 +47,7 @@ struct Iphone1415ProMax2: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .font(.system(size: 26))
-                
+
                 TextField("Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -55,7 +55,7 @@ struct Iphone1415ProMax2: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .font(.system(size: 26))
-                
+
                 SecureField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -63,7 +63,7 @@ struct Iphone1415ProMax2: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .font(.system(size: 26))
-                
+
                 SecureField("Repeat Password", text: $repeatPassword)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -71,14 +71,14 @@ struct Iphone1415ProMax2: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .font(.system(size: 26))
-                
+
                 if !passwordsMatch {
                     Text("Passwords do not match")
                         .foregroundColor(.red)
                 }
-                
+
                 Spacer()
-                
+
                 Button(action: createUser) {
                     Text("Create Account")
                         .padding()
@@ -88,9 +88,9 @@ struct Iphone1415ProMax2: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
-                
+
                 NavigationLink(destination: Iphone1415ProMax3().navigationBarBackButtonHidden(true)) {
-                    
+
                     Text("Login")
                         .padding()
                         .frame(maxWidth: 170)
@@ -101,7 +101,7 @@ struct Iphone1415ProMax2: View {
                 }
                 .padding(.top)
                 .navigationBarBackButtonHidden(true)
-                
+
                 Spacer()}
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -112,23 +112,23 @@ struct Iphone1415ProMax2: View {
             .navigationBarHidden(true)
             .onAppear {
                 UITableView.appearance().backgroundColor = .clear
-            
+
             }
             .padding(.top, -100)
         }
     }
-    
+
     func createUser() {
         guard passwordsMatch else {
             showAlert(message: "Passwords do not match")
             return
         }
-        
+
         guard !firstName.isEmpty, !lastName.isEmpty, !username.isEmpty, !email.isEmpty, !password.isEmpty, !repeatPassword.isEmpty else {
             showAlert(message: "All fields are required")
             return
         }
-        
+
         guard password == repeatPassword else {
             showAlert(message: "Passwords do not match")
             return
@@ -141,7 +141,7 @@ struct Iphone1415ProMax2: View {
             "lösenord": password,
             "upprepa_lösenord": repeatPassword
         ]
-        
+
         guard let jsonData = try? JSONSerialization.data(withJSONObject: userData) else {
             showAlert(message: "Failed to encode user data")
             return
@@ -151,24 +151,24 @@ struct Iphone1415ProMax2: View {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
-        
+
         // Perform the HTTP request
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 showAlert(message: "Failed to create user")
                 return
             }
-            
-            
+
+
             showAlert(message: "User created successfully")
         }.resume()
     }
-    
+
     func showAlert(message: String) {
         alertMessage = message
         showAlert = true
     }
-    
+
     struct UserRegistrationView_Previews: PreviewProvider {
         static var previews: some View {
             Iphone1415ProMax2()

@@ -7,7 +7,7 @@ let recipeSteps = [
         "Stir in tomato sauce and simmer for 10-15 minutes.",
         "Serve the cooked spaghetti topped with the bolognese sauce and grated Parmesan cheese."
     ],
-    
+
     "Chicken Stir-Fry": [
         "Slice chicken breast into thin strips.",
         "Heat sesame oil in a large pan or wok over medium-high heat.",
@@ -15,14 +15,14 @@ let recipeSteps = [
         "Add sliced bell peppers, onions, and julienned carrots to the pan.",
         "Stir in soy sauce and continue cooking until vegetables are tender and chicken is cooked through."
     ],
-    
+
     "Beef Tacos": [
         "Cook ground beef in a skillet over medium heat until browned.",
         "Warm tortillas in a separate skillet or in the oven.",
         "Assemble tacos by placing a spoonful of cooked beef onto each tortilla.",
         "Top with shredded lettuce, diced tomatoes, grated cheese, and salsa."
     ],
-    
+
     "Margherita Pizza": [
         "Preheat your oven to the temperature specified on the pizza dough package.",
         "Roll out the pizza dough into a circle on a baking sheet.",
@@ -32,7 +32,7 @@ let recipeSteps = [
         "Drizzle with olive oil.",
         "Bake in the preheated oven until the crust is golden and the cheese is melted and bubbly."
     ],
-    
+
     "Caesar Salad": [
         "Tear lettuce leaves into bite-sized pieces and place them in a large salad bowl.",
         "Add croutons to the bowl.",
