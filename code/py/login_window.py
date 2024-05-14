@@ -1,15 +1,17 @@
 """Class for login_window."""
 
+import os
 import sys
+from pathlib import Path
+
 import create_user_window
-import start_window
 import smartshop_mysql
-from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import *
+import start_window
+from passlib.hash import bcrypt
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from passlib.hash import bcrypt
-from pathlib import Path
+from PyQt5.QtWidgets import *
+from PyQt5.uic import loadUi
 
 
 class LoginWindow(QMainWindow):
