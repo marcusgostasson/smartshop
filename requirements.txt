@@ -5,7 +5,7 @@ sphinx-rtd-theme
 pylint
 
 # for ReadTheDocs local build
-Graphviz
+graphviz
 
 # GUI
 pyqt5
