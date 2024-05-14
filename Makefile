@@ -28,3 +28,10 @@ uml:
 	find code/py -name "*.py" | xargs pyreverse -o png -p smartshop
 	mv classes_smartshop.png doc/classes.png
 	mv packages_smartshop.png doc/packages.png
+
+.PHONY: pydoc
+
+pydoc:
+	@echo "Generating HTML documentation with pdoc...\n"
+	$(PYTHON) -m pdoc --html --output-dir doc $(code/py)
+	@echo "Documentation generated in doc/pydoc/ directory."
