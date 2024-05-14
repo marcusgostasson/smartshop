@@ -26,5 +26,5 @@ uml:
 	@echo "Generating UML diagrams with pyreverse...\n"
 	mkdir -p doc
 	find code/py -name "*.py" | xargs pyreverse -o png -p smartshop
-	mv classes.png doc/classes.png
-	mv packages.png doc/packages.png
+	mv classes_smartshop.png doc/classes.png
+	mv packages_smartshop.png doc/packages.png
