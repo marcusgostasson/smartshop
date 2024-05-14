@@ -8,7 +8,7 @@ install:
 
 # Kör programmet
 run:
-	$(PYTHON) src/login_window.py
+	$(PYTHON) code/py/login_window.py
 
 # Rensa upp
 clean:
@@ -20,7 +20,8 @@ clean:
 pyreverse:
 	@echo "Generating UML diagrams with pyreverse..."
 	mkdir -p doc/pyreverse
-	pyreverse code/*.py
+	find code/py -name "*.py" | xargs pyreverse -o png -p project_name
+	pyreverse code /*.py
 	dot -Tpng classes.dot -o doc/pyreverse/classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f classes.dot packages.dot
