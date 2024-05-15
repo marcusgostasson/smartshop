@@ -511,7 +511,7 @@ QPushButton:disabled {
        </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>50</width>
          <height>40</height>
         </size>
        </property>
