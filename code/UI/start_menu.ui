@@ -136,6 +136,12 @@ selection-color: rgb(251, 108, 24);</string>
            <property name="enabled">
             <bool>true</bool>
            </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="maximumSize">
             <size>
              <width>2000</width>
@@ -511,7 +517,7 @@ QPushButton:disabled {
        </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>50</width>
          <height>40</height>
         </size>
        </property>
