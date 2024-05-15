@@ -136,6 +136,18 @@ selection-color: rgb(251, 108, 24);</string>
            <property name="enabled">
             <bool>true</bool>
            </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>2000</width>
@@ -504,15 +516,21 @@ QPushButton:disabled {
      <item>
       <widget class="QPushButton" name="logout_button">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>2000</width>
-         <height>50</height>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
@@ -532,7 +550,6 @@ QPushButton:disabled {
 	border-radius: 5px;
 	color: white;
 	background-color: #3474eb;
-	height: 40px
 }
 
 QPushButton:enabled {
