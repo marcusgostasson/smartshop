@@ -44,7 +44,7 @@ git clone git@github.com:marcusgostasson/pigdicegame.git
 git clone https://github.com/marcusgostasson/pigdicegame.git
 ```
 
-### Add db.properties in your code environmen
+### Add db.properties in your code environment
 
 Create a new file named `db.properties` under `requirements.txt` and paste the following content, replacing `xxxxx` with your own `DB_USER` and `DB_PWD`:
 
