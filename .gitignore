@@ -2,4 +2,3 @@ db.properties
 test_smartshop_mysql.py
 __pycache__
 .pre-commit-config.yaml
-test_create_user_window.py
