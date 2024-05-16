@@ -26,11 +26,16 @@ class TestCreateUserWindow(unittest.TestCase):
         self.assertEqual(self.window.windowTitle(), "Skapa användare")
 
     def test_validate_email_correct(self):
-        """Testing if valid email is returning True for correct email format."""
+        """Testing if valid email is returning True for correct email format
+        and False for incorrect format."""
         self.app = QApplication(sys.argv)
         self.window = create_user_window.CreateUserWindow()
         exp = True
         res = self.window.validate_email("raz@hotmail.com")
+        self.assertEqual(exp, res)
+
+        exp = False
+        res = self.window.validate_email("razhotmail.com")
         self.assertEqual(exp, res)
 
 
