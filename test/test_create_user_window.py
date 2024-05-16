@@ -39,16 +39,5 @@ class TestCreateUserWindow(unittest.TestCase):
         self.assertEqual(exp, res)
 
 
-"""
-    def test_back_button_exist(self):
-        Testing that the back button exist.
-        app = QApplication(sys.argv)
-        window = create_user_window.CreateUserWindow()
-        window.set_up_window()
-        back_button = window.findChild(QPushButton, "back")
-
-        self.assertIsNotNone(back_button)
-"""
-
 if __name__ == "__main__":
     unittest.main()
