@@ -30,6 +30,8 @@
 
 ## Installation Desktop App
 
+Clone the repo:
+
 ### SSH
 
 ```sh
