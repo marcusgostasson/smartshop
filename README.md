@@ -30,7 +30,7 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 * **Deal Hunter:**  Take advantage of store sales and coupons integrated within the app to maximize your savings.
 * **Plan It Out:**  Plan your meals ahead of time to avoid impulse purchases and unnecessary grocery trips.
 
-**Installation**
+**Installation for desktop app**
 
 ***SSH
 ```
@@ -40,67 +40,73 @@ git@github.com:marcusgostasson/pigdicegame.git
 ```
 https://github.com/marcusgostasson/pigdicegame.git
 ```
+Creating a virtual environment (or `venv`) is a common way to manage dependencies in Python projects. Here is a step-by-step guide to creating and using a `venv`:
 
-Att skapa en virtuell miljö (virtual environment eller `venv`) är ett vanligt sätt att hantera beroenden i Python-projekt. Här är en steg-för-steg-guide för att skapa och använda en `venv`:
-
-### Steg 1: Installera `venv`-modulen
-Om du använder en modern version av Python (3.3 eller senare), kommer `venv`-modulen redan vara inkluderad. Annars kan du behöva installera den. Du kan kontrollera din Python-version med:
-```
-python --version
+### Step 1: Install the `venv` module
+If you are using a modern version of Python (3.3 or later), the `venv` module will already be included. Otherwise, you may need to install it. You can check your Python version with:
 ```sh
-eller
+python --version
+```
+or
 ```sh
 python3 --version
 ```
 
-### Steg 2: Skapa en ny virtuell miljö
-1. Öppna din terminal eller kommandoprompt.
-2. Navigera till den katalog där du vill skapa din virtuella miljö.
-3. Kör följande kommando:
+### Step 2: Create a new virtual environment
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you want to create your virtual environment.
+3. Run the following command:
    ```sh
    python -m venv .venv
    ```
-   eller
+   or
    ```sh
    python3 -m venv .venv
    ```
-   där `.venv` är namnet på den virtuella miljön. Du kan välja vilket namn du vill.
+   where `.venv` is the name of the virtual environment. You can choose any name you like.
 
-### Steg 3: Aktivera den virtuella miljön
-För att använda den virtuella miljön, behöver du aktivera den.
+### Step 3: Activate the virtual environment
+To use the virtual environment, you need to activate it.
 
-- På Windows:
+- On Windows:
   ```sh
-  myenv\Scripts\activate
+  .venv\Scripts\activate
   ```
 
-- På macOS och Linux:
+- On macOS and Linux:
   ```sh
-  source myenv/bin/activate
+  source .venv/bin/activate
   ```
 
-När miljön är aktiverad, kommer terminalprompten att ändras för att indikera att du arbetar inom den virtuella miljön (vanligtvis ser du namnet på miljön inom parentes, t.ex. `(.venv)`).
+When the environment is activated, the terminal prompt will change to indicate that you are working within the virtual environment (usually, you will see the environment name in parentheses, e.g., `(.venv)`).
 
-### Steg 4: Installera paket
-Nu när din virtuella miljö är aktiverad, kan du installera paket med `pip` som vanligt. Till exempel:
+### Step 4: Install packages
+Now that your virtual environment is activated, you can install packages with `pip` as usual. For example:
 ```sh
-pip install requirements.txt
+pip install requests
 ```
 
-### Steg 5: Avaktivera den virtuella miljön
-När du är färdig med att använda den virtuella miljön, kan du avaktivera den genom att köra:
+### Step 5: Deactivate the virtual environment
+When you are done using the virtual environment, you can deactivate it by running:
 ```sh
 deactivate
 ```
 
-### Ytterligare tips
+### Additional tips
+- To see which packages are installed in your `venv`, you can use:
+  ```sh
+  pip list
   ```
-- För att installera alla beroenden från en `requirements.txt`-fil i en ny `venv`:
+- You can create a `requirements.txt` file to save a list of your dependencies:
+  ```sh
+  pip freeze > requirements.txt
+  ```
+- To install all dependencies from a `requirements.txt` file in a new `venv`:
   ```sh
   pip install -r requirements.txt
   ```
 
-Genom att använda `venv` kan du hantera beroenden för olika projekt utan att de påverkar varandra, vilket är särskilt användbart i utvecklingsmiljöer.
+By using `venv`, you can manage dependencies for different projects without them interfering with each other, which is especially useful in development environments.
 
 **We hope you enjoy using SmartShop!**
 
