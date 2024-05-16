@@ -34,11 +34,11 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 
 Clone the repo: https://github.com/marcusgostasson/smartshop
 
-SSH
+####SSH
 ```
 git@github.com:marcusgostasson/pigdicegame.git
 ```
-HTTPS
+####HTTPS
 ```
 https://github.com/marcusgostasson/pigdicegame.git
 ```
