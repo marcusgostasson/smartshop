@@ -16,7 +16,7 @@
 
 ## Get Started with SmartShop
 
-1. Download the SmartShop app from the App Store: [coming soon!]
+1. Download the SmartShop app from the App Store: *(coming soon!)*
 2. Create an account or log in if you already have one.
 3. Set your location to see nearby stores or manually select your preferred grocery stores. *(Coming soon!)*
 4. Start exploring delicious recipes and finding the best deals on your groceries!
