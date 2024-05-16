@@ -28,7 +28,7 @@
 - **Deal Hunter:** Utilize store sales and coupons integrated within the app to maximize your savings.
 - **Plan It Out:** Plan your meals in advance to avoid impulse purchases and unnecessary grocery trips.
 
-## Installation for Desktop App
+## Installation Desktop App
 
 ### SSH
 
