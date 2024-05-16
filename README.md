@@ -107,6 +107,7 @@ deactivate
   ```sh
   pip install -r requirements.txt
   ```
+
   
 ***We hope you enjoy using SmartShop!***
 
