@@ -156,6 +156,3 @@ We appreciate your input! For questions or suggestions, contact us at [info@smar
 - Follow us on social media for recipe inspiration and exclusive deals:
   - Facebook: [link to Facebook page] *(Coming soon!)*
   - Instagram: [link to Instagram page] *(Coming soon!)*
-```
-
-This README is now organized, easy to read, and follows a logical structure. It includes sections for features, getting started, installation instructions, tips for saving money, and additional information.
