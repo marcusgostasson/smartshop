@@ -36,11 +36,11 @@ Clone the repo: https://github.com/marcusgostasson/smartshop
 
 #### SSH
 ```
-git@github.com:marcusgostasson/pigdicegame.git
+git clone git@github.com:marcusgostasson/pigdicegame.git
 ```
 #### HTTPS
 ```
-https://github.com/marcusgostasson/pigdicegame.git
+git clone https://github.com/marcusgostasson/pigdicegame.git
 ```
 Creating a virtual environment (or `venv`) is a common way to manage dependencies in Python projects. Here is a step-by-step guide to creating and using a `venv`:
 
