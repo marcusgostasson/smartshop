@@ -87,7 +87,7 @@ When the environment is activated, the terminal prompt will change to indicate t
 ### Step 4: Install packages
 Now that your virtual environment is activated, you can install packages with `pip` as usual. For example:
 ```sh
-pip install requests
+pip install requirements.txt
 ```
 
 ### Step 5: Deactivate the virtual environment
@@ -97,21 +97,10 @@ deactivate
 ```
 
 ### Additional tips
-- To see which packages are installed in your `venv`, you can use:
-  ```sh
-  pip list
-  ```
-- You can create a `requirements.txt` file to save a list of your dependencies:
-  ```sh
-  pip freeze > requirements.txt
-  ```
 - To install all dependencies from a `requirements.txt` file in a new `venv`:
   ```sh
   pip install -r requirements.txt
   ```
-
-By using `venv`, you can manage dependencies for different projects without them interfering with each other, which is especially useful in development environments.
-
 **We hope you enjoy using SmartShop!**
 
 **FAQ**
