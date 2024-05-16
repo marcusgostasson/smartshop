@@ -20,23 +20,32 @@ from smartshop.code.py import create_user_window
 class TestCreateUserWindow(unittest.TestCase):
     def test_window_title(self):
         """Testing if the name of the window is correct."""
-        app = QApplication(sys.argv)
-        window = create_user_window.CreateUserWindow()
-        window.set_up_window()
-        self.assertEqual(window.windowTitle(), "Skapa användare")
+        self.app = QApplication(sys.argv)
+        self.window = create_user_window.CreateUserWindow()
+        self.window.set_up_window()
+        self.assertEqual(self.window.windowTitle(), "Skapa användare")
 
     def test_validate_email(self):
         """Testing if valid email is returning True for correct email format
         and False for incorrect format."""
-        app = QApplication(sys.argv)
-        window = create_user_window.CreateUserWindow()
+        self.app = QApplication(sys.argv)
+        self.window = create_user_window.CreateUserWindow()
         exp = True
-        res = window.validate_email("raz@hotmail.com")
+        res = self.window.validate_email("raz@hotmail.com")
         self.assertEqual(exp, res)
 
         exp = False
-        res = window.validate_email("razhotmail.com")
+        res = self.window.validate_email("razhotmail.com")
         self.assertEqual(exp, res)
+
+    def test_back_button_exist(self):
+        self.app = QApplication(sys.argv)
+        self.window = create_user_window.CreateUserWindow()
+        self.window.set_up_window()
+
+        button = self.window.findChild(QPushButton, "back")
+
+        self.assertIsNotNone(button)
 
 
 if __name__ == "__main__":

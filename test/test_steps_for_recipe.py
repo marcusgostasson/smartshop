@@ -22,30 +22,32 @@ from smartshop.code.py import steps_for_recipe
 class TestStepsForRecipe(unittest.TestCase):
     def test_click_return_to_previous_window(self):
         """Testing if return to previous window works."""
-        app = QApplication(sys.argv)
+        self.app = QApplication(sys.argv)
 
-        window = steps_for_recipe.RecipeSteps()
+        self.window = steps_for_recipe.RecipeSteps()
         db_instance = MagicMock()
         db_instance.get_steps_for_recipe.return_value = "Step 1: Prepare ingredients"
 
-        window.set_up_recipe_step_window(db_instance, "tacos", MagicMock(), "sven")
+        self.window.set_up_recipe_step_window(db_instance, "tacos", MagicMock(), "sven")
 
-        QTest.mouseClick(window.return_button, Qt.LeftButton)
+        QTest.mouseClick(self.window.return_button, Qt.LeftButton)
 
-        self.assertTrue(window.previous_window.set_up_ingredient_price_window.called)
+        self.assertTrue(
+            self.window.previous_window.set_up_ingredient_price_window.called
+        )
 
     def test_widgets_exist(self):
         """Testing if the labels are able to be found."""
-        app = QApplication(sys.argv)
+        self.app = QApplication(sys.argv)
 
-        window = steps_for_recipe.RecipeSteps()
+        self.window = steps_for_recipe.RecipeSteps()
         db_instance = MagicMock()
         db_instance.get_steps_for_recipe.return_value = "Step 1: Prepare ingredients"
-        window.set_up_recipe_step_window(db_instance, "tacos", MagicMock(), "sven")
+        self.window.set_up_recipe_step_window(db_instance, "tacos", MagicMock(), "sven")
 
-        recipe_name = window.findChild(QLabel, "recept_name")
-        recipe_steps = window.findChild(QLabel, "recept_steps")
-        recipe_picture = window.findChild(QLabel, "recept_picture")
+        recipe_name = self.window.findChild(QLabel, "recept_name")
+        recipe_steps = self.window.findChild(QLabel, "recept_steps")
+        recipe_picture = self.window.findChild(QLabel, "recept_picture")
 
         self.assertIsNotNone(recipe_name)
         self.assertIsNotNone(recipe_steps)

@@ -22,43 +22,45 @@ from smartshop.code.py import window_for_stores_and_ingredients_price
 class TestWindowForStoresAndIngredientsPrice(unittest.TestCase):
     def test_window_title(self):
         """Testing if the windows name is correct."""
-        app = QApplication(sys.argv)
-        window = window_for_stores_and_ingredients_price.IngredientPrice()
-        window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
-        self.assertEqual(window.windowTitle(), "Ingredienser för receptet")
+        self.app = QApplication(sys.argv)
+        self.window = window_for_stores_and_ingredients_price.IngredientPrice()
+        self.window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
+        self.assertEqual(self.window.windowTitle(), "Ingredienser för receptet")
 
     def test_click_return_to_start_window_button(self):
         """Testing if 'Tillbaka till meny' is working."""
-        app = QApplication(sys.argv)
-        window = window_for_stores_and_ingredients_price.IngredientPrice()
-        window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
+        self.app = QApplication(sys.argv)
+        self.window = window_for_stores_and_ingredients_price.IngredientPrice()
+        self.window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
 
-        button = window.return_to_start_window_button
+        button = self.window.return_to_start_window_button
         QTest.mouseClick(button, Qt.LeftButton)
 
-        self.assertTrue(window.start_menu_window.set_up_start_menu.called)
+        self.assertTrue(self.window.start_menu_window.set_up_start_menu.called)
 
     def test_click_steps_for_recipe_button(self):
         """Testing if 'Stegen till receptet' button works."""
-        app = QApplication(sys.argv)
-        window = window_for_stores_and_ingredients_price.IngredientPrice()
-        window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
+        self.app = QApplication(sys.argv)
+        self.window = window_for_stores_and_ingredients_price.IngredientPrice()
+        self.window.set_up_ingredient_price_window(MagicMock(), MagicMock(), "sven")
 
-        button = window.get_steps_for_recipe_button
+        button = self.window.get_steps_for_recipe_button
         QTest.mouseClick(button, Qt.LeftButton)
 
-        self.assertTrue(window.steps_for_chosen_recipe.set_up_recipe_step_window.called)
+        self.assertTrue(
+            self.window.steps_for_chosen_recipe.set_up_recipe_step_window.called
+        )
 
     def test_store_with_lowest_cost(self):
         """Testing that it finds the store with the lowest price."""
-        app = QApplication(sys.argv)
-        window = window_for_stores_and_ingredients_price.IngredientPrice()
+        self.app = QApplication(sys.argv)
+        self.window = window_for_stores_and_ingredients_price.IngredientPrice()
         recipe_price = {
             "Willys": [("Pastasås", 400.0, "DL", 43), ("Pasta", 500.0, "G", 59.3)],
             "Ica": [("Pastasås", 400.0, "DL", 31), ("Pasta", 500.0, "G", 58)],
             "Coop": [("Pastasås", 400.0, "DL", 82.5), ("Pasta", 500.0, "G", 5)],
         }
-        cost = window.store_with_lowest_cost(recipe_price)
+        cost = self.window.store_with_lowest_cost(recipe_price)
         self.assertEqual(cost, 87.5)
 
 
