@@ -109,7 +109,7 @@ deactivate
   ```
 
   
-***We hope you enjoy using SmartShop!***
+**We hope you enjoy using SmartShop!**
 
 **FAQ**
 
