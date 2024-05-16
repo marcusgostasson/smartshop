@@ -30,7 +30,7 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 * **Deal Hunter:**  Take advantage of store sales and coupons integrated within the app to maximize your savings.
 * **Plan It Out:**  Plan your meals ahead of time to avoid impulse purchases and unnecessary grocery trips.
 
-* **Installation**
+**Installation**
 
 ***SSH
 ```
