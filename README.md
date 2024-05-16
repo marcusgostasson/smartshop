@@ -32,6 +32,8 @@ SmartShop is a mobile app that helps you save money on groceries by finding the 
 
 **Installation for desktop app**
 
+Clone the repo: https://github.com/marcusgostasson/smartshop
+
 SSH
 ```
 git@github.com:marcusgostasson/pigdicegame.git
