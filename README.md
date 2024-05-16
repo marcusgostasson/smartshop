@@ -40,9 +40,31 @@ git clone git@github.com:marcusgostasson/pigdicegame.git
 ```
 git clone https://github.com/marcusgostasson/pigdicegame.git
 ```
-Creating a virtual environment (or `venv`) is a common way to manage dependencies in Python projects. Here is a step-by-step guide to creating and using a `venv`:
+
+### Add db.properties
+Add a new file with name db.properties under requirements.txt and paste this in and type in your own DB_USER and DB_PWD insted of xxxxx:
+
+```
+DB_HOST=localhost
+DB_SCHEMA=smartshop
+DB_USER=xxxxx
+DB_PWD=xxxxx
+```
+
+### Create a schema in MySQL
+Add this line to create a schema in MySQL:
+```
+CREATE SCHEMA smartshop
+```
+
+### Copy the database
+
+Go to codebase and copy the code from smartshop_data_for_mysql and add it in MySQL. 
 
 ### Step 1: Install the `venv` module
+
+Here is a step-by-step guide to creating and using a `venv`:
+
 If you are using a modern version of Python (3.3 or later), the `venv` module will already be included. Otherwise, you may need to install it. You can check your Python version with:
 - On Windows:
 ```sh
@@ -99,12 +121,6 @@ When you are done using the virtual environment, you can deactivate it by runnin
 ```sh
 deactivate
 ```
-
-### Additional tips
-- To install all dependencies from a `requirements.txt` file in a new `venv`:
-  ```sh
-  pip install -r requirements.txt
-  ```
 
 ## We hope you enjoy using SmartShop!
 
