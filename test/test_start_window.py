@@ -22,63 +22,63 @@ from smartshop.code.py import start_window
 class TestStartWindow(unittest.TestCase):
     def test_window_title(self):
         """Testing if the name of the window is correct."""
-        self.app = QApplication(sys.argv)
+        app = QApplication(sys.argv)
         user_name = "raz"
-        self.window = start_window.UIMainWindow(user_name)
-        self.window.set_up_start_menu()
-        self.assertEqual(self.window.windowTitle(), "SmartShop")
+        window = start_window.UIMainWindow(user_name)
+        window.set_up_start_menu()
+        self.assertEqual(window.windowTitle(), "SmartShop")
 
     def test_button_click_get_ingredients(self):
         """Testing if pressing 'Hämta ingredienser' is opening other window."""
-        self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
-        self.window.set_up_start_menu()
-        button = self.window.get_ingredients_button
+        app = QApplication(sys.argv)
+        window = start_window.UIMainWindow("raz")
+        window.set_up_start_menu()
+        button = window.get_ingredients_button
 
         QTest.mouseClick(button, Qt.LeftButton)
 
-        self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
+        self.assertTrue(window.second_window.set_up_ingredient_price_window.called)
 
     def test_button_click_user_get_ingredients(self):
         """Testing if pressing users 'Hämta ingredienser' is opening other window."""
-        self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
-        self.window.set_up_start_menu()
-        button = self.window.user_get_ingredients_button
+        app = QApplication(sys.argv)
+        window = start_window.UIMainWindow("raz")
+        window.set_up_start_menu()
+        button = window.user_get_ingredients_button
 
         QTest.mouseClick(button, Qt.LeftButton)
-        self.assertTrue(self.window.second_window.set_up_ingredient_price_window.called)
+        self.assertTrue(window.second_window.set_up_ingredient_price_window.called)
 
     def test_click_create_recipe_button(self):
         """Testing the 'Skapa recept' button works."""
-        self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
-        self.window.set_up_start_menu()
-        button = self.window.create_recipe_button
+        app = QApplication(sys.argv)
+        window = start_window.UIMainWindow("raz")
+        window.set_up_start_menu()
+        button = window.create_recipe_button
 
         QTest.mouseClick(button, Qt.LeftButton)
         self.assertTrue(
-            self.window.create_recipe_instance.set_up_create_recipe_window.called
+            window.create_recipe_instance.set_up_create_recipe_window.called
         )
 
     def test_click_delete_recipe_button(self):
         """Testing the 'Radera recept' button."""
-        self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
-        self.window.set_up_start_menu()
-        self.window.user_ingredients_for_recipe = MagicMock()
-        button = self.window.delete_recipe_button
+        app = QApplication(sys.argv)
+        window = start_window.UIMainWindow("raz")
+        window.set_up_start_menu()
+        window.user_ingredients_for_recipe = MagicMock()
+        button = window.delete_recipe_button
         QTest.mouseClick(button, Qt.LeftButton)
-        self.assertTrue(self.window.db_instance.delete_recipe.called)
+        self.assertTrue(window.db_instance.delete_recipe.called)
 
     def test_click_logout_button(self):
         """Testing if the user can logout."""
-        self.app = QApplication(sys.argv)
-        self.window = start_window.UIMainWindow("raz")
-        self.window.set_up_start_menu()
-        button = self.window.logout_button
+        app = QApplication(sys.argv)
+        window = start_window.UIMainWindow("raz")
+        window.set_up_start_menu()
+        button = window.logout_button
         QTest.mouseClick(button, Qt.LeftButton)
-        self.assertTrue(self.window.login_window.set_up_login.called)
+        self.assertTrue(window.login_window.set_up_login.called)
 
 
 if __name__ == "__main__":
