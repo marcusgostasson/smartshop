@@ -43,6 +43,7 @@ git clone git@github.com:marcusgostasson/pigdicegame.git
 ```sh
 git clone https://github.com/marcusgostasson/pigdicegame.git
 ```
+If you not able to run any make commands CD in to smartshop
 
 ### Add db.properties in your code environment
 
