@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: Python application
 
 on: push
@@ -21,9 +18,10 @@ jobs:
         python-version: "3.11"
     - name: Install dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with unittest
       run: |
-        if [ -d "./test" ]; then python -m unittest discover -s ./test; fi
-      # Rename the parts after the ./ to whatever our folder with tests is called
+        if [ -d "./test" ]; then xvfb-run python -m unittest discover -s ./test; fi
