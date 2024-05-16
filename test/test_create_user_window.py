@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtTest import QTest
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QPushButton
 
 sys.modules["smartshop_mysql"] = MagicMock()
 sys.modules["login_window"] = MagicMock()
@@ -37,6 +37,15 @@ class TestCreateUserWindow(unittest.TestCase):
         exp = False
         res = self.window.validate_email("razhotmail.com")
         self.assertEqual(exp, res)
+
+    def test_back_button_exist(self):
+        """Test if the back button exist."""
+        self.app = QApplication(sys.argv)
+        self.window = create_user_window.CreateUserWindow()
+        self.window.set_up_window()
+        self.back_button = self.window.findChild(QPushButton, "back")
+
+        self.assertIsNotNone(self.back_button)
 
 
 if __name__ == "__main__":

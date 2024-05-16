@@ -76,7 +76,7 @@ class CreateRecipeWindow(QWidget):
             self.login_window.error_message("Måste ha minst en ingrediens")
         elif self.at_least_one_ingredient_picked:
             does_recipe_exist = self.db_instance.get_recipe_name(
-                self.recipe_name.text()
+                self.recipe_name.text(), user_name
             )
             if does_recipe_exist:
                 self.login_window.error_message(

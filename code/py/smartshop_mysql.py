@@ -51,7 +51,8 @@ WHERE recipe.recipe_name = %s; """,
     def delete_recipe(self, recipe, user_name):
         """Delete the chosen recipe."""
         self.mycursor.execute(
-            "SELECT recipe_id FROM recipe WHERE recipe_name = %s", (recipe,)
+            "SELECT recipe_id FROM recipe WHERE recipe_name = %s AND user_user_name = %s",
+            (recipe, user_name),
         )
         recipe_id = self.mycursor.fetchone()
         self.mycursor.execute(
@@ -59,9 +60,7 @@ WHERE recipe.recipe_name = %s; """,
         )
 
         self.mycursor.execute(
-            """DELETE FROM recipe
-                                WHERE user_user_name = %s AND recipe_name = %s""",
-            (user_name, recipe),
+            "DELETE FROM recipe WHERE recipe_id = %s", (recipe_id[0],)
         )
         self.db.commit()
 
@@ -98,11 +97,18 @@ WHERE recipe.recipe_name = %s; """,
             ingredienses.append(label_name)
         return ingredienses
 
-    def get_steps_for_recipe(self, recipe_name):
+    def get_steps_for_recipe(self, recipe_name, user_name=None):
         """Fetch the steps for the selected recipe."""
-        self.mycursor.execute(
-            "SELECT recipe_step FROM recipe WHERE recipe_name = %s", (recipe_name,)
-        )
+        if user_name is None:
+            self.mycursor.execute(
+                "SELECT recipe_step FROM recipe WHERE recipe_name = %s AND user_user_name IS NULL",
+                (recipe_name,),
+            )
+        else:
+            self.mycursor.execute(
+                "SELECT recipe_step FROM recipe WHERE recipe_name = %s and user_user_name = %s OR user_user_name IS NULL",
+                (recipe_name, user_name),
+            )
         steps = self.mycursor.fetchone()
         for step in steps:
             return step
@@ -148,10 +154,11 @@ WHERE recipe.recipe_name = %s; """,
             print("Database query failed:", e)
             return None
 
-    def get_recipe_name(self, recipe_name):
+    def get_recipe_name(self, recipe_name, user_name):
         """get the recipe name from the database."""
         self.mycursor.execute(
-            "SELECT recipe_name FROM recipe WHERE recipe_name = %s", (recipe_name,)
+            "SELECT recipe_name FROM recipe WHERE recipe_name = %s and user_user_name = %s",
+            (recipe_name, user_name),
         )
         result = self.mycursor.fetchone()
         if result is not None:

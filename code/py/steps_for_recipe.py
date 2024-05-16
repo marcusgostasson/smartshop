@@ -43,7 +43,7 @@ class RecipeSteps(QWidget):
         vertical_layout.addWidget(self.recipe_picture)
 
         self.db_instance = db_instance
-        recipe_step = self.db_instance.get_steps_for_recipe(recipe)
+        recipe_step = self.db_instance.get_steps_for_recipe(recipe, user_name)
         if recipe_step is None:
             self.recipe_name.setText(recipe)
             vertical_layout.addWidget(self.recipe_name)
