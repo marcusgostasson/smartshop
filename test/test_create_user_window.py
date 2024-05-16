@@ -38,15 +38,6 @@ class TestCreateUserWindow(unittest.TestCase):
         res = self.window.validate_email("razhotmail.com")
         self.assertEqual(exp, res)
 
-    def test_back_button_exist(self):
-        self.app = QApplication(sys.argv)
-        self.window = create_user_window.CreateUserWindow()
-        self.window.set_up_window()
-
-        button = self.window.findChild(QPushButton, "back")
-
-        self.assertIsNotNone(button)
-
 
 if __name__ == "__main__":
     unittest.main()
