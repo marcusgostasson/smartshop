@@ -1,4 +1,3 @@
-```html
 <p align="center">
     <img width="320" alt="smartshoplogo" src="https://github.com/marcusgostasson/smartshop/assets/143846336/f1097435-1004-411d-8747-279634d3da42">
 </p>
@@ -123,4 +122,3 @@ DB_PWD=xxxxx</code></pre>
         </ul>
     </li>
 </ul>
-```
