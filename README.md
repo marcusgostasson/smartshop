@@ -57,7 +57,7 @@ DB_PWD=xxxxx
 
 ### Create a Schema in MySQL
 
-Add this line to create a schema in MySQL:
+Add this line to create a schema in MySQL and run it:
 
 ```sql
 CREATE SCHEMA smartshop;
