@@ -35,15 +35,16 @@ Clone the repo:
 ### SSH
 
 ```sh
-git clone git@github.com:marcusgostasson/pigdicegame.git
+git clone git@github.com:marcusgostasson/smartshop.git
 ```
 
 ### HTTPS
 
 ```sh
-git clone https://github.com/marcusgostasson/pigdicegame.git
+git clone https://github.com/marcusgostasson/smartshop.git
 ```
-If you not able to run any make commands CD in to smartshop
+
+If you are not able to run any make commands, CD into SmartShop:
 
 ### Add db.properties in your code environment
 
@@ -66,7 +67,7 @@ CREATE SCHEMA smartshop;
 
 ### Copy the Database
 
-Go to the codebase, copy the code from `smartshop_data_for_mysql`, and add it in MySQL.
+Go to the codebase in the repository, copy the code from `smartshop_data_for_mysql`, and add it in MySQL.
 
 ### Step-by-Step Guide to Using a Virtual Environment
 
