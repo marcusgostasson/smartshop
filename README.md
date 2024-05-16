@@ -44,10 +44,11 @@ Creating a virtual environment (or `venv`) is a common way to manage dependencie
 
 ### Step 1: Install the `venv` module
 If you are using a modern version of Python (3.3 or later), the `venv` module will already be included. Otherwise, you may need to install it. You can check your Python version with:
+- On Windows:
 ```sh
 python --version
 ```
-or
+- On macOS and Linux:
 ```sh
 python3 --version
 ```
@@ -56,10 +57,11 @@ python3 --version
 1. Open your terminal or command prompt.
 2. Navigate to the directory where you want to create your virtual environment.
 3. Run the following command:
+- On Windows:
    ```sh
    python -m venv .venv
    ```
-   or
+- On macOS and Linux:
    ```sh
    python3 -m venv .venv
    ```
