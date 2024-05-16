@@ -90,7 +90,13 @@ Now that your virtual environment is activated, you can install packages with `p
 pip install requirements.txt
 ```
 
-### Step 5: Deactivate the virtual environment
+### Step 5: Run
+Run the program:
+```
+Make run
+```
+
+### Step 6: Deactivate the virtual environment
 When you are done using the virtual environment, you can deactivate it by running:
 ```sh
 deactivate
