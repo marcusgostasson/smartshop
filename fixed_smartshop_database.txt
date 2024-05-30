@@ -1,0 +1,193 @@
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: smartshop
+-- ------------------------------------------------------
+-- Server version	8.0.36
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ingredients_recipe`
+--
+
+DROP TABLE IF EXISTS `ingredients_recipe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ingredients_recipe` (
+  `product_product_id` int NOT NULL,
+  `recipe_recipe_id` int NOT NULL,
+  `portionsize` int DEFAULT NULL,
+  KEY `product_product_id_idx` (`product_product_id`),
+  KEY `recipe_recipe_id_idx` (`recipe_recipe_id`),
+  CONSTRAINT `product_product_id` FOREIGN KEY (`product_product_id`) REFERENCES `product` (`product_id`),
+  CONSTRAINT `recipe_recipe_id` FOREIGN KEY (`recipe_recipe_id`) REFERENCES `recipe` (`recipe_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ingredients_recipe`
+--
+
+LOCK TABLES `ingredients_recipe` WRITE;
+/*!40000 ALTER TABLE `ingredients_recipe` DISABLE KEYS */;
+INSERT INTO `ingredients_recipe` VALUES (143,9,250),(165,9,200),(147,9,200),(148,9,50),(144,10,200),(166,10,2),(147,10,100),(148,10,50),(159,10,50),(164,10,50),(144,11,250),(145,11,6),(147,11,100),(148,11,50),(159,11,50),(164,11,50),(146,12,500),(143,46,NULL),(165,46,NULL),(143,51,NULL),(143,52,NULL),(145,60,NULL),(143,60,NULL),(143,61,NULL),(145,61,NULL),(144,63,NULL);
+/*!40000 ALTER TABLE `ingredients_recipe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product` (
+  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(50) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_amount` float NOT NULL,
+  `product_amount_type` enum('G','KG','DL','L','ST') NOT NULL,
+  `product_type` enum('MEAT','VEGO','DRY GOODS','DAIRY') NOT NULL,
+  PRIMARY KEY (`product_id`),
+  UNIQUE KEY `product_id_UNIQUE` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (143,'Pasta','Brand A',500,'G','DRY GOODS'),(144,'Nötfärs-20%','Brand B',500,'G','MEAT'),(145,'Tacoskal','Brand C',12,'ST','DRY GOODS'),(146,'Kycklingbröstfile','Brand D',500,'G','MEAT'),(147,'Tomat','Brand E',500,'G','VEGO'),(148,'Sallad','Brand F',200,'G','VEGO'),(159,'Lök','Brand G',200,'G','VEGO'),(164,'Ost','Brand H',200,'G','DAIRY'),(165,'Pastasås','Brand I',400,'DL','DRY GOODS'),(166,'Hamburgerbröd','Brand J',6,'ST','DRY GOODS'),(167,'Tacokrydda','Brand K',50,'G','DRY GOODS');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_price_for_each_store`
+--
+
+DROP TABLE IF EXISTS `product_price_for_each_store`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product_price_for_each_store` (
+  `p_product_id` int NOT NULL,
+  `store_store_id` int NOT NULL,
+  `product_price` double NOT NULL,
+  KEY `product_product_id_idx` (`p_product_id`),
+  KEY `store_store_id_idx` (`store_store_id`),
+  CONSTRAINT `p_product_id` FOREIGN KEY (`p_product_id`) REFERENCES `product` (`product_id`),
+  CONSTRAINT `store_store_id` FOREIGN KEY (`store_store_id`) REFERENCES `store` (`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_price_for_each_store`
+--
+
+LOCK TABLES `product_price_for_each_store` WRITE;
+/*!40000 ALTER TABLE `product_price_for_each_store` DISABLE KEYS */;
+INSERT INTO `product_price_for_each_store` VALUES (143,3,1.29),(143,2,58.98),(143,1,91.01),(144,3,78.14),(144,2,17.65),(144,1,53.81),(145,3,16.13),(145,2,19.2),(145,1,47.63),(146,3,80.53),(146,2,59.78),(146,1,57.29),(147,3,7.1),(147,2,63.66),(147,1,96.99),(148,3,93.99),(148,2,78.96),(148,1,12.83),(159,3,27.25),(159,2,97.8),(159,1,7.22),(164,3,42.71),(164,2,91.89),(164,1,31.34),(165,3,81.01),(165,2,11.02),(165,1,12.06),(166,3,27.27),(166,2,0.17),(166,1,19.05),(167,3,94.72),(167,2,16.44),(167,1,98.03);
+/*!40000 ALTER TABLE `product_price_for_each_store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recipe`
+--
+
+DROP TABLE IF EXISTS `recipe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `recipe` (
+  `recipe_id` int NOT NULL AUTO_INCREMENT,
+  `recipe_name` varchar(50) NOT NULL,
+  `recipe_step` text,
+  `user_user_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`recipe_id`),
+  UNIQUE KEY `recipe_id_UNIQUE` (`recipe_id`),
+  KEY `user_user_name_idx` (`user_user_name`),
+  CONSTRAINT `user_user_name` FOREIGN KEY (`user_user_name`) REFERENCES `user` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recipe`
+--
+
+LOCK TABLES `recipe` WRITE;
+/*!40000 ALTER TABLE `recipe` DISABLE KEYS */;
+INSERT INTO `recipe` VALUES (9,'Pasta med räkor och curry','1. Koka upp vatten.\n2. Tillsätt pasta.\n3. Koka tills al dente.\n4. Dränera.',NULL),(10,'Hamburgare','1. Stek nötfärs.\n2. Rosta hamburgerbullar. \n3. Montera burgare med sallad, tomat, lök och ost.',NULL),(11,'Tacos','1. Stek nötfärs med tacokrydda. \n2. Värm tacoskal. \n3. Montera tacos med nötkött, sallad, tomat, lök och ost.',NULL),(12,'Kyckling Roma','1. Marinera kycklingbröst. \n2. Grilla tills den är genomstekt.',NULL),(46,'ra','asd','raz2'),(51,'test recept','yes test','test'),(52,'raz pasta','','razze'),(60,'Razze Tacos Deluxe','1. Koka deluxe.','razze'),(61,'raz pasta','Jag gjorde pastan först','sven'),(63,'raz pasta v2','sasa','razze');
+/*!40000 ALTER TABLE `recipe` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `store`
+--
+
+DROP TABLE IF EXISTS `store`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `store` (
+  `store_id` int NOT NULL,
+  `store_name` enum('Willys','Ica','Coop') NOT NULL,
+  PRIMARY KEY (`store_id`),
+  UNIQUE KEY `store_id_UNIQUE` (`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `store`
+--
+
+LOCK TABLES `store` WRITE;
+/*!40000 ALTER TABLE `store` DISABLE KEYS */;
+INSERT INTO `store` VALUES (1,'Willys'),(2,'Ica'),(3,'Coop');
+/*!40000 ALTER TABLE `store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`user_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('ad','$2b$12$ahI3U18pjEMnHoL4.3TG5OJrrIEPPHSyv/7gowXOofUUl.mNh4HiW','Asd','Asd','ad@sa.se'),('doger','$2b$12$/BjiDIm/MK62V6v99Acfi.bmD9WdgNC.z9KXtJJThOjLPwYA5S8ZK','Dog','Dogson','dog@gotmail.com'),('DOGMAN','$2b$12$mMHHLPP/wpvcXkq.LdOgA.VIVrzVQqWDCtN4mgEY7q3tNJ7aCGHZm','Asdasda','Adsad','asda@hot.se'),('mar','$2b$12$a0lb0VV.7VyVOGgdyL8wle6lmFOYllJJpnxQrdUdL.BlC5oFXZcVq','Mar','Cus','waffe@hotmail.se'),('qwe','$2b$12$/dabwQUTy7mK4mQqRXOic.zF7WjLGoJ/XiW8J9OAY1Uc2EYWBEneu','Svens','Svenssss','asd@ho.se'),('ra','$2b$12$AAGD2eikfstUgL1QDI0hv.x9RZEdDpJsHZqh5OyOIQG92v/oSseDC','Ra','Ar','wa@as.se'),('rall','$2b$12$GCItU8CrCjawP2WCkBTk4.nfhTgiz4ozETl7NtkAAjS1eBja9Gg4u','Ra','Ad','s@g.se'),('raz','$2b$12$lW.ajeZZME8swPQsS.sFFubzk/7JLiGtomTx/jraBR1/6egw1zPrG','As','Sad','asd@hot.se'),('raz2','$2b$12$5P4AjwL.ZT.5Rr3tMp8W0Ogpbcw3lNeF4O6ER0cjHd8JvqfOM2gmK','Raz','Rass','wa@h.se'),('raz23','$2b$12$84oCygjwGcuMa4zmsIqjOe2LP9U.xRAsjNQPe/EUtPf43MFgCpev.','Razmus','Rosen','ra@hotmail.com'),('razmus','$2b$12$xcMhQKi7ss9v3xsiDLiY2uoUJ93Oynbadnr8X65duk3k8B1CDMfoq','As','Ra','as@a.se'),('razze','$2b$12$5.W9X4p43tmDbldHbgZvbu63af4aqbyo6Gce/FFME/F4fB0ott2EK','Raz','Ros','wafe@hotmail.se'),('sven','$2b$12$UU7S084tIqnLKmk1fJ3H.OPtdKg3W80tEEPWEh1ReCvzNhyZzsOAC','Sven','Svensson','sven@hot.se'),('test','$2b$12$Ss2KQ0TK4MJrk03LmS.EpObh.9GodSJE9i1UWMoX.1YRNl8T8Qbj2','Test','Testar','tes@hot.com');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-05-30 13:43:43
