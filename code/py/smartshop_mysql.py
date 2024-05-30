@@ -26,19 +26,33 @@ class SmartShopDB:
         except mysql.connector.Error as e:
             print("Failed to connect to MySQL DB" + str(e))
 
-    def get_price_and_ingredients(self, recipe_name):
+    def get_price_and_ingredients(self, recipe_name, user_name=None):
         """Fetch all ingredients and the price for the selected recipe."""
-        self.mycursor.execute(
-            """
+        if user_name is not None:
+            self.mycursor.execute(
+                """
 SELECT store.store_name, product.product_name, product.product_amount, product.product_amount_type, product_price_for_each_store.product_price
 FROM recipe
 JOIN ingredients_recipe ON recipe.recipe_id = ingredients_recipe.recipe_recipe_id
 JOIN product ON ingredients_recipe.product_product_id = product.product_id
 JOIN product_price_for_each_store ON product.product_id = product_price_for_each_store.p_product_id
 JOIN store ON product_price_for_each_store.store_store_id = store.store_id
-WHERE recipe.recipe_name = %s; """,
-            (recipe_name,),
-        )
+WHERE recipe.recipe_name = %s AND user_user_name = %s; """,
+                (recipe_name, user_name),
+            )
+        else:
+            self.mycursor.execute(
+                """
+SELECT store.store_name, product.product_name, product.product_amount, product.product_amount_type, product_price_for_each_store.product_price
+FROM recipe
+JOIN ingredients_recipe ON recipe.recipe_id = ingredients_recipe.recipe_recipe_id
+JOIN product ON ingredients_recipe.product_product_id = product.product_id
+JOIN product_price_for_each_store ON product.product_id = product_price_for_each_store.p_product_id
+JOIN store ON product_price_for_each_store.store_store_id = store.store_id
+WHERE recipe.recipe_name = %s;""",
+                (recipe_name,),
+            )
+
         recipe_ingredient = self.mycursor.fetchall()
         organized_data = {}
 

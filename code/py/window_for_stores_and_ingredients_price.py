@@ -12,7 +12,7 @@ from PyQt5.QtWidgets import *
 class IngredientPrice(QWidget):
     """Ingredient and price class."""
 
-    def set_up_ingredient_price_window(self, start_menu, recipe_name, user_name):
+    def set_up_ingredient_price_window(self, start_menu, recipe_name, user_name=None):
         """Set up the window."""
         self.recipe_name = recipe_name
         self.user_name = user_name
@@ -27,7 +27,9 @@ class IngredientPrice(QWidget):
         self.setGeometry(200, 200, 500, 200)
         self.setStyleSheet("background-color: rgb(255, 255, 255);")
 
-        recipe_price = self.db_instance.get_price_and_ingredients(recipe_name)
+        recipe_price = self.db_instance.get_price_and_ingredients(
+            recipe_name, user_name
+        )
 
         self.lowest_total_cost = self.store_with_lowest_cost(recipe_price)
 

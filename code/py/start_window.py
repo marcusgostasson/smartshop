@@ -52,9 +52,7 @@ class UIMainWindow(QMainWindow):
         self.get_ingredient_button = self.findChild(
             QPushButton, "get_ingredients_button"
         )
-        self.get_ingredient_button.clicked.connect(
-            lambda: self.get_ingredients(self.user_name)
-        )
+        self.get_ingredient_button.clicked.connect(lambda: self.get_ingredients())
 
         self.user_get_ingredients_button = self.findChild(
             QPushButton, "your_get_ingredients_button"
@@ -115,11 +113,11 @@ class UIMainWindow(QMainWindow):
                 self, self.user_ingredients_for_recipe.currentText(), user_name
             )
 
-    def get_ingredients(self, user_name):
+    def get_ingredients(self):
         """Hide current window and set up second window."""
         self.hide()
         self.second_window.set_up_ingredient_price_window(
-            self, self.ingredients_for_recipe.currentText(), user_name
+            self, self.ingredients_for_recipe.currentText()
         )
 
     def logout(self):
